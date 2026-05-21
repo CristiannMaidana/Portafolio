@@ -28,6 +28,8 @@
                         <div class="circle yellow"></div>
                         <div class="circle green"></div>
                     </div>
+                    <div style="background:gray; height:1px"></div>
+                    <pre class="terminal-code"><code><span class="code-keyword">const</span> developer = &#123;<br>  name: <span class="code-value">"Cristian"</span>,<br>  stack: [<span class="code-stack">"Flutter", "Django", "PostgreSQL"</span>],<br>  focus: <span class="code-value">"Modern Interfaces"</span>,<br>  status: <span class="code-value">"Open to work"</span><br>&#125;;</code></pre>
                 </div>
             </div>
         </div>
@@ -93,6 +95,29 @@
         margin: 25px;
         border-radius: 26px;
         background-color: #0d0f11FF;
+    }
+
+    .terminal-code {
+        margin: 0;
+        padding: 24px;
+        padding-right: 0px;
+        color: #d7e2f0;
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+        font-size: 18px;
+        line-height: 1.7;
+        white-space: pre-wrap;
+    }
+
+    .code-keyword {
+        color: #85dffb;
+    }
+
+    .code-value {
+        color: #99ebac;
+    }
+
+    .code-stack {
+        color: #977ef1;
     }
 
     .circle {
