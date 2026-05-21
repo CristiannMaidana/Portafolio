@@ -8,14 +8,47 @@
     <div style="display: flex; flex-direction: column; align-items: center; width:45%">
         <p>Desarrollador junior con experiencia en frontend, backend, arquitectura y diseño visual. Apasionado por crear experiencias digitales modernas con estética premium y movimiento dinámico.</p>
     </div>
-    <div>
-        <button>Ver proyectos</button>
-        <button>Contactame</button>
+    <div style="margin-top: 20px;">
+        <button class="btn primary" >Ver proyectos</button>
+        <button class="btn secondary" >Contactame</button>
     </div>
 </body>
 </html>
 
 <style>
+    .btn{
+        padding: 16px 22px;
+        border-radius: 16px;
+        border: 1px solid transparent;
+        font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background-color .3s, color .3s, border-color .3s, transform .3s;
+    }
+    .btn.primary{
+        background: linear-gradient(135deg, #66e3ff, #7c5cff);
+        color: #0b0d10;
+    }
+
+    .btn.secondary{
+        border-color: #d0d7de;
+        color: #14191c;
+        background: #ffffff;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+
+    .btn.primary:hover {
+        background: linear-gradient(135deg, #ffd88d, #ffb274);
+    }
+
+    .btn.secondary:hover {
+        background: #f6f8fa;
+    }
+
     text {
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
         font-size: 24px;
