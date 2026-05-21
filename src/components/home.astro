@@ -1,21 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
-    <text>JUNIOR DEVELOPER. SYSTEMS STUDENT</text>
-    <div style="display: flex; flex-direction: column; align-items: center; width:30%">
-        <h1>Hola, soy Cristian</h1>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center; width:45%">
-        <p>Desarrollador junior con experiencia en frontend, backend, arquitectura y diseño visual. Apasionado por crear experiencias digitales modernas con estética premium y movimiento dinámico.</p>
-    </div>
-    <div style="margin-top: 20px;">
-        <button class="btn primary" >Ver proyectos</button>
-        <button class="btn secondary" >Contactame</button>
+    <div class="home-container">
+        <div  style="display: flex; background-color: #66e3ff;">
+            <div style="flex-direction: column; margin:200px; margin-right: 30px">
+                <text>JUNIOR DEVELOPER. SYSTEMS STUDENT</text>
+            <div style="display: flex; flex-direction: column; align-items: center; width:90%">
+                <h1>Hola, soy Cristian</h1>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; ">
+                <p>Desarrollador junior con experiencia en frontend, backend, arquitectura y diseño visual. 
+                    Apasionado por crear experiencias digitales modernas con estética premium y movimiento dinámico.
+                </p>
+            </div>
+            <div style="margin-top: 20px;">
+                <button class="btn primary" >Ver proyectos</button>
+                <button class="btn secondary" >Contactarme</button>
+            </div>
+            </div>
+        </div>
+
+        <div  style="display: flex; background-color: #ffb274; width:100%; padding-top:200px;">
+            <div class="container-terminal">
+
+            </div>
+        </div>
     </div>
 </body>
 </html>
 
 <style>
+    .home-container {
+        flex-direction: row;
+        display: flex;
+    }
+
     .btn{
         padding: 16px 22px;
         border-radius: 16px;
@@ -26,6 +45,7 @@
         cursor: pointer;
         transition: background-color .3s, color .3s, border-color .3s, transform .3s;
     }
+    
     .btn.primary{
         background: linear-gradient(135deg, #66e3ff, #7c5cff);
         color: #0b0d10;
@@ -35,6 +55,7 @@
         border-color: #d0d7de;
         color: #14191c;
         background: #ffffff;
+        margin-left: 10px;
     }
 
     .btn:hover {
@@ -49,6 +70,17 @@
         background: #f6f8fa;
     }
 
+    .container-terminal {
+        width: 100%;
+        max-width: 580px;
+        height: 460px;
+        background:linear-gradient(145deg,#14181d,#0e1115);
+        border:1px solid rgba(255,255,255,.08);
+        box-shadow:0 30px 80px rgba(0,0,0,.45);
+        border-radius: 25px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
     text {
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
         font-size: 24px;
@@ -59,7 +91,7 @@
 
     h1 {
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-        font-size: 90px;
+        font-size: 120px;
         margin-top: 10px;
         margin-bottom: 20px;
     }
