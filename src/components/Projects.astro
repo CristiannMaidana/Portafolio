@@ -5,6 +5,10 @@ import djangoImage from '../assets/Django.png';
 import mapboxImage from '../assets/MapBox.png';
 import postgresImage from '../assets/postgresSQL.png';
 import restApiImage from '../assets/RESTApi.svg';
+
+import calendarImage from '../assets/EcoUshuaia/Calendar.png'
+import mapImage from '../assets/EcoUshuaia/Map.png'
+import settingsImage from '../assets/EcoUshuaia/Settings.png'
 ---
 
 <div id="container-projects">
@@ -63,7 +67,9 @@ import restApiImage from '../assets/RESTApi.svg';
                 </div>
             </div>
             <div class="image">
-
+                <img class="app-image" src={calendarImage.src} alt="Calendar">
+                <img class="app-image" src={mapImage.src} alt="Calendar">
+                <img class="app-image" src={settingsImage.src} alt="Calendar">
             </div>
         </div>
     </section>
@@ -85,9 +91,11 @@ import restApiImage from '../assets/RESTApi.svg';
     }
 
     .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: blueviolet;
-        height: 400px;
-        width: 100%;
+        width: 80%;
     }
     
     .tecnology img {
@@ -169,6 +177,10 @@ import restApiImage from '../assets/RESTApi.svg';
         color: #14191c;
         background: #ffffff;
         margin-left: 10px;
+    }
+
+    .app-image {
+        height: 400px;
     }
 
     #container-projects {
