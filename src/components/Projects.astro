@@ -92,7 +92,7 @@ const tecnologyItems = [
         gap: 12px;
         width: min(100%, 560px);
         min-height: 450px;
-        overflow: visible;
+        overflow: hidden;
         border: 1px solid #7fdc8f;
         border-radius: 22px;
         padding: 28px 22px;
@@ -143,8 +143,9 @@ const tecnologyItems = [
     }
 
     .app-image {
-        height: min(400px, 28vw);
-        max-width: 31%;
+        width: 31%;
+        max-width: 180px;
+        height: auto;
         object-fit: contain;
     }
 
@@ -191,16 +192,18 @@ const tecnologyItems = [
         }
 
         .image {
-            justify-content: flex-start;
+            justify-content: center;
         }
 
         .app-showcase {
             width: 100%;
-            min-height: 360px;
+            min-height: 0;
+            aspect-ratio: 16 / 10;
         }
 
         .app-image {
-            height: min(320px, 30vw);
+            width: 29%;
+            max-width: none;
         }
     }
 
@@ -212,17 +215,16 @@ const tecnologyItems = [
         }
 
         .app-showcase {
-            min-height: 0;
             padding: 20px 12px;
+            aspect-ratio: 1 / 1;
         }
 
         .app-image {
-            height: min(240px, 42vw);
-            max-width: 32%;
+            width: 30%;
         }
 
         .app-image.middle {
-            transform: translateY(clamp(16px, 7vw, 48px));
+            transform: translateY(clamp(12px, 5vw, 28px));
         }
 
         .buttons {
