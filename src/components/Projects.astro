@@ -1,9 +1,31 @@
+---
+import projectImage from '../assets/pngwing.com.png';
+---
+
 <div id="container-projects">
     <section>
         <h3>Projectos destacados</h3>
         <h1>Proyectos academicos presentados como productos reales</h1>
         <div class="card">
-            
+            <div class="text">
+                <p>MOBILE APP</p>
+                <h2>EcoUshuaia</h2>
+                <p>Aplicación móvil enfocada en reciclaje urbano y gestión ambiental desarrollada con Flutter.
+                    La app permite visualizar contenedores ecológicos en mapas interactivos, consultar puntos de reciclaje y acceder a novedades y eventos mediantes una interfaz moderna orientada a dispositivos móviles.
+                    Desarrollé la arquitectura de la aplicación, la interfaz de usuario, la navegación entre pantallas, la integración con APis REST y los sistemas de mapas y geolocalización.
+                </p>
+                <div style="flex-direction: row; display: flex">
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <div class="tecnology">
+                            <img src={projectImage.src} alt="EcoUshuaia preview" />
+                        </div>
+                        <p>Flutter</p>
+                    </div>
+                </div>
+            </div>
+            <div class="image">
+
+            </div>
         </div>
     </section>
 </div>
@@ -13,8 +35,40 @@
         margin-top: 50px;
         border-radius: 22px;
         border: 1px solid black;
-        height: 100px;
+        flex-direction: row;
+        display: flex;
     }
+
+    .text {
+        background-color: aqua;
+        height: 400px;
+        width: 100%;
+    }
+
+    .image {
+        background-color: blueviolet;
+        height: 400px;
+        width: 100%;
+    }
+    
+    .tecnology img {
+        width: 66.67px;
+        height: 50px;
+    }
+
+    .tecnology {
+        width: 62px;
+        height: 62px;
+        border: 1px solid black;
+        border-radius: 10px;
+        background-color: red;
+        align-content: center;
+    }
+
+    .tecnology + p {
+        margin: 6px 0 0;
+    }
+
 
     #container-projects {
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
