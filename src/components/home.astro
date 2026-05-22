@@ -2,35 +2,35 @@
 <html lang="en">
 <body>
     <div class="home-container">
-        <div  style="display: flex;">
-            <div style="flex-direction: column; margin:200px; margin-right: 30px">
+        <div class="home-copy-wrapper">
+            <div class="home-copy">
                 <text>JUNIOR DEVELOPER. SYSTEMS STUDENT</text>
-            <div style="display: flex; flex-direction: column; align-items: center; width:90%">
-                <h1>Hola, soy Cristian</h1>
-            </div>
-            <div style="display: flex; flex-direction: column; align-items: center; ">
-                <p>Desarrollador junior con experiencia en frontend, backend, arquitectura y diseño visual. 
-                    Apasionado por crear experiencias digitales modernas con estética premium y movimiento dinámico.
-                </p>
-            </div>
-            <div style="margin-top: 20px;">
-                <button class="btn primary" >Ver proyectos</button>
-                <button class="btn secondary" >Contactarme</button>
-            </div>
+                <div class="home-title">
+                    <h1>Hola, soy Cristian</h1>
+                </div>
+                <div class="home-description">
+                    <p>Desarrollador junior con experiencia en frontend, backend, arquitectura y diseño visual. 
+                        Apasionado por crear experiencias digitales modernas con estética premium y movimiento dinámico.
+                    </p>
+                </div>
+                <div class="home-actions">
+                    <button class="btn primary" >Ver proyectos</button>
+                    <button class="btn secondary" >Contactarme</button>
+                </div>
             </div>
         </div>
 
-        <div  style="display: flex; width:100%; padding-top:200px;">
+        <div class="home-terminal-wrapper">
             <div class="container-terminal">
                 <div class="terminal">
-                    <div style="flex-direction: row; display:flex; padding:20px">
+                    <div class="terminal-toolbar">
                         <div class="circle red"></div>
                         <div class="circle yellow"></div>
                         <div class="circle green"></div>
                     </div>
-                    <div style="background:gray; height:1px"></div>
+                    <div class="terminal-divider"></div>
                     <pre class="terminal-code"><code><span class="code-keyword">const</span> developer = &#123;<br>  name: <span class="code-value">"Cristian"</span>,<br>  stack: [<span class="code-stack">"Flutter", "Django", "PostgreSQL"</span>],<br>  focus: <span class="code-value">"Modern Interfaces"</span>,<br>  status: <span class="code-value">"Open to work"</span><br>&#125;;</code></pre>
-                    <div style="flex-direction: row; display:flex">
+                    <div class="terminal-stats">
                         <div class="container-data">
                             <p class="titulo">4°</p>
                             <p>Año universitario</p>
@@ -54,8 +54,58 @@
 
 <style>
     .home-container {
-        flex-direction: row;
         display: flex;
+        flex-direction: row;
+        gap: 30px;
+        padding-top: 200px;
+    }
+
+    .home-copy-wrapper,
+    .home-terminal-wrapper {
+        display: flex;
+        width: 100%;
+    }
+
+    .home-copy {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+
+    .home-description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-actions {
+        margin-top: 20px;
+    }
+
+    .home-terminal-wrapper {
+        padding-top: 200px;
+    }
+
+    .terminal-toolbar {
+        display: flex;
+        flex-direction: row;
+        padding: 20px;
+    }
+
+    .terminal-divider {
+        height: 1px;
+        background: gray;
+    }
+
+    .terminal-stats {
+        display: flex;
+        flex-direction: row;
     }
 
     .btn{
@@ -193,5 +243,16 @@
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
         font-size: 24px;
         color: #333;
+    }
+
+    @media (max-width: 1200px) {
+        .home-container {
+            flex-direction: column;
+            padding-top: 140px;
+        }
+
+        .home-terminal-wrapper {
+            padding-top: 0;
+        }
     }
 </style>
