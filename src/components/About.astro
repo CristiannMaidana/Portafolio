@@ -35,10 +35,14 @@ const tecnologyItems = [
 </div>
 
 <style>
+    #container-about {
+        width: 100%;
+    }
+
     .content {
         display: flex;
         flex-direction: row;
-        gap: 100px;
+        gap: 40px;
         margin-top: 50px;
     }
 
@@ -64,21 +68,39 @@ const tecnologyItems = [
 
     p {
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-        font-size: 20px;
+        font-size: clamp(1rem, 1.4vw, 1.25rem);
         color: #333;
     }
 
     h1 {
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-        font-size: 80px;
+        font-size: clamp(3rem, 6vw, 5rem);
+        line-height: 1;
         color: black;
-        width: 90%;
     }
 
     h3 {
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-        font-size: 30px;
+        font-size: clamp(1.25rem, 2.5vw, 1.875rem);
         color: #85e7fb;
         margin-bottom: -30px;
+    }
+
+    @media (max-width: 1200px) {
+        .content {
+            flex-direction: column;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .content {
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .data,
+        .tecnology {
+            padding: 20px 16px;
+        }
     }
 </style>

@@ -27,9 +27,9 @@ const tecnologyItems = [
         <h1>Proyectos académicos realizados como productos reales.</h1>
         <div class="card">
             <div class="text">
-                <p style="color: #85e7fb; margin-bottom: -20px;">MOBILE APP</p>
+                <p class="project-kicker">MOBILE APP</p>
                 <h2>EcoUshuaia</h2>
-                <div style="width: 96%;">
+                <div class="project-copy">
                     <p>Aplicación móvil enfocada en reciclaje urbano y gestión ambiental desarrollada con Flutter.</p>
                     <p>
                         La app permite visualizar contenedores ecológicos en mapas interactivos, consultar puntos de reciclaje y acceder a novedades y eventos mediantes una interfaz moderna orientada a dispositivos móviles.
@@ -56,9 +56,16 @@ const tecnologyItems = [
 </div>
 
 <style>
+    #container-projects,
+    section {
+        width: 100%;
+    }
+
     .card {
-        flex-direction: row;
         display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 32px;
         margin-top: 50px;
         border-radius: 22px;
         border: 1px solid black;
@@ -67,33 +74,50 @@ const tecnologyItems = [
 
     .text {
         width: 100%;
+        min-width: 0;
     }
 
     .image {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 70%;
-        overflow: visible;
+        width: 100%;
+        min-width: 0;
     }
 
     .app-showcase {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 450px;
+        gap: 12px;
+        width: min(100%, 560px);
+        min-height: 450px;
         overflow: visible;
         border: 1px solid #7fdc8f;
         border-radius: 22px;
+        padding: 28px 22px;
+        box-sizing: border-box;
         background: linear-gradient(165deg, #d8ffb8 0%, #9af08d 42%, #67d978 100%);
         box-shadow:
             inset 0 2px 0 rgba(255, 255, 255, 0.55),
             inset 0 -18px 28px rgba(53, 144, 68, 0.22),
             0 18px 35px rgba(63, 152, 77, 0.28);
     }
+
+    .project-kicker {
+        color: #85e7fb;
+        margin-bottom: -20px;
+    }
+
+    .project-copy {
+        width: 96%;
+    }
     
     .buttons {
-        margin-top:30px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 30px;
     }
 
     .bt {
@@ -116,41 +140,99 @@ const tecnologyItems = [
         border-color: #d0d7de;
         color: #14191c;
         background: #ffffff;
-        margin-left: 10px;
     }
 
     .app-image {
-        height: 400px;
+        height: min(400px, 28vw);
+        max-width: 31%;
+        object-fit: contain;
     }
 
     .app-image.middle { 
-        transform: translateY(148px);
+        transform: translateY(clamp(56px, 8vw, 148px));
     }
 
     p {
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-        font-size: 20px;
+        font-size: clamp(1rem, 1.4vw, 1.25rem);
         color: #333;
     }
 
     h1 {
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-        font-size: 80px;
+        font-size: clamp(3rem, 6vw, 5rem);
+        line-height: 1;
         color: black;
-        width: 90%;
+        width: min(90%, 14ch);
     }
 
     h2 {
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-        font-size: 50px;
+        font-size: clamp(2rem, 4vw, 3.125rem);
         color: black;
+        margin-bottom: 20px;
     }
 
     h3 {
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-        font-size: 30px;
+        font-size: clamp(1.25rem, 2.5vw, 1.875rem);
         color: #85e7fb;
         margin-bottom: -30px;
+    }
+
+    @media (max-width: 1200px) {
+        .card {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .project-copy {
+            width: 100%;
+        }
+
+        .image {
+            justify-content: flex-start;
+        }
+
+        .app-showcase {
+            width: 100%;
+            min-height: 360px;
+        }
+
+        .app-image {
+            height: min(320px, 30vw);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .card {
+            gap: 24px;
+            margin-top: 32px;
+            padding: 16px;
+        }
+
+        .app-showcase {
+            min-height: 0;
+            padding: 20px 12px;
+        }
+
+        .app-image {
+            height: min(240px, 42vw);
+            max-width: 32%;
+        }
+
+        .app-image.middle {
+            transform: translateY(clamp(16px, 7vw, 48px));
+        }
+
+        .buttons {
+            flex-direction: column;
+        }
+
+        .bt {
+            width: 100%;
+            height: 48px;
+        }
     }
 
 </style>
