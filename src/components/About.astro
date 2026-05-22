@@ -17,7 +17,7 @@ const tecnologyItems = [
 ];
 ---
 
-<div style="height:100px; widght:200px; margin:200px">
+<div id="container-about">
     <h3>Proyectos destacados</h3>
     <h1>Proyectos académicos realizados como productos reales.</h1>
     <div class="content">
@@ -26,7 +26,6 @@ const tecnologyItems = [
             <p>Estudiante avanzado de Licenciatura en Sistemas orientado al desarrollo de software de calidad.</p>
             <p>Me interesa el diseño de arquitecturas escalables, la integración entre frontend y backend y las bases de datos relacionales.</p>
         </div>
-        <div style="width: 100px; height:100%"></div>
         <div class="tecnology">
             <p>Tecnologias</p>
             <p>A lo largo de la cursadas universitaria aprendi tanto de patrones de diseño con java, modelado de datos y normalización, concurrencia, estructura de datos,  recursividad  y criterio a la hora de elegir y implementar diferentes tecnologías a los problemas adecuados</p>
@@ -39,6 +38,8 @@ const tecnologyItems = [
     .content {
         display: flex;
         flex-direction: row;
+        gap: 100px;
+        margin-top: 50px;
     }
 
     .data {
@@ -59,5 +60,30 @@ const tecnologyItems = [
         border: 1px solid black;
         border-radius: 22px;
         padding: 30px;
+    }
+
+    #container-about {
+        font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+        margin: 200px;
+    }
+
+    p {
+        font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+        font-size: 20px;
+        color: #333;
+    }
+
+    h1 {
+        font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+        font-size: 80px;
+        color: black;
+        width: 90%;
+    }
+
+    h3 {
+        font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+        font-size: 30px;
+        color: #85e7fb;
+        margin-bottom: -30px;
     }
 </style>
