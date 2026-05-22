@@ -1,5 +1,10 @@
 ---
-import projectImage from '../assets/Flutter.png';
+import flutterImage from '../assets/Flutter.png';
+import dartImage from '../assets/Dart.png';
+import djangoImage from '../assets/Django.png';
+import mapboxImage from '../assets/MapBox.png';
+import postgresImage from '../assets/postgresSQL.png';
+import restApiImage from '../assets/RESTApi.svg';
 ---
 
 <div id="container-projects">
@@ -14,12 +19,42 @@ import projectImage from '../assets/Flutter.png';
                     La app permite visualizar contenedores ecológicos en mapas interactivos, consultar puntos de reciclaje y acceder a novedades y eventos mediantes una interfaz moderna orientada a dispositivos móviles.
                     Desarrollé la arquitectura de la aplicación, la interfaz de usuario, la navegación entre pantallas, la integración con APis REST y los sistemas de mapas y geolocalización.
                 </p>
-                <div style="flex-direction: row; display: flex">
-                    <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="flex-direction: row; display: flex; justify-content: flex-start; gap: 18px; width:70%">
+                    <div class="tech-item">
                         <div class="tecnology">
-                            <img src={projectImage.src} alt="EcoUshuaia preview" />
+                            <img src={flutterImage.src} alt="Flutter icon" />
                         </div>
                         <p>Flutter</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tecnology">
+                            <img class="icon-dart" src={dartImage.src} alt="Dart icon" />
+                        </div>
+                        <p>Dart</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tecnology">
+                            <img class="icon-django" src={djangoImage.src} alt="Django icon" />
+                        </div>
+                        <p>Django</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tecnology">
+                            <img class="icon-mapbox" src={mapboxImage.src} alt="Mapbox icon" />
+                        </div>
+                        <p>Mapbox</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tecnology">
+                            <img class="icon-postgres" src={postgresImage.src} alt="PostgreSQL icon" />
+                        </div>
+                        <p>PostgreSQL</p>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tecnology">
+                            <img class="icon-restapi" src={restApiImage.src} alt="REST API icon" />
+                        </div>
+                        <p style="white-space: nowrap;">REST API</p>
                     </div>
                 </div>
             </div>
@@ -56,13 +91,49 @@ import projectImage from '../assets/Flutter.png';
         height: 50px;
     }
 
+    .tecnology img.icon-dart {
+        width: 50px;
+        height: 50px;
+
+    }
+
+    .tecnology img.icon-mapbox {
+        width: 53.34px;
+        height: 50px;
+    }
+
+    .tecnology img.icon-restapi {
+        width: 50px;
+        height: 50px;
+    }
+
+    .tecnology img.icon-postgres {
+        width: 48.53px;
+        height: 50px;
+    }
+
+    .tecnology img.icon-django {
+        width: 39.26px;
+        height: 50px;
+    }
+
     .tecnology {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 62px;
         height: 62px;
         border: 1px solid black;
         border-radius: 10px;
         background-color: red;
-        align-content: center;
+    }
+
+    .tech-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 78px;
+        text-align: center;
     }
 
     .tecnology + p {
