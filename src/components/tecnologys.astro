@@ -1,0 +1,93 @@
+---
+type TecnologyItem = {
+    src: string;
+    alt: string;
+    label: string;
+    imageClass?: string;
+    nowrap?: boolean;
+};
+
+const {
+    items,
+    width = '70%'
+} = Astro.props as {
+    items: TecnologyItem[];
+    width?: string;
+};
+---
+
+<div class="tecnologys" style={`width:${width};`}>
+    {items.map((item) => (
+        <div class="tech-item">
+            <div class="tecnology">
+                <img class={item.imageClass} src={item.src} alt={item.alt} />
+            </div>
+            <p class={item.nowrap ? 'nowrap' : undefined}>{item.label}</p>
+        </div>
+    ))}
+</div>
+
+<style>
+    .tecnologys {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 18px;
+    }
+
+    .tecnology img {
+        width: 66.67px;
+        height: 50px;
+    }
+
+    .tecnology img.icon-dart {
+        width: 50px;
+        height: 50px;
+    }
+
+    .tecnology img.icon-mapbox {
+        width: 53.34px;
+        height: 50px;
+    }
+
+    .tecnology img.icon-restapi {
+        width: 50px;
+        height: 50px;
+    }
+
+    .tecnology img.icon-postgres {
+        width: 48.53px;
+        height: 50px;
+    }
+
+    .tecnology img.icon-django {
+        width: 39.26px;
+        height: 50px;
+    }
+
+    .tecnology {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 62px;
+        height: 62px;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+
+    .tech-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 78px;
+        text-align: center;
+    }
+
+    .tecnology + p {
+        margin: 6px 0 0;
+    }
+
+    .nowrap {
+        white-space: nowrap;
+    }
+</style>
