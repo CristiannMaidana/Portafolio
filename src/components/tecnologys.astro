@@ -9,7 +9,7 @@ type TecnologyItem = {
 
 const {
     items,
-    width = '70%'
+    width = '100%'
 } = Astro.props as {
     items: TecnologyItem[];
     width?: string;
@@ -31,8 +31,10 @@ const {
     .tecnologys {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         justify-content: flex-start;
         gap: 18px;
+        max-width: 100%;
     }
 
     .tecnology img {
@@ -94,5 +96,47 @@ const {
 
     .nowrap {
         white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+        .tecnologys {
+            gap: 14px;
+        }
+
+        .tecnology {
+            width: 56px;
+            height: 56px;
+        }
+
+        .tecnology img {
+            width: 52px;
+            height: 40px;
+        }
+
+        .tecnology img.icon-dart,
+        .tecnology img.icon-restapi,
+        .tecnology img.icon-java {
+            width: 40px;
+            height: 40px;
+        }
+
+        .tecnology img.icon-mapbox {
+            width: 44px;
+            height: 40px;
+        }
+
+        .tecnology img.icon-postgres {
+            width: 39px;
+            height: 40px;
+        }
+
+        .tecnology img.icon-django {
+            width: 31px;
+            height: 40px;
+        }
+
+        .tech-item {
+            width: 68px;
+        }
     }
 </style>
