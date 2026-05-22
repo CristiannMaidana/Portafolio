@@ -13,9 +13,24 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# environment variables
+# environment variables and local overrides
 .env
-.env.production
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+*.local
+.envrc
+
+# credentials and private keys
+*.pem
+*.key
+*.p12
+*.pfx
+*.cer
+*.crt
+.npmrc
+.netrc
 
 # macOS-specific files
 .DS_Store
