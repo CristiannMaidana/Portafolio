@@ -5,10 +5,20 @@ import djangoImage from '../assets/Django.png';
 import mapboxImage from '../assets/MapBox.png';
 import postgresImage from '../assets/postgresSQL.png';
 import restApiImage from '../assets/RESTApi.svg';
+import Tecnologys from './tecnologys.astro';
 
 import calendarImage from '../assets/EcoUshuaia/Calendar.png'
 import mapImage from '../assets/EcoUshuaia/Map.png'
 import settingsImage from '../assets/EcoUshuaia/Settings.png'
+
+const tecnologyItems = [
+    { src: flutterImage.src, alt: 'Flutter icon', label: 'Flutter' },
+    { src: dartImage.src, alt: 'Dart icon', label: 'Dart', imageClass: 'icon-dart' },
+    { src: djangoImage.src, alt: 'Django icon', label: 'Django', imageClass: 'icon-django' },
+    { src: mapboxImage.src, alt: 'Mapbox icon', label: 'Mapbox', imageClass: 'icon-mapbox' },
+    { src: postgresImage.src, alt: 'PostgreSQL icon', label: 'PostgreSQL', imageClass: 'icon-postgres' },
+    { src: restApiImage.src, alt: 'REST API icon', label: 'REST API', imageClass: 'icon-restapi', nowrap: true }
+];
 ---
 
 <div id="container-projects">
@@ -28,44 +38,7 @@ import settingsImage from '../assets/EcoUshuaia/Settings.png'
                         Desarrollé la arquitectura de la aplicación, la interfaz de usuario, la navegación entre pantallas, la integración con APis REST y los sistemas de mapas y geolocalización.
                     </p>
                 </div>
-                <div style="flex-direction: row; display: flex; justify-content: flex-start; gap: 18px; width:70%">
-                    <div class="tech-item">
-                        <div class="tecnology">
-                            <img src={flutterImage.src} alt="Flutter icon" />
-                        </div>
-                        <p>Flutter</p>
-                    </div>
-                    <div class="tech-item">
-                        <div class="tecnology">
-                            <img class="icon-dart" src={dartImage.src} alt="Dart icon" />
-                        </div>
-                        <p>Dart</p>
-                    </div>
-                    <div class="tech-item">
-                        <div class="tecnology">
-                            <img class="icon-django" src={djangoImage.src} alt="Django icon" />
-                        </div>
-                        <p>Django</p>
-                    </div>
-                    <div class="tech-item">
-                        <div class="tecnology">
-                            <img class="icon-mapbox" src={mapboxImage.src} alt="Mapbox icon" />
-                        </div>
-                        <p>Mapbox</p>
-                    </div>
-                    <div class="tech-item">
-                        <div class="tecnology">
-                            <img class="icon-postgres" src={postgresImage.src} alt="PostgreSQL icon" />
-                        </div>
-                        <p>PostgreSQL</p>
-                    </div>
-                    <div class="tech-item">
-                        <div class="tecnology">
-                            <img class="icon-restapi" src={restApiImage.src} alt="REST API icon" />
-                        </div>
-                        <p style="white-space: nowrap;">REST API</p>
-                    </div>
-                </div>
+                <Tecnologys items={tecnologyItems} />
                 <div class="buttons">
                     <button class="bt primary">GitHub</button>
                     <button class="bt secundary">Detalles</button>
@@ -119,59 +92,6 @@ import settingsImage from '../assets/EcoUshuaia/Settings.png'
             0 18px 35px rgba(63, 152, 77, 0.28);
     }
     
-    .tecnology img {
-        width: 66.67px;
-        height: 50px;
-    }
-
-    .tecnology img.icon-dart {
-        width: 50px;
-        height: 50px;
-
-    }
-
-    .tecnology img.icon-mapbox {
-        width: 53.34px;
-        height: 50px;
-    }
-
-    .tecnology img.icon-restapi {
-        width: 50px;
-        height: 50px;
-    }
-
-    .tecnology img.icon-postgres {
-        width: 48.53px;
-        height: 50px;
-    }
-
-    .tecnology img.icon-django {
-        width: 39.26px;
-        height: 50px;
-    }
-
-    .tecnology {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 62px;
-        height: 62px;
-        border: 1px solid black;
-        border-radius: 10px;
-    }
-
-    .tech-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 78px;
-        text-align: center;
-    }
-
-    .tecnology + p {
-        margin: 6px 0 0;
-    }
-
     .buttons {
         margin-top:30px;
     }
