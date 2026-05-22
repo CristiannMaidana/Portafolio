@@ -58,8 +58,8 @@ import restApiImage from '../assets/RESTApi.svg';
                     </div>
                 </div>
                 <div class="buttons">
-                    <button>GitHub</button>
-                    <button>Detalles</button>
+                    <button class="bt primary">GitHub</button>
+                    <button class="bt secundary">Detalles</button>
                 </div>
             </div>
             <div class="image">
@@ -146,6 +146,22 @@ import restApiImage from '../assets/RESTApi.svg';
 
     .buttons {
         margin-top:30px;
+    }
+
+    .bt {
+        width: 110px;
+        height: 40px;
+        border-radius: 20px;
+        border: 1px solid transparent;
+        font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .bt.primary {
+        background: linear-gradient(135deg, #66e3ff, #7c5cff);
+        color: #0b0d10;
     }
 
     #container-projects {
