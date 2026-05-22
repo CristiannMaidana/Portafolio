@@ -25,18 +25,31 @@
     }
 
     .portfolio-content {
-        padding: 0 200px 200px;
+        width: 100%;
+    }
+
+    :global(.portfolio-screen) {
+        min-height: 100svh;
+        display: flex;
+        align-items: center;
+        padding: 120px 200px 72px;
+        box-sizing: border-box;
+    }
+
+    :global(.portfolio-screen > *) {
+        width: 100%;
     }
 
     @media (max-width: 1200px) {
-        .portfolio-content {
-            padding: 0 96px 120px;
+        :global(.portfolio-screen) {
+            padding: 120px 96px 72px;
         }
     }
 
     @media (max-width: 768px) {
-        .portfolio-content {
-            padding: 0 24px 72px;
+        :global(.portfolio-screen) {
+            min-height: auto;
+            padding: 108px 24px 56px;
         }
     }
 </style>
