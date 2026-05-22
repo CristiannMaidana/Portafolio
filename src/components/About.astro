@@ -1,0 +1,63 @@
+---
+import flutterImage from '../assets/Flutter.png';
+import dartImage from '../assets/Dart.png';
+import djangoImage from '../assets/Django.png';
+import postgresImage from '../assets/postgresSQL.png';
+import restApiImage from '../assets/RESTApi.svg';
+import javaImage from '../assets/Java.png'
+import Tecnologys from './tecnologys.astro';
+
+const tecnologyItems = [
+    { src: flutterImage.src, alt: 'Flutter icon', label: 'Flutter' },
+    { src: dartImage.src, alt: 'Dart icon', label: 'Dart', imageClass: 'icon-dart' },
+    { src: djangoImage.src, alt: 'Django icon', label: 'Django', imageClass: 'icon-django' },
+    { src: postgresImage.src, alt: 'PostgreSQL icon', label: 'PostgreSQL', imageClass: 'icon-postgres' },
+    { src: restApiImage.src, alt: 'REST API icon', label: 'REST API', imageClass: 'icon-restapi', nowrap: true },
+    { src: javaImage.src, alt: 'Java icon', label: 'Java', imageClass: 'icon-java', nowrap: true }
+];
+---
+
+<div style="height:100px; widght:200px; margin:200px">
+    <h3>Proyectos destacados</h3>
+    <h1>Proyectos académicos realizados como productos reales.</h1>
+    <div class="content">
+        <div class="data">
+            <p>Cristian Maidana</p>
+            <p>Estudiante avanzado de Licenciatura en Sistemas orientado al desarrollo de software de calidad.</p>
+            <p>Me interesa el diseño de arquitecturas escalables, la integración entre frontend y backend y las bases de datos relacionales.</p>
+        </div>
+        <div style="width: 100px; height:100%"></div>
+        <div class="tecnology">
+            <p>Tecnologias</p>
+            <p>A lo largo de la cursadas universitaria aprendi tanto de patrones de diseño con java, modelado de datos y normalización, concurrencia, estructura de datos,  recursividad  y criterio a la hora de elegir y implementar diferentes tecnologías a los problemas adecuados</p>
+            <Tecnologys items={tecnologyItems} />
+        </div>
+    </div>
+</div>
+
+<style>
+    .content {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .data {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        border: 1px solid black;
+        border-radius: 22px;
+        padding: 30px;
+    }
+
+    .tecnology {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        border: 1px solid black;
+        border-radius: 22px;
+        padding: 30px;
+    }
+</style>
