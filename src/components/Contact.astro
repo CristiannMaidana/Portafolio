@@ -26,12 +26,15 @@
         border-radius: 64px;
         padding: 30px 100px 50px;
         margin: 0 60px 0px; 
+        box-sizing: border-box;
     }
 
     .contact-form {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
+        max-width: 976px;
     }
 
     .inputs{
@@ -39,10 +42,14 @@
         flex-direction: row;
         gap: 16px;
         margin-top: 24px;
+        width: 100%;
     }
 
     .inputs input {
         width: 480px;
+        max-width: 100%;
+        flex: 1 1 0;
+        min-width: 0;
         padding: 14px 18px;
         border: 1px solid #d0d7de;
         border-radius: 14px;
@@ -59,10 +66,13 @@
 
     .msg {
         margin-top: 16px;
+        width: 100%;
     }
 
     .msg textarea {
         width: 976px;
+        max-width: 100%;
+        display: block;
         height: 340px;
         padding: 14px 18px;
         border: 1px solid #d0d7de;
@@ -90,6 +100,7 @@
 
     button {
         width: 976px;
+        max-width: 100%;
         margin-top: 20px;
         padding: 16px 22px;
         border: 1px solid transparent;
@@ -120,5 +131,27 @@
         font-size: clamp(1.25rem, 2.5vw, 1.875rem);
         color: #85e7fb;
         margin-bottom: -20px;
+    }
+
+    @media (max-width: 1200px) {
+        .contact-page {
+            padding-left: 48px;
+            padding-right: 48px;
+            margin-left: 24px;
+            margin-right: 24px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .contact-page {
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .inputs {
+            flex-direction: column;
+        }
     }
 </style>
