@@ -101,6 +101,10 @@
     .terminal-stats {
         display: flex;
         flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 10px;
+        padding: 0 10px 10px;
+        box-sizing: border-box;
     }
 
     .btn{
@@ -138,6 +142,7 @@
         width: 100%;
         max-width: 580px;
         height: 460px;
+        box-sizing: border-box;
         background:linear-gradient(145deg,#14181d,#0e1115);
         border:1px solid rgba(255,255,255,.08);
         box-shadow:0 30px 80px rgba(0,0,0,.45);
@@ -146,9 +151,10 @@
     }
 
     .terminal {
-        width: 526px;
+        width: calc(100% - 50px);
         height: 300px;
         margin: 25px;
+        box-sizing: border-box;
         border-radius: 26px;
         background-color: #0d0f11FF;
     }
@@ -196,22 +202,24 @@
     }
 
     .container-data{
-        width: 180px;
+        flex: 1 1 0;
+        min-width: 0;
         margin-top: 30px;
-        margin-right: 10px;
         border-radius: 26px;
         background-color: #f0fffaFF;
         padding: 10px;
         text-align: center;
+        box-sizing: border-box;
     }
 
     .container-data p {
         margin: 4px 0;
-        font-size: 18px;
+        font-size: clamp(0.85rem, 1.2vw, 1.125rem);
+        overflow-wrap: break-word;
     }
     
      .container-data p.titulo{
-        font-size: 30px;
+        font-size: clamp(1.25rem, 2.2vw, 1.875rem);
      } 
 
     text {
@@ -239,6 +247,29 @@
     @media (max-width: 1200px) {
         .home-container {
             flex-direction: column;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .container-terminal {
+            height: auto;
+        }
+
+        .terminal {
+            width: calc(100% - 32px);
+            height: auto;
+            margin: 16px;
+        }
+
+        .terminal-code {
+            padding: 20px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .container-data {
+            margin-top: 16px;
+            padding: 10px 8px;
         }
     }
 </style>
