@@ -68,7 +68,7 @@ const tecnologyItems = [
         gap: 32px;
         margin-top: 50px;
         border-radius: 22px;
-        border: 1px solid black;
+        border: 1px solid var(--portfolio-border);
         padding: 20px;
     }
 
@@ -93,19 +93,19 @@ const tecnologyItems = [
         width: min(100%, 560px);
         min-height: 450px;
         overflow: hidden;
-        border: 1px solid #7fdc8f;
+        border: 1px solid var(--portfolio-showcase-border);
         border-radius: 22px;
         padding: 28px 22px;
         box-sizing: border-box;
-        background: linear-gradient(165deg, #d8ffb8 0%, #9af08d 42%, #67d978 100%);
+        background: var(--portfolio-showcase-bg);
         box-shadow:
-            inset 0 2px 0 rgba(255, 255, 255, 0.55),
-            inset 0 -18px 28px rgba(53, 144, 68, 0.22),
-            0 18px 35px rgba(63, 152, 77, 0.28);
+            inset 0 2px 0 var(--portfolio-showcase-highlight),
+            inset 0 -18px 28px var(--portfolio-showcase-shadow-top),
+            0 18px 35px var(--portfolio-showcase-shadow-bottom);
     }
 
     .project-kicker {
-        color: #85e7fb;
+        color: var(--portfolio-accent);
         margin-bottom: -20px;
     }
 
@@ -131,22 +131,22 @@ const tecnologyItems = [
     }
 
     .bt.primary {
-        background: linear-gradient(135deg, #66e3ff, #7c5cff);
-        color: #0b0d10;
+        background: linear-gradient(135deg, var(--portfolio-accent-start), var(--portfolio-accent-end));
+        color: var(--portfolio-button-text);
     }
 
     .bt.secundary {
-        border-color: #d0d7de;
-        color: #14191c;
-        background: #ffffff;
+        border-color: var(--portfolio-input-border);
+        color: var(--portfolio-text);
+        background: var(--portfolio-surface);
     }
 
     .bt:hover {
         transform: translateY(-4px);
     }
 
-    .bt.secondary:hover {
-        background: #f6f8fa;
+    .bt.secundary:hover {
+        background: var(--portfolio-button-hover);
     }
 
     .app-image {
@@ -164,27 +164,27 @@ const tecnologyItems = [
     p {
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
         font-size: clamp(1rem, 1.4vw, 1.25rem);
-        color: #333;
+        color: var(--portfolio-muted);
     }
 
     h1 {
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
         font-size: clamp(3rem, 6vw, 5rem);
         line-height: 1;
-        color: black;
+        color: var(--portfolio-heading);
     }
 
     h2 {
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
         font-size: clamp(2rem, 4vw, 3.125rem);
-        color: black;
+        color: var(--portfolio-heading);
         margin-bottom: 20px;
     }
 
     h3 {
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
         font-size: clamp(1.25rem, 2.5vw, 1.875rem);
-        color: #85e7fb;
+        color: var(--portfolio-accent);
         margin-bottom: -30px;
     }
 

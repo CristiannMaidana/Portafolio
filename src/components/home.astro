@@ -96,7 +96,7 @@
 
     .terminal-divider {
         height: 1px;
-        background: gray;
+        background: var(--portfolio-divider);
     }
 
     .terminal-stats {
@@ -120,14 +120,14 @@
     }
     
     .btn.primary{
-        background: linear-gradient(135deg, #66e3ff, #7c5cff);
-        color: #0b0d10;
+        background: linear-gradient(135deg, var(--portfolio-accent-start), var(--portfolio-accent-end));
+        color: var(--portfolio-button-text);
     }
 
     .btn.secondary{
-        border-color: #d0d7de;
-        color: #14191c;
-        background: #ffffff;
+        border-color: var(--portfolio-input-border);
+        color: var(--portfolio-text);
+        background: var(--portfolio-surface);
         margin-left: 10px;
     }
 
@@ -136,7 +136,7 @@
     }
 
     .btn.secondary:hover {
-        background: #f6f8fa;
+        background: var(--portfolio-button-hover);
     }
 
     .container-terminal {
@@ -144,11 +144,10 @@
         max-width: 580px;
         height: 460px;
         box-sizing: border-box;
-        background:linear-gradient(145deg,#14181d,#0e1115);
-        border:1px solid rgba(255,255,255,.08);
-        box-shadow:0 30px 80px rgba(0,0,0,.45);
+        background: var(--portfolio-terminal-bg);
+        border:1px solid var(--portfolio-terminal-border);
         border-radius: 25px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 12px var(--portfolio-terminal-shadow);
     }
 
     .terminal {
@@ -157,14 +156,14 @@
         margin: 25px;
         box-sizing: border-box;
         border-radius: 26px;
-        background-color: #0d0f11FF;
+        background-color: var(--portfolio-terminal-panel);
     }
 
     .terminal-code {
         margin: 0;
         padding: 24px;
         padding-right: 0px;
-        color: #d7e2f0;
+        color: var(--portfolio-code-text);
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
         font-size: 18px;
         line-height: 1.7;
@@ -172,15 +171,15 @@
     }
 
     .code-keyword {
-        color: #85dffb;
+        color: var(--portfolio-code-keyword);
     }
 
     .code-value {
-        color: #99ebac;
+        color: var(--portfolio-code-value);
     }
 
     .code-stack {
-        color: #977ef1;
+        color: var(--portfolio-code-stack);
     }
 
     .circle {
@@ -191,15 +190,15 @@
     }
 
     .circle.red {
-        background: #fe5252FF;;
+        background: var(--portfolio-window-red);
     }
 
     .circle.yellow {
-        background: #ffb240FF;
+        background: var(--portfolio-window-yellow);
     }
 
     .circle.green {
-        background: #2cc248FF;
+        background: var(--portfolio-window-green);
     }
 
     .container-data{
@@ -207,7 +206,7 @@
         min-width: 0;
         margin-top: 30px;
         border-radius: 26px;
-        background-color: #f0fffaFF;
+        background-color: var(--portfolio-stat-surface);
         padding: 10px;
         text-align: center;
         box-sizing: border-box;
@@ -226,10 +225,9 @@
     text {
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
         font-size: 24px;
-        color: #555;
         text-transform: uppercase;
         letter-spacing: 2px;
-        color: #85dffb;
+        color: var(--portfolio-accent-alt);
     }
 
     h1 {
@@ -242,7 +240,7 @@
     p {
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
         font-size: 20px;
-        color: #333;
+        color: var(--portfolio-muted);
     }
 
     @media (max-width: 1360px) {
