@@ -115,20 +115,18 @@ const tecnologyItems = [
     
     .buttons {
         display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
         margin-top: 30px;
     }
 
     .bt {
-        width: 110px;
-        height: 40px;
-        border-radius: 20px;
+        padding: 16px 22px;
+        border-radius: 16px;
         border: 1px solid transparent;
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
         font-size: 16px;
         font-weight: 700;
         cursor: pointer;
+        transition: background-color .3s, color .3s, border-color .3s, transform .3s;
     }
 
     .bt.primary {
@@ -140,6 +138,15 @@ const tecnologyItems = [
         border-color: #d0d7de;
         color: #14191c;
         background: #ffffff;
+        margin-left: 10px;
+    }
+
+    .bt:hover {
+        transform: translateY(-4px);
+    }
+
+    .bt.secondary:hover {
+        background: #f6f8fa;
     }
 
     .app-image {
