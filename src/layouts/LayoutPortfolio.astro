@@ -9,6 +9,85 @@
     <main class="portfolio-content">
         <slot />
     </main>
+
+    <script is:inline>
+        const revealGroups = [];
+        const nav = document.querySelector('nav');
+
+        if (nav) {
+            revealGroups.push([nav, ...nav.querySelectorAll('li')]);
+        }
+
+        const sectionTargets = [
+            'h1',
+            'h2',
+            'h3',
+            'p',
+            'text',
+            '.home-description',
+            '.home-actions',
+            '.container-terminal',
+            '.card',
+            '.app-showcase',
+            '.content > *',
+            '.tech-item',
+            '.inputs input',
+            '.msg textarea',
+            '.contact-form button',
+        ].join(', ');
+
+        document.querySelectorAll('.portfolio-screen').forEach((section) => {
+            revealGroups.push(Array.from(section.querySelectorAll(sectionTargets)));
+        });
+
+        revealGroups.forEach((group) => {
+            group.forEach((element, index) => {
+                element.dataset.reveal = '';
+                element.style.setProperty('--reveal-order', String(index));
+            });
+        });
+
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            if (nav) {
+                requestAnimationFrame(() => {
+                    nav.classList.add('is-visible');
+                    nav.querySelectorAll('[data-reveal]').forEach((item) => item.classList.add('is-visible'));
+                });
+            }
+
+            const revealImmediately = (section) => {
+                const rect = section.getBoundingClientRect();
+                return rect.top < window.innerHeight * 0.92 && rect.bottom > 0;
+            };
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (!entry.isIntersecting) return;
+
+                        const group = entry.target.querySelectorAll('[data-reveal]');
+                        group.forEach((element) => element.classList.add('is-visible'));
+                        observer.unobserve(entry.target);
+                    });
+                },
+                {
+                    threshold: 0.08,
+                    rootMargin: '0px 0px -8% 0px',
+                }
+            );
+
+            document.querySelectorAll('.portfolio-screen').forEach((section) => {
+                if (revealImmediately(section)) {
+                    section.querySelectorAll('[data-reveal]').forEach((element) => element.classList.add('is-visible'));
+                    return;
+                }
+
+                observer.observe(section);
+            });
+        } else {
+            document.querySelectorAll('[data-reveal]').forEach((element) => element.classList.add('is-visible'));
+        }
+    </script>
 </body>
 </html>
 
@@ -40,6 +119,40 @@
         width: 100%;
     }
 
+    :global([data-reveal]) {
+        opacity: 0;
+        transform: translate3d(0, 28px, 0) scale(0.985);
+        will-change: opacity, transform;
+        transition:
+            opacity 0.68s cubic-bezier(0.22, 1, 0.36, 1),
+            transform 0.68s cubic-bezier(0.22, 1, 0.36, 1);
+        transition-delay: calc(var(--reveal-order, 0) * 85ms);
+    }
+
+    :global(nav[data-reveal]) {
+        transform: translate(-50%, -18px);
+    }
+
+    :global(p[data-reveal]) {
+        transition-delay: calc((var(--reveal-order, 0) * 45ms) + 40ms);
+    }
+
+    :global(img[data-reveal]),
+    :global(.container-terminal[data-reveal]),
+    :global(.app-showcase[data-reveal]),
+    :global(.tech-item[data-reveal]) {
+        transition-delay: calc(var(--reveal-order, 0) * 30ms);
+    }
+
+    :global([data-reveal].is-visible) {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    :global(nav[data-reveal].is-visible) {
+        transform: translate(-50%, 0);
+    }
+
     @media (max-width: 1600px) {
         :global(.portfolio-screen) {
             padding: 120px 160px 72px;
@@ -62,6 +175,14 @@
         :global(.portfolio-screen) {
             min-height: auto;
             padding: 108px 24px 56px;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        :global([data-reveal]) {
+            opacity: 1;
+            transform: none;
+            transition: none;
         }
     }
 </style>
