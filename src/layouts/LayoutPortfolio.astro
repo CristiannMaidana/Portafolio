@@ -155,9 +155,9 @@
                 });
             }
 
-            const revealImmediately = (section) => {
-                const rect = section.getBoundingClientRect();
-                return rect.top < window.innerHeight * 0.92 && rect.bottom > 0;
+            const revealImmediately = (element) => {
+                const rect = element.getBoundingClientRect();
+                return rect.top < window.innerHeight * 0.88 && rect.bottom > window.innerHeight * 0.08;
             };
 
             const observer = new IntersectionObserver(
@@ -165,24 +165,25 @@
                     entries.forEach((entry) => {
                         if (!entry.isIntersecting) return;
 
-                        const group = entry.target.querySelectorAll('[data-reveal]');
-                        group.forEach((element) => element.classList.add('is-visible'));
+                        entry.target.classList.add('is-visible');
                         observer.unobserve(entry.target);
                     });
                 },
                 {
-                    threshold: 0.08,
-                    rootMargin: '0px 0px -8% 0px',
+                    threshold: 0.18,
+                    rootMargin: '0px 0px -10% 0px',
                 }
             );
 
-            document.querySelectorAll('.portfolio-screen').forEach((section) => {
-                if (revealImmediately(section)) {
-                    section.querySelectorAll('[data-reveal]').forEach((element) => element.classList.add('is-visible'));
+            revealGroups.flat().forEach((element) => {
+                if (element === nav || nav?.contains(element)) return;
+
+                if (revealImmediately(element)) {
+                    element.classList.add('is-visible');
                     return;
                 }
 
-                observer.observe(section);
+                observer.observe(element);
             });
         } else {
             document.querySelectorAll('[data-reveal]').forEach((element) => element.classList.add('is-visible'));
