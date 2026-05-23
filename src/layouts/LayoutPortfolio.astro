@@ -4,6 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio Cristian Maidana</title>
+    <style is:inline>
+        :root {
+            --portfolio-text: #14191c;
+            --portfolio-muted: #333333;
+            --portfolio-heading: #000000;
+            --portfolio-border: #000000;
+            --portfolio-input-border: #d0d7de;
+            --portfolio-divider: #808080;
+            --portfolio-accent: #85e7fb;
+            --portfolio-accent-alt: #85dffb;
+            --portfolio-accent-start: #66e3ff;
+            --portfolio-accent-end: #7c5cff;
+            --portfolio-button-text: #0b0d10;
+            --portfolio-button-hover: #f6f8fa;
+            --portfolio-surface: #ffffff;
+            --portfolio-nav-bg: rgba(20, 25, 28, 0.75);
+            --portfolio-nav-link: #9198a2;
+            --portfolio-nav-link-hover: #ffffff;
+            --portfolio-terminal-bg: linear-gradient(145deg, #14181d, #0e1115);
+            --portfolio-terminal-border: rgba(255, 255, 255, 0.08);
+            --portfolio-terminal-shadow: rgba(0, 0, 0, 0.2);
+            --portfolio-terminal-panel: #0d0f11;
+            --portfolio-code-text: #d7e2f0;
+            --portfolio-code-keyword: #85dffb;
+            --portfolio-code-value: #99ebac;
+            --portfolio-code-stack: #977ef1;
+            --portfolio-window-red: #fe5252;
+            --portfolio-window-yellow: #ffb240;
+            --portfolio-window-green: #2cc248;
+            --portfolio-stat-surface: #f0fffa;
+            --portfolio-showcase-border: #7fdc8f;
+            --portfolio-showcase-bg: linear-gradient(165deg, #d8ffb8 0%, #9af08d 42%, #67d978 100%);
+            --portfolio-showcase-highlight: rgba(255, 255, 255, 0.55);
+            --portfolio-showcase-shadow-top: rgba(53, 144, 68, 0.22);
+            --portfolio-showcase-shadow-bottom: rgba(63, 152, 77, 0.28);
+            --portfolio-error: #ff6b6b;
+            --portfolio-success: #5ec26a;
+        }
+
+        html {
+            background: var(--portfolio-surface);
+        }
+
+        body.portfolio-body {
+            background: var(--portfolio-surface);
+            color: var(--portfolio-text);
+        }
+
+        .btn.primary,
+        .bt.primary,
+        .contact-form button {
+            background: linear-gradient(135deg, var(--portfolio-accent-start), var(--portfolio-accent-end));
+            color: var(--portfolio-button-text);
+        }
+
+        .btn.secondary,
+        .bt.secundary {
+            background: var(--portfolio-surface);
+            border-color: var(--portfolio-input-border);
+            color: var(--portfolio-text);
+        }
+
+        .card,
+        .data,
+        .tecnology,
+        .contact-page {
+            border-color: var(--portfolio-border);
+        }
+
+        .inputs input,
+        .msg textarea {
+            border-color: var(--portfolio-input-border);
+            background: var(--portfolio-surface);
+            color: var(--portfolio-text);
+        }
+
+        .container-terminal {
+            background: var(--portfolio-terminal-bg);
+        }
+
+        .app-showcase {
+            border-color: var(--portfolio-showcase-border);
+            background: var(--portfolio-showcase-bg);
+        }
+
+        .project-kicker,
+        h3,
+        text {
+            color: var(--portfolio-accent);
+        }
+
+        p {
+            color: var(--portfolio-muted);
+        }
+
+        h1,
+        h2 {
+            color: var(--portfolio-heading);
+        }
+    </style>
 </head>
 <body class="portfolio-body">
     <main class="portfolio-content">
