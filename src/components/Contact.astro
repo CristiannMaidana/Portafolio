@@ -3,6 +3,10 @@
 <div class="contact-page">
     <h1>Contacto</h1>
     <h1>Construyamos algo juntos</h1>
+    <div class="inputs">
+        <input type="text" name="nombre" placeholder="Nombre" />
+        <input type="email" name="email" placeholder="Email" />
+    </div>
 </div>
 
 <style>
@@ -12,5 +16,29 @@
         align-items: center;
         flex-direction: column;
         text-align: center;
+    }
+
+    .inputs{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        gap: 16px;
+        margin-top: 24px;
+    }
+
+    .inputs input {
+        width: 480px;
+        padding: 14px 18px;
+        border: 1px solid #d0d7de;
+        border-radius: 14px;
+        font-size: 16px;
+        color: #14191c;
+        background: #ffffff;
+        box-sizing: border-box;
+    }
+
+    .inputs input:focus {
+        outline: none;
+        border-color: #66e3ff;
     }
 </style>
