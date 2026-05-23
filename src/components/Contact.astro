@@ -3,13 +3,16 @@
 <div class="contact-page">
     <h1>Contacto</h1>
     <h1>Construyamos algo juntos</h1>
-    <div class="inputs">
-        <input type="text" name="nombre" placeholder="Nombre" />
-        <input type="email" name="email" placeholder="Email" />
-    </div>
-    <div class="msg">
-        <textarea name="mensaje" placeholder="Mensaje"></textarea>
-    </div>
+    <form class="contact-form">
+        <div class="inputs">
+            <input type="text" name="nombre" placeholder="Nombre" />
+            <input type="email" name="email" placeholder="Email" required />
+        </div>
+        <div class="msg">
+            <textarea name="mensaje" placeholder="Mensaje"></textarea>
+        </div>
+        <button type="submit">Enviar mensaje</button>
+    </form>
 </div>
 
 <style>
@@ -19,6 +22,12 @@
         align-items: center;
         flex-direction: column;
         text-align: center;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .inputs{
@@ -65,5 +74,33 @@
     .msg textarea:focus {
         outline: none;
         border-color: #66e3ff;
+    }
+
+    .inputs input[type='email']:not(:placeholder-shown):invalid {
+        border-color: #ff6b6b;
+    }
+
+    .inputs input[type='email']:not(:placeholder-shown):valid {
+        border-color: #5ec26a;
+    }
+
+    button {
+        width: 976px;
+        margin-top: 20px;
+        padding: 16px 22px;
+        border: 1px solid transparent;
+        border-radius: 16px;
+        background: linear-gradient(135deg, #66e3ff, #7c5cff);
+        color: #0b0d10;
+        font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform .3s, opacity .3s;
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+        opacity: 0.96;
     }
 </style>
