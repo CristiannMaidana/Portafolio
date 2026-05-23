@@ -22,12 +22,12 @@ const tecnologyItems = [
     <h1>Base técnica, criterio visual y ganas de crecer.</h1>
     <div class="content">
         <div class="data">
-            <p>Cristian Maidana</p>
+            <h2>Cristian Maidana</h2>
             <p>Estudiante avanzado de Licenciatura en Sistemas orientado al desarrollo de software de calidad.</p>
             <p>Me interesa el diseño de arquitecturas escalables, la integración entre frontend y backend y las bases de datos relacionales.</p>
         </div>
         <div class="tecnology">
-            <p>Tecnologias</p>
+            <h2>Tecnologias</h2>
             <p>A lo largo de la cursadas universitaria aprendi tanto de patrones de diseño con Java, modelado de datos y normalización con PostgreSQL, concurrencia, estructura de datos, recursividad con Pascal y criterio a la hora de elegir y implementar diferentes tecnologías a los problemas adecuados.</p>
             <Tecnologys items={tecnologyItems} />
         </div>
@@ -75,6 +75,13 @@ const tecnologyItems = [
     h1 {
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
         font-size: clamp(3rem, 6vw, 5rem);
+        line-height: 1;
+        color: black;
+    }
+
+    h2 {
+        font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+        font-size: 40px;
         line-height: 1;
         color: black;
     }
