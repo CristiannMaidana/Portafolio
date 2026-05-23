@@ -244,7 +244,47 @@
         color: #333;
     }
 
+    @media (max-width: 1360px) {
+        .home-container {
+            gap: 20px;
+        }
+
+        .container-terminal {
+            max-width: 540px;
+        }
+
+        .terminal {
+            width: calc(100% - 40px);
+            margin: 20px;
+        }
+
+        .terminal-code {
+            padding: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .container-data {
+            margin-top: 20px;
+        }
+    }
+
     @media (max-width: 1200px) {
+        .container-terminal {
+            max-width: 500px;
+        }
+
+        .terminal {
+            width: calc(100% - 36px);
+            margin: 18px;
+        }
+
+        .container-data {
+            padding: 8px;
+        }
+    }
+
+    @media (max-width: 1024px) {
         .home-container {
             flex-direction: column;
         }
