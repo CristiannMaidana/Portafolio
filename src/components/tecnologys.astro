@@ -80,6 +80,7 @@ const {
         height: 62px;
         border: 1px solid var(--portfolio-border);
         border-radius: 10px;
+        transition: transform .3s;
     }
 
     .tech-item {
@@ -90,8 +91,17 @@ const {
         text-align: center;
     }
 
+    .tech-item:hover .tecnology {
+        transform: translateY(-4px);
+    }
+
+    .tech-item:hover p {
+        color: var(--portfolio-accent);
+    }
+
     .tecnology + p {
         margin: 6px 0 0;
+        transition: color .3s;
     }
 
     .nowrap {
