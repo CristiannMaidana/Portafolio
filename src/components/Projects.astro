@@ -11,6 +11,8 @@ import calendarImage from '../assets/EcoUshuaia/Calendar.png';
 import mapImage from '../assets/EcoUshuaia/Map.png';
 import settingsImage from '../assets/EcoUshuaia/Settings.png';
 
+// Data EcoUshuaia app
+
 const ecoUshuaiaTecnologyItems = [
     { src: flutterImage.src, alt: 'Flutter icon', label: 'Flutter' },
     { src: dartImage.src, alt: 'Dart icon', label: 'Dart', imageClass: 'icon-dart' },
@@ -42,6 +44,30 @@ const ecoUshuaiaProjectImages = [
     { src: mapImage.src, alt: 'Map' },
     { src: settingsImage.src, alt: 'Settings', imageClass: 'middle' }
 ];
+
+
+// Data of Expo app
+
+const appAlimentosTecnologyItems = [
+    { src: restApiImage.src, alt: 'REST API icon', label: 'REST API', imageClass: 'icon-restapi', nowrap: true }
+];
+
+const appAlimentosProjectDescription = [
+    'Aplicación móvil enfocada en obtener informacion de productos alimenticios.',
+    'La app permite visualizar diversas categorias de productos alimenticios, consultar diferentes categorias y productos, ver las caracteristica y nivel de los alimentos, y poder agregar nuevos alimentos mediante una camara nativa. Orientada a dispositivos móviles.',
+    'Desarrollé la navegación entre pantallas, la integración con la APis de alimentos y la camara integrada para analizar nuevos productos.'
+];
+
+const appAlimentosProjectLinks = [
+    {
+        label: 'GitHub',
+        href: 'https://github.com/CristiannMaidana/AppAlimentos',
+        variant: 'primary' as const,
+        target: '_blank',
+        rel: 'noreferrer'
+    },
+    { label: 'Detalles', variant: 'secundary' as const }
+];
 ---
 
 <div id="container-projects">
@@ -58,6 +84,19 @@ const ecoUshuaiaProjectImages = [
             >
                 <p class="project-kicker">MOBILE APP</p>
                 <h2>EcoUshuaia</h2>
+            </ProjectContent>
+        </div>
+        
+        <div class="card">
+            <ProjectContent
+                description={appAlimentosProjectDescription}
+                technologies={appAlimentosTecnologyItems}
+                links={appAlimentosProjectLinks}
+                images={ecoUshuaiaProjectImages}
+                imageContainerColor="var(--portfolio-showcase-bg)"
+            >
+                <p class="project-kicker">MOBILE APP</p>
+                <h2>Alimentos</h2>
             </ProjectContent>
         </div>
     </section>
