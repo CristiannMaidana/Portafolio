@@ -5,11 +5,11 @@ import djangoImage from '../assets/Django.png';
 import mapboxImage from '../assets/MapBox.png';
 import postgresImage from '../assets/postgresSQL.png';
 import restApiImage from '../assets/RESTApi.svg';
-import Tecnologys from './tecnologys.astro';
+import ProjectContent from './ProjectContent.astro';
 
-import calendarImage from '../assets/EcoUshuaia/Calendar.png'
-import mapImage from '../assets/EcoUshuaia/Map.png'
-import settingsImage from '../assets/EcoUshuaia/Settings.png'
+import calendarImage from '../assets/EcoUshuaia/Calendar.png';
+import mapImage from '../assets/EcoUshuaia/Map.png';
+import settingsImage from '../assets/EcoUshuaia/Settings.png';
 
 const tecnologyItems = [
     { src: flutterImage.src, alt: 'Flutter icon', label: 'Flutter' },
@@ -19,6 +19,29 @@ const tecnologyItems = [
     { src: postgresImage.src, alt: 'PostgreSQL icon', label: 'PostgreSQL', imageClass: 'icon-postgres' },
     { src: restApiImage.src, alt: 'REST API icon', label: 'REST API', imageClass: 'icon-restapi', nowrap: true }
 ];
+
+const projectDescription = [
+    'Aplicación móvil enfocada en reciclaje urbano y gestión ambiental desarrollada con Flutter.',
+    'La app permite visualizar contenedores ecológicos en mapas interactivos, consultar puntos de reciclaje y acceder a novedades y eventos mediantes una interfaz moderna orientada a dispositivos móviles.',
+    'Desarrollé la arquitectura de la aplicación, la interfaz de usuario, la navegación entre pantallas, la integración con APis REST y los sistemas de mapas y geolocalización.'
+];
+
+const projectLinks = [
+    {
+        label: 'GitHub',
+        href: 'https://github.com/CristiannMaidana/EcoUshuaia',
+        variant: 'primary' as const,
+        target: '_blank',
+        rel: 'noreferrer'
+    },
+    { label: 'Detalles', variant: 'secundary' as const }
+];
+
+const projectImages = [
+    { src: calendarImage.src, alt: 'Calendar', imageClass: 'middle' },
+    { src: mapImage.src, alt: 'Map' },
+    { src: settingsImage.src, alt: 'Settings', imageClass: 'middle' }
+];
 ---
 
 <div id="container-projects">
@@ -26,31 +49,16 @@ const tecnologyItems = [
         <h3>Proyectos destacados</h3>
         <h1>Proyectos académicos realizados como productos reales.</h1>
         <div class="card">
-            <div class="text">
+            <ProjectContent
+                description={projectDescription}
+                technologies={tecnologyItems}
+                links={projectLinks}
+                images={projectImages}
+                imageContainerColor="var(--portfolio-showcase-bg)"
+            >
                 <p class="project-kicker">MOBILE APP</p>
                 <h2>EcoUshuaia</h2>
-                <div class="project-copy">
-                    <p>Aplicación móvil enfocada en reciclaje urbano y gestión ambiental desarrollada con Flutter.</p>
-                    <p>
-                        La app permite visualizar contenedores ecológicos en mapas interactivos, consultar puntos de reciclaje y acceder a novedades y eventos mediantes una interfaz moderna orientada a dispositivos móviles.
-                    </p>
-                    <p>
-                        Desarrollé la arquitectura de la aplicación, la interfaz de usuario, la navegación entre pantallas, la integración con APis REST y los sistemas de mapas y geolocalización.
-                    </p>
-                </div>
-                <Tecnologys items={tecnologyItems} />
-                <div class="buttons">
-                    <a class="bt primary" href="https://github.com/CristiannMaidana/EcoUshuaia" target="_blank" rel="noreferrer">GitHub</a>
-                    <button class="bt secundary">Detalles</button>
-                </div>
-            </div>
-            <div class="image">
-                <div class="app-showcase">
-                    <img class="app-image middle" src={calendarImage.src} alt="Calendar">
-                    <img class="app-image" src={mapImage.src} alt="Map">
-                    <img class="app-image middle" src={settingsImage.src} alt="Settings">
-                </div>
-            </div>
+            </ProjectContent>
         </div>
     </section>
 </div>
@@ -62,107 +70,15 @@ const tecnologyItems = [
     }
 
     .card {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 32px;
         margin-top: 50px;
         border-radius: 22px;
         border: 1px solid var(--portfolio-border);
         padding: 20px;
     }
 
-    .text {
-        width: 100%;
-        min-width: 0;
-    }
-
-    .image {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        min-width: 0;
-    }
-
-    .app-showcase {
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        gap: 12px;
-        width: min(100%, 560px);
-        min-height: 450px;
-        overflow: hidden;
-        border: 1px solid var(--portfolio-showcase-border);
-        border-radius: 22px;
-        padding: 28px 22px;
-        box-sizing: border-box;
-        background: var(--portfolio-showcase-bg);
-        box-shadow:
-            inset 0 2px 0 var(--portfolio-showcase-highlight),
-            inset 0 -18px 28px var(--portfolio-showcase-shadow-top),
-            0 18px 35px var(--portfolio-showcase-shadow-bottom);
-    }
-
     .project-kicker {
         color: var(--portfolio-accent);
         margin-bottom: -20px;
-    }
-
-    .project-copy {
-        width: 110%;
-    }
-    
-    .buttons {
-        display: flex;
-        gap: 10px;
-        margin-top: 30px;
-    }
-
-    .bt {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 16px 22px;
-        border-radius: 16px;
-        border: 1px solid transparent;
-        font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-        font-size: 16px;
-        font-weight: 700;
-        text-decoration: none;
-        cursor: pointer;
-        transition: background-color .3s, color .3s, border-color .3s, transform .3s;
-    }
-
-    .bt.primary {
-        background: linear-gradient(135deg, var(--portfolio-accent-start), var(--portfolio-accent-end));
-        color: var(--portfolio-button-text);
-    }
-
-    .bt.secundary {
-        border-color: var(--portfolio-input-border);
-        color: var(--portfolio-text);
-        background: var(--portfolio-surface);
-    }
-
-    .bt:hover {
-        transform: translateY(-4px);
-    }
-
-    .bt.secundary:hover {
-        background: var(--portfolio-button-hover);
-    }
-
-    .app-image {
-        width: 31%;
-        max-width: 180px;
-        height: auto;
-        object-fit: contain;
-        margin-bottom: 30px;
-    }
-
-    .app-image.middle { 
-        transform: translateY(clamp(178px, 8vw, 148px));
     }
 
     p {
@@ -194,16 +110,7 @@ const tecnologyItems = [
 
     @media (max-width: 1360px) {
         .card {
-            gap: 24px;
             padding: 16px;
-        }
-
-        .app-showcase {
-            padding: 24px 18px;
-        }
-
-        .buttons {
-            margin-top: 24px;
         }
     }
 
@@ -211,66 +118,12 @@ const tecnologyItems = [
         .card {
             padding: 14px;
         }
-
-        .app-showcase {
-            padding: 20px 16px;
-        }
-    }
-
-    @media (max-width: 1024px) {
-        .card {
-            flex-direction: column;
-            align-items: stretch;
-        }
-
-        .project-copy {
-            width: 100%;
-        }
-
-        .image {
-            justify-content: center;
-        }
-
-        .app-showcase {
-            width: 100%;
-            min-height: 0;
-            aspect-ratio: 16 / 10;
-        }
-
-        .app-image {
-            width: 29%;
-            max-width: none;
-        }
     }
 
     @media (max-width: 768px) {
         .card {
-            gap: 24px;
             margin-top: 32px;
             padding: 16px;
-        }
-
-        .app-showcase {
-            padding: 70px 12px;
-            aspect-ratio: 1 / 1;
-        }
-
-        .app-image {
-            width: 30%;
-        }
-
-        .app-image.middle {
-            transform: translateY(clamp(206px, 9vw, 96px));
-        }
-
-        .buttons {
-            flex-direction: column;
-        }
-
-        .bt {
-            width: 100%;
-            height: 48px;
-            padding: 0;
         }
     }
 
