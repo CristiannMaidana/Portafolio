@@ -6,10 +6,16 @@
     <title>Portafolio Cristian Maidana</title>
     <style is:inline>
         :root {
+            --surface: rgba(255, 255, 255, 0.72);
+            --surface-2: rgba(255, 255, 255, 0.48);
+            --surface-58: rgba(255, 255, 255, 0.58);
+            --surface-62: rgba(255, 255, 255, 0.62);
+            --surface-66: rgba(255, 255, 255, 0.66);
+            --surface-70: rgba(255, 255, 255, 0.7);
             --portfolio-text: #14191c;
             --portfolio-muted: #333333;
             --portfolio-heading: #000000;
-            --portfolio-border: #000000;
+            --portfolio-border: rgba(255, 255, 255, 0.78);
             --portfolio-input-border: #d0d7de;
             --portfolio-divider: #808080;
             --portfolio-accent: #85e7fb;
@@ -18,12 +24,12 @@
             --portfolio-accent-end: #7c5cff;
             --portfolio-button-text: #0b0d10;
             --portfolio-button-hover: #f6f8fa;
-            --portfolio-surface: #ffffff;
+            --portfolio-surface: var(--surface);
             --portfolio-nav-bg: rgba(20, 25, 28, 0.75);
             --portfolio-nav-link: #9198a2;
             --portfolio-nav-link-hover: #ffffff;
             --portfolio-terminal-bg: linear-gradient(145deg, #14181d, #0e1115);
-            --portfolio-terminal-border: rgba(255, 255, 255, 0.08);
+            --portfolio-terminal-border: rgba(255, 255, 255, 0.78);
             --portfolio-terminal-shadow: rgba(0, 0, 0, 0.2);
             --portfolio-terminal-panel: #0d0f11;
             --portfolio-code-text: #d7e2f0;
@@ -34,7 +40,7 @@
             --portfolio-window-yellow: #ffb240;
             --portfolio-window-green: #2cc248;
             --portfolio-stat-surface: #f0fffa;
-            --portfolio-showcase-border: #7fdc8f;
+            --portfolio-showcase-border: rgba(255, 255, 255, 0.78);
             --portfolio-showcase-bg: linear-gradient(165deg, #d8ffb8 0%, #9af08d 42%, #67d978 100%);
             --portfolio-showcase-highlight: rgba(255, 255, 255, 0.55);
             --portfolio-showcase-shadow-top: rgba(53, 144, 68, 0.22);
@@ -69,19 +75,27 @@
         .card,
         .data,
         .tecnology,
-        .contact-page {
+        .contact-page,
+        .container-data,
+        .container-terminal,
+        .app-showcase {
             border-color: var(--portfolio-border);
+            background: var(--surface);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
         }
 
         .inputs input,
         .msg textarea {
             border-color: var(--portfolio-input-border);
-            background: var(--portfolio-surface);
+            background: var(--surface-70);
             color: var(--portfolio-text);
         }
 
         .container-terminal {
-            background: var(--portfolio-terminal-bg);
+            background:
+                linear-gradient(var(--surface-2), var(--surface-2)),
+                var(--portfolio-terminal-bg);
         }
 
         .app-showcase {
@@ -106,6 +120,13 @@
     </style>
 </head>
 <body class="portfolio-body">
+    <div class="ambient" aria-hidden="true">
+        <div class="soft-grid"></div>
+        <div class="mesh one"></div>
+        <div class="mesh two"></div>
+        <div class="mesh three"></div>
+    </div>
+
     <main class="portfolio-content">
         <slot />
     </main>
@@ -193,6 +214,10 @@
 </html>
 
 <style>
+	:global(:root) {
+        --bg: #f5f5f7;
+    }
+
 	html,
 	body {
 		margin: 0;
@@ -200,12 +225,74 @@
 		min-height: 100%;
 	}
 
+    :global(body) {
+        background: var(--bg);
+    }
+
     .portfolio-body {
         font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+        isolation: isolate;
     }
 
     .portfolio-content {
+        position: relative;
+        z-index: 1;
         width: 100%;
+    }
+
+    .ambient {
+        position: fixed;
+        inset: 0;
+        z-index: -5;
+        overflow: hidden;
+        pointer-events: none;
+        background:
+            radial-gradient(circle at 16% 20%, rgba(0, 113, 227, 0.16), transparent 30%),
+            radial-gradient(circle at 80% 18%, rgba(90, 200, 250, 0.18), transparent 28%),
+            radial-gradient(circle at 78% 82%, rgba(52, 199, 89, 0.12), transparent 30%),
+            linear-gradient(180deg, #fbfbfd 0%, #f5f5f7 45%, #ffffff 100%);
+    }
+
+    .mesh {
+        position: absolute;
+        width: 52vw;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        filter: blur(50px);
+        opacity: 0.48;
+        mix-blend-mode: multiply;
+        animation: meshFloat 18s ease-in-out infinite alternate;
+    }
+
+    .mesh.one {
+        left: -14vw;
+        top: 4vh;
+        background: rgba(0, 113, 227, 0.3);
+    }
+
+    .mesh.two {
+        right: -18vw;
+        top: 28vh;
+        background: rgba(90, 200, 250, 0.28);
+        animation-delay: -5s;
+    }
+
+    .mesh.three {
+        left: 28vw;
+        bottom: -28vh;
+        background: rgba(52, 199, 89, 0.16);
+        animation-delay: -9s;
+    }
+
+    .soft-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+            linear-gradient(rgba(29, 29, 31, 0.045) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(29, 29, 31, 0.045) 1px, transparent 1px);
+        background-size: 70px 70px;
+        mask-image: linear-gradient(to bottom, transparent, black 20%, black 70%, transparent);
+        opacity: 0.55;
     }
 
     :global(.portfolio-screen) {
@@ -284,6 +371,20 @@
             opacity: 1;
             transform: none;
             transition: none;
+        }
+
+        .mesh {
+            animation: none;
+        }
+    }
+
+    @keyframes meshFloat {
+        from {
+            transform: translate3d(0, 0, 0) scale(1);
+        }
+
+        to {
+            transform: translate3d(40px, -60px, 0) scale(1.1);
         }
     }
 </style>
