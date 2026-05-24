@@ -28,18 +28,18 @@
             --portfolio-nav-bg: rgba(20, 25, 28, 0.75);
             --portfolio-nav-link: #9198a2;
             --portfolio-nav-link-hover: #ffffff;
-            --portfolio-terminal-bg: linear-gradient(145deg, #14181d, #0e1115);
+            --portfolio-terminal-bg: rgba(255, 255, 255, 0.58);
             --portfolio-terminal-border: rgba(255, 255, 255, 0.78);
-            --portfolio-terminal-shadow: rgba(0, 0, 0, 0.2);
-            --portfolio-terminal-panel: #0d0f11;
-            --portfolio-code-text: #d7e2f0;
-            --portfolio-code-keyword: #85dffb;
-            --portfolio-code-value: #99ebac;
-            --portfolio-code-stack: #977ef1;
-            --portfolio-window-red: #fe5252;
-            --portfolio-window-yellow: #ffb240;
-            --portfolio-window-green: #2cc248;
-            --portfolio-stat-surface: #f0fffa;
+            --portfolio-terminal-shadow: rgba(0, 0, 0, 0.1);
+            --portfolio-terminal-panel: rgba(29, 29, 31, 0.94);
+            --portfolio-code-text: #f5f5f7;
+            --portfolio-code-keyword: #5ac8fa;
+            --portfolio-code-value: #7ee787;
+            --portfolio-code-stack: #8b949e;
+            --portfolio-window-red: #ff5f57;
+            --portfolio-window-yellow: #ffbd2e;
+            --portfolio-window-green: #28c840;
+            --portfolio-stat-surface: rgba(255, 255, 255, 0.62);
             --portfolio-showcase-border: rgba(255, 255, 255, 0.78);
             --portfolio-showcase-bg: linear-gradient(165deg, #d8ffb8 0%, #9af08d 42%, #67d978 100%);
             --portfolio-showcase-highlight: rgba(255, 255, 255, 0.55);
@@ -93,9 +93,7 @@
         }
 
         .container-terminal {
-            background:
-                linear-gradient(var(--surface-2), var(--surface-2)),
-                var(--portfolio-terminal-bg);
+            background: var(--portfolio-terminal-bg);
         }
 
         .app-showcase {
