@@ -11,7 +11,7 @@ import calendarImage from '../assets/EcoUshuaia/Calendar.png';
 import mapImage from '../assets/EcoUshuaia/Map.png';
 import settingsImage from '../assets/EcoUshuaia/Settings.png';
 
-const tecnologyItems = [
+const ecoUshuaiaTecnologyItems = [
     { src: flutterImage.src, alt: 'Flutter icon', label: 'Flutter' },
     { src: dartImage.src, alt: 'Dart icon', label: 'Dart', imageClass: 'icon-dart' },
     { src: djangoImage.src, alt: 'Django icon', label: 'Django', imageClass: 'icon-django' },
@@ -20,13 +20,13 @@ const tecnologyItems = [
     { src: restApiImage.src, alt: 'REST API icon', label: 'REST API', imageClass: 'icon-restapi', nowrap: true }
 ];
 
-const projectDescription = [
+const ecoUshuaiaProjectDescription = [
     'Aplicación móvil enfocada en reciclaje urbano y gestión ambiental desarrollada con Flutter.',
     'La app permite visualizar contenedores ecológicos en mapas interactivos, consultar puntos de reciclaje y acceder a novedades y eventos mediantes una interfaz moderna orientada a dispositivos móviles.',
     'Desarrollé la arquitectura de la aplicación, la interfaz de usuario, la navegación entre pantallas, la integración con APis REST y los sistemas de mapas y geolocalización.'
 ];
 
-const projectLinks = [
+const ecoUshuaiaProjectLinks = [
     {
         label: 'GitHub',
         href: 'https://github.com/CristiannMaidana/EcoUshuaia',
@@ -37,7 +37,7 @@ const projectLinks = [
     { label: 'Detalles', variant: 'secundary' as const }
 ];
 
-const projectImages = [
+const ecoUshuaiaProjectImages = [
     { src: calendarImage.src, alt: 'Calendar', imageClass: 'middle' },
     { src: mapImage.src, alt: 'Map' },
     { src: settingsImage.src, alt: 'Settings', imageClass: 'middle' }
@@ -50,10 +50,10 @@ const projectImages = [
         <h1>Proyectos académicos realizados como productos reales.</h1>
         <div class="card">
             <ProjectContent
-                description={projectDescription}
-                technologies={tecnologyItems}
-                links={projectLinks}
-                images={projectImages}
+                description={ecoUshuaiaProjectDescription}
+                technologies={ecoUshuaiaTecnologyItems}
+                links={ecoUshuaiaProjectLinks}
+                images={ecoUshuaiaProjectImages}
                 imageContainerColor="var(--portfolio-showcase-bg)"
             >
                 <p class="project-kicker">MOBILE APP</p>
