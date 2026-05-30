@@ -1,13 +1,63 @@
 ---
+import calendarImage from '../assets/EcoUshuaia/forDetails/calendar.png';
+import editDataImage from '../assets/EcoUshuaia/forDetails/edit-data.png';
+import mapImage from '../assets/EcoUshuaia/forDetails/Map.png';
+import newsDetailImage from '../assets/EcoUshuaia/forDetails/news-detail.png';
+import optionFilterImage from '../assets/EcoUshuaia/forDetails/option-filter.png';
+import settingsImage from '../assets/EcoUshuaia/forDetails/settings.png';
+import singupImage from '../assets/EcoUshuaia/forDetails/singup.png';
+
+const detailImages = [
+    { src: calendarImage.src, alt: 'Calendar screen' },
+    { src: editDataImage.src, alt: 'Edit data screen' },
+    { src: mapImage.src, alt: 'Map screen' },
+    { src: newsDetailImage.src, alt: 'News detail screen' },
+    { src: optionFilterImage.src, alt: 'Option filter screen' },
+    { src: settingsImage.src, alt: 'Settings screen' },
+    { src: singupImage.src, alt: 'Signup screen' }
+];
 ---
 <div class="detail">
-
+    <div class="image">
+        {detailImages.map((image) => (
+            <img src={image.src} alt={image.alt} />
+        ))}
+    </div>
 </div>
 
 <style>
-    .detail {
-        background-color: aqua;
+    .image{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background: linear-gradient(165deg, #d8ffb8 0%, #9af08d 42%, #67d978 100%);
         width: 100%;
-        width: 100%;
+        min-height: 300px;
+        padding: 24px;
+        overflow-x: auto;
+    }
+
+    .image img {
+        height: 300px;
+        width: auto;
+        object-fit: contain;
+        flex: 0 0 auto;
+    }
+
+    .image img:nth-child(1),
+    .image img:nth-child(4),
+    .image img:nth-child(7) {
+        transform: translateY(-18px);
+    }
+
+    .image img:nth-child(2),
+    .image img:nth-child(5) {
+        transform: translateY(20px);
+    }
+
+    .image img:nth-child(3),
+    .image img:nth-child(6) {
+        transform: translateY(-6px);
     }
 </style>
