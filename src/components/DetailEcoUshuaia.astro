@@ -31,11 +31,54 @@ const detailImages = [
     <p>Desarrollé EcoUshuaia para resolver una necesidad concreta de la ciudad: facilitar la localización de contenedores, mejorar la disposición de residuos y centralizar información útil en una aplicación móvil.</p>
 
     <p>Este proyecto me permitió profundizar en arquitectura modular en Flutter, consumo de APIs REST, autenticación con JWT, modelado relacional y geoespacial con PostgreSQL/PostGIS, e integración entre Flutter y código nativo iOS con Swift para mapas, búsqueda y navegación.</p>
-    
-    <p>Utilicé Flutter y Dart para la aplicación móvil, Django REST Framework y Python para la API, PostgreSQL con PostGIS para la base de datos, Mapbox para mapa, búsqueda y navegación, y herramientas como GitHub, Visual Studio Code, PyCharm, DataGrip y Xcode para el desarrollo.</p>
+        
+    <div class="steps">
+        <div class="container-steps">
+            <h2>Diseño</h2>
+            <p>La etapa de diseño fue mi primer acercamiento real a la construcción completa de una aplicación desde cero. En esta parte trabajé en la definición de pantallas, navegación, distribución de funciones y jerarquía visual, tratando de convertir una idea general en una experiencia comprensible para el usuario. Hubo varios cambios de criterio, pruebas y correcciones, lo que me permitió entender que diseñar una app no es solamente decidir colores o estética, sino pensar cómo se organiza la información, qué se muestra primero y cómo guiar al usuario dentro del sistema. Fue una etapa clave para aprender a darle forma inicial al producto antes de desarrollarlo técnicamente.</p>
+        </div>
+        
+        <div class="container-steps">
+            <h2>Arquitectura</h2>
+            <p>La etapa de arquitectura estuvo centrada en definir cómo organizar internamente la aplicación para que pudiera crecer, mantenerse y conectarse con otros componentes sin perder orden. En este punto trabajé en la separación del proyecto por módulos y capas, diferenciando la presentación, la lógica de dominio y el acceso a datos. A partir de esta experiencia aprendí que una aplicación no se sostiene solo por sus pantallas, sino por la forma en que está estructurada por dentro. También entendí la importancia de adaptar la arquitectura a la evolución real del proyecto, especialmente cuando aumentan la complejidad funcional, las integraciones externas y la necesidad de mantener el código más claro y escalable.</p>
+        </div>
+                
+        <div class="container-steps">
+            <h2>Frontend</h2>
+            <p>La etapa de frontend consistió en construir la aplicación móvil desde el lado visible e interactivo para el usuario. Acá desarrollé pantallas, componentes reutilizables, navegación, manejo de estado e integración con los datos que consume la app, utilizando Flutter y Dart como base principal. Esta etapa me permitió aprender a transformar decisiones funcionales y visuales en una experiencia concreta de uso, conectando interfaz, interacción y comportamiento del sistema. También me ayudó a entender cómo organizar un cliente móvil de forma modular, para que la aplicación no solo se vea bien, sino que también resulte clara, mantenible y coherente en su uso diario.</p>
+        </div>
+                
+        <div class="container-steps">
+            <h2>Backend</h2>
+            <p>La etapa de backend estuvo enfocada en desarrollar la lógica del servidor y la comunicación entre la aplicación móvil y los datos del sistema. En esta parte trabajé en la creación de la API, los endpoints, la serialización, las validaciones y la autenticación con JWT, utilizando Python, Django y Django REST Framework. A través de este proceso aprendí a pensar el backend como una capa que no solo entrega información, sino que también la organiza, la valida y controla cómo se expone al cliente. Esta etapa fue importante para entender cómo se construye una base lógica sólida para que una aplicación móvil pueda funcionar de forma segura, consistente y conectada con sus necesidades reales.</p>
+        </div>
+                
+        <div class="container-steps">
+            <h2>Base de datos</h2>
+            <p>La etapa de base de datos estuvo orientada al modelado de la información que necesitaba el sistema para funcionar de forma consistente. Trabajé en el diseño de tablas, relaciones, claves foráneas, restricciones y normalización, utilizando PostgreSQL y PostGIS para incorporar también el componente geoespacial del proyecto. En esta parte aprendí que una base de datos bien pensada influye directamente en la claridad del backend y en la calidad general de la solución. También entendí la importancia de revisar y ajustar el modelo a medida que el proyecto evoluciona, eliminando redundancias y reorganizando estructuras para representar mejor el problema real que la aplicación busca resolver.</p>
+        </div>
+                        
+        <div class="container-steps">
+            <h2>Extras</h2>
+            <p>Además de las etapas principales, una parte importante del aprendizaje del proyecto estuvo en la integración de tecnologías complementarias que ampliaron el alcance técnico de la aplicación. La más significativa fue Mapbox, utilizado para resolver visualización cartográfica, búsqueda geográfica y navegación hacia contenedores y destinos. Esta integración me permitió aprender a trabajar con servicios especializados de mapas, rutas y localización, y también a combinar Flutter con código nativo iOS en Swift cuando la complejidad técnica lo requirió. Como complemento, también profundicé en autenticación segura, consumo de APIs REST y manejo de datos geoespaciales.</p>
+        </div>
+    </div>
 </div>
 
 <style>
+    .container-steps {
+        margin-top: 30px;
+        width: 350px;
+        border: 1px solid black;
+        padding: 20px;
+        margin-right: 10px;
+    }
+
+    .steps {
+        display: flex;
+        flex-direction: row;
+    }
+
     .divider {
         width: 100%;
         height: 1px;
