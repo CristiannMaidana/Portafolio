@@ -7,6 +7,8 @@ import optionFilterImage from '../assets/EcoUshuaia/forDetails/option-filter.png
 import settingsImage from '../assets/EcoUshuaia/forDetails/settings.png';
 import singupImage from '../assets/EcoUshuaia/forDetails/singup.png';
 
+import requeriments from '../assets/EcoUshuaia/forDetails/documentation/Requerimientos.png'
+
 const detailImages = [
     { src: calendarImage.src, alt: 'Calendar screen' },
     { src: editDataImage.src, alt: 'Edit data screen' },
@@ -26,6 +28,7 @@ const detailImages = [
     <div class="divider"></div>
     <h1>EcoUshuaia</h1>
     <p>EcoUshuaia es un sistema orientado a mejorar la localización, consulta y disposición de residuos urbanos en la ciudad de Ushuaia mediante una aplicación móvil.</p>
+    
     <div class="divider"></div>
     <h3>Historia</h3>
     <p>Desarrollé EcoUshuaia para resolver una necesidad concreta de la ciudad: facilitar la localización de contenedores, mejorar la disposición de residuos y centralizar información útil en una aplicación móvil.</p>
@@ -69,9 +72,26 @@ const detailImages = [
     <h2>Buscar requerimientos</h2>
 
     <p>La identificación de requisitos se realizó mediante el análisis del problema a resolver y la investigación de aplicaciones y servicios similares relacionados con reciclaje, gestión ambiental y navegación geográfica. A partir de ese relevamiento se definieron las funcionalidades principales, los flujos de uso esperados y las necesidades de los distintos tipos de usuarios, evaluando tanto características que finalmente fueron implementadas como otras que quedaron fuera del alcance inicial del proyecto.</p>
+    <div class="documentation">
+        <img src={requeriments.src} alt="requeriments">
+    </div>
 </div>
 
 <style>
+    .documentation {
+        width: 100%;
+        margin-top: 24px;
+        display: flex;
+    }
+
+    .documentation img {
+        display: block;
+        width: 100%;
+        max-width: 1000px;
+        height: auto;
+        object-fit: contain;
+    }
+
     .container-steps {
         margin-top: 30px;
         margin-right: 10px;
