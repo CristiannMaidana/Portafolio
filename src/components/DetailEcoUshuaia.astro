@@ -10,6 +10,8 @@ import singupImage from '../assets/EcoUshuaia/forDetails/singup.png';
 import requeriments from '../assets/EcoUshuaia/forDetails/documentation/Requerimientos.png'
 import caserUse from '../assets/EcoUshuaia/forDetails/documentation/CasosDeUso.png'
 import dataBase from '../assets/EcoUshuaia/forDetails/documentation/DataBase.png'
+import loginImage from '../assets/EcoUshuaia/forDetails/login.png'
+import homeImage from '../assets/EcoUshuaia/forDetails/home.png'
 
 const detailImages = [
     { src: calendarImage.src, alt: 'Calendar screen' },
@@ -111,6 +113,43 @@ const detailImages = [
             <p>Uno de los principales aprendizajes fue comprender que el diseño de la base de datos no es una etapa aislada ni definitiva, sino que evoluciona junto con el resto del sistema. Muchas decisiones surgieron o fueron ajustadas durante el desarrollo de funcionalidades, la implementación del backend y la definición de nuevas interacciones entre los usuarios y la aplicación.</p>
         </div>
     </div>
+
+    <h1>Diseño</h1>
+    <div class="documentation documentation-design">
+        <div class="documentation-design-top">
+            <div class="documentation-design-copy">
+                <p class="documentation-design-text">El diseño de EcoUshuaia representó mi primer acercamiento a la construcción completa de una experiencia de usuario para una aplicación móvil. Durante esta etapa busqué desarrollar una interfaz simple, intuitiva y visualmente consistente, tomando como referencia aplicaciones móviles modernas y adaptando sus patrones de diseño a las necesidades específicas del proyecto.</p> 
+                <p class="documentation-design-text">En un comienzo el enfoque estuvo centrado principalmente en la apariencia individual de cada pantalla y en la distribución de sus elementos. Sin embargo, a medida que avanzó el desarrollo, comprendí que el diseño no se limita únicamente al aspecto visual, sino también a la forma en que los usuarios interactúan con la aplicación y cómo las distintas pantallas, componentes y funcionalidades se conectan entre sí.</p>
+                <p class="documentation-design-text">Este proceso me permitió incorporar conceptos relacionados con jerarquía visual, experiencia de usuario, navegación, animaciones y transiciones, buscando que cada interacción se sintiera natural y coherente dentro de la aplicación. El resultado fue una evolución constante del diseño, donde muchas decisiones fueron refinadas a partir de la experiencia obtenida durante el desarrollo y de las nuevas necesidades que surgían a medida que el proyecto crecía.</p>
+            </div>
+            <div class="documentation-design-item">
+                <img src={loginImage.src} alt="">
+                <p>Login</p>
+            </div>
+            <div class="documentation-design-item">
+                <img src={singupImage.src} alt="">
+                <p>Signup</p>
+            </div>
+        </div>
+        <div class="documentation-design-bottom">
+            <div class="documentation-design-item">
+                <img src={homeImage.src} alt="">
+                <p>Home</p>
+            </div>
+            <div class="documentation-design-item">
+                <img src={calendarImage.src} alt="">
+                <p>Calendario</p>
+            </div>
+            <div class="documentation-design-item">
+                <img src={mapImage.src} alt="">
+                <p>Mapa</p>
+            </div>
+            <div class="documentation-design-item">
+                <img src={settingsImage.src} alt="">
+                <p>Settings</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <style>
@@ -118,7 +157,62 @@ const detailImages = [
         width: 100%;
         margin-top: 24px;
         display: flex;
-        justify-content: row;
+        flex-direction: row;
+    }
+
+    .documentation-design {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .documentation-design-top {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+
+    .documentation-design-copy {
+        flex: 1 1 420px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .documentation-design-bottom {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+
+    .documentation-design-text {
+        margin: 0;
+    }
+
+    .documentation-design-item {
+        flex: 0 1 300px;
+        width: 180px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .documentation-design-item img {
+        width: 100%;
+        max-width: none;
+        height: 360px;
+        object-fit: contain;
+    }
+
+    .documentation-design-item p {
+        margin: 12px 0 0;
     }
 
     .documentation img {
