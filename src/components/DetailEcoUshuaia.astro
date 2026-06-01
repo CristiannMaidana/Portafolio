@@ -9,6 +9,7 @@ import singupImage from '../assets/EcoUshuaia/forDetails/singup.png';
 
 import requeriments from '../assets/EcoUshuaia/forDetails/documentation/Requerimientos.png'
 import caserUse from '../assets/EcoUshuaia/forDetails/documentation/CasosDeUso.png'
+import dataBase from '../assets/EcoUshuaia/forDetails/documentation/DataBase.png'
 
 const detailImages = [
     { src: calendarImage.src, alt: 'Calendar screen' },
@@ -71,7 +72,6 @@ const detailImages = [
     <h1>Como fueron los primero pasos?</h1>
 
     <h2>Buscar requerimientos</h2>
-
     <p>La identificación de requisitos se realizó mediante el análisis del problema a resolver y la investigación de aplicaciones y servicios similares relacionados con reciclaje, gestión ambiental y navegación geográfica. A partir de ese relevamiento se definieron las funcionalidades principales, los flujos de uso esperados y las necesidades de los distintos tipos de usuarios, evaluando tanto características que finalmente fueron implementadas como otras que quedaron fuera del alcance inicial del proyecto.</p>
     <div class="documentation">
         <img src={requeriments.src} alt="requeriments">
@@ -96,6 +96,20 @@ const detailImages = [
             <p>* Identificación de actores y responsabilidades.</p>
             <p>* Modelado de interacciones entre usuarios y sistema.</p>
             <p>* Definición del alcance funcional de la aplicación.</p>
+        </div>
+    </div>
+
+    <h1>Diagramas</h1>
+    <h2>Base de datos</h2>
+    <p>Se diseñó la base de datos relacional del sistema definiendo las entidades, atributos y relaciones necesarias para soportar las funcionalidades de la aplicación, asegurando una organización consistente y escalable de la información.</p>
+        <div class="documentation">
+        <img src={dataBase.src} alt="dataBase">
+        <div style="width: 120px;"></div>
+        <div style="justify-content: column;">
+            <h3>Mi experiencia</h3>
+            <p>La construcción de la base de datos fue un proceso iterativo que evolucionó junto con el proyecto. Inicialmente se definió un modelo simple compuesto por las entidades principales, como usuarios, zonas, calendarios, sensores, contenedores, residuos y mapas. A medida que avanzaba el análisis y se profundizaba en los requisitos del sistema, surgieron nuevas relaciones, restricciones y entidades necesarias para representar correctamente el funcionamiento de la aplicación.</p>
+            <p>Este proceso de refinamiento constante me permitió comprender la importancia de contar con una base sólida desde las primeras etapas del diseño, al mismo tiempo que incorporaba mejoras derivadas tanto de los conocimientos adquiridos durante la carrera como de las necesidades reales identificadas durante el desarrollo de EcoUshuaia. También reforzó la idea de que el diseño de una base de datos es una tarea evolutiva, donde cada iteración contribuye a obtener una estructura más consistente, escalable y alineada con los objetivos del sistema.</p>
+            <p>Uno de los principales aprendizajes fue comprender que el diseño de la base de datos no es una etapa aislada ni definitiva, sino que evoluciona junto con el resto del sistema. Muchas decisiones surgieron o fueron ajustadas durante el desarrollo de funcionalidades, la implementación del backend y la definición de nuevas interacciones entre los usuarios y la aplicación.</p>
         </div>
     </div>
 </div>
