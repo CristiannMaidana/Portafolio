@@ -8,6 +8,7 @@ import settingsImage from '../assets/EcoUshuaia/forDetails/settings.png';
 import singupImage from '../assets/EcoUshuaia/forDetails/singup.png';
 
 import requeriments from '../assets/EcoUshuaia/forDetails/documentation/Requerimientos.png'
+import caserUse from '../assets/EcoUshuaia/forDetails/documentation/CasosDeUso.png'
 
 const detailImages = [
     { src: calendarImage.src, alt: 'Calendar screen' },
@@ -74,6 +75,28 @@ const detailImages = [
     <p>La identificación de requisitos se realizó mediante el análisis del problema a resolver y la investigación de aplicaciones y servicios similares relacionados con reciclaje, gestión ambiental y navegación geográfica. A partir de ese relevamiento se definieron las funcionalidades principales, los flujos de uso esperados y las necesidades de los distintos tipos de usuarios, evaluando tanto características que finalmente fueron implementadas como otras que quedaron fuera del alcance inicial del proyecto.</p>
     <div class="documentation">
         <img src={requeriments.src} alt="requeriments">
+        <div style="width: 120px;"></div>
+        <div style="justify-content: column;">
+            <h3>Mi experiencia</h3>
+            <p>* Análisis y priorización de necesidades.</p>
+            <p>* Investigación de aplicaciones similares.</p>
+            <p>* Definición del alcance del proyecto.</p>
+            <p>* Elaboración de requisitos funcionales y no funcionales.</p>
+        </div>
+    </div>
+
+    <h2>Casos de uso</h2>
+    <p>Con los requisitos definidos, se desarrollaron los casos de uso para organizar y representar las distintas interacciones previstas dentro de la aplicación. Esta etapa permitió validar el alcance funcional del sistema y servir como base para las decisiones de diseño y desarrollo posteriores.</p>
+    <div class="documentation">
+        <img src={caserUse.src} alt="caserUse">        
+        <div style="width: 120px;"></div>
+        <div style="justify-content: column; align-content: start;">
+            <h3>Mi experiencia</h3>
+            <p>* Traducción de requisitos a funcionalidades concretas.</p>
+            <p>* Identificación de actores y responsabilidades.</p>
+            <p>* Modelado de interacciones entre usuarios y sistema.</p>
+            <p>* Definición del alcance funcional de la aplicación.</p>
+        </div>
     </div>
 </div>
 
@@ -82,12 +105,13 @@ const detailImages = [
         width: 100%;
         margin-top: 24px;
         display: flex;
+        justify-content: row;
     }
 
     .documentation img {
         display: block;
         width: 100%;
-        max-width: 1000px;
+        max-width: 700px;
         height: auto;
         object-fit: contain;
     }
