@@ -12,6 +12,7 @@ import caserUse from '../assets/EcoUshuaia/forDetails/documentation/CasosDeUso.p
 import dataBase from '../assets/EcoUshuaia/forDetails/documentation/DataBase.png'
 import loginImage from '../assets/EcoUshuaia/forDetails/login.png'
 import homeImage from '../assets/EcoUshuaia/forDetails/home.png'
+import calendarVideo from '../assets/EcoUshuaia/forDetails/video/calendarGif.mp4'
 
 const detailImages = [
     { src: calendarImage.src, alt: 'Calendar screen' },
@@ -150,9 +151,22 @@ const detailImages = [
             </div>
         </div>
     </div>
+
+    <h1>Diseño final</h1>
+    <video class="final-video" src={calendarVideo} autoplay loop muted playsinline></video>
 </div>
 
 <style>
+    .final-video {
+        display: block;
+        height: 660px;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+        border: 1px solid black;
+        border-radius: 22px;
+    }
+
     .documentation {
         width: 100%;
         margin-top: 24px;
