@@ -153,18 +153,57 @@ const detailImages = [
     </div>
 
     <h1>Diseño final</h1>
-    <video class="final-video" src={calendarVideo} autoplay loop muted playsinline></video>
+    <div class="final-gif">
+        <video class="final-video" src={calendarVideo} autoplay loop muted playsinline></video>
+        <div class="final-gif-copy">
+            <h2>Meta del calendario</h2>
+
+            <p>El calendario fue diseñado para centralizar eventos, novedades y recordatorios dentro de una única interfaz clara y fácil de utilizar. Uno de los principales objetivos fue mantener una experiencia fluida entre los distintos componentes de la pantalla, integrando transiciones, paneles y animaciones que acompañaran las acciones del usuario de forma natural.</p>
+
+            <p>A medida que el diseño evolucionó, se buscó que cada elemento tuviera una función específica y que la información más importante permaneciera siempre accesible. El resultado fue una interfaz más dinámica y conectada, donde la navegación entre fechas, categorías y detalles se integra de manera coherente dentro de una misma experiencia visual.</p>
+        </div>
+    </div>
 </div>
 
 <style>
+    .final-gif {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 40px;
+        flex-wrap: nowrap;
+    }
+
+    .final-gif-copy {
+        flex: 1 1 420px;
+        min-width: 0;
+        align-self: flex-start;
+    }
+
+    .final-gif-copy p:first-child {
+        margin-top: 0;
+    }
+
     .final-video {
-        display: block;
+        display: flex;
+        flex: 0 0 auto;
         height: 660px;
         width: auto;
         max-width: 100%;
         object-fit: contain;
         border: 1px solid black;
         border-radius: 22px;
+    }
+
+    @media (max-width: 1100px) {
+        .final-gif {
+            flex-wrap: wrap;
+        }
+
+        .final-gif-copy {
+            flex-basis: 100%;
+        }
     }
 
     .documentation {
