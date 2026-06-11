@@ -584,7 +584,9 @@ const detailImages = [
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
-        background: linear-gradient(165deg, #d8ffb8 0%, #9af08d 42%, #67d978 100%);
+        background:
+            linear-gradient(135deg, rgba(238, 250, 235, 0.94), rgba(217, 241, 215, 0.9)),
+            radial-gradient(circle at 30% 30%, rgba(150, 222, 147, 0.8), transparent 24rem);
         width: 100%;
         min-height: 300px;
         padding: 24px;
@@ -593,7 +595,7 @@ const detailImages = [
     }
 
     .image img {
-        height: clamp(180px, 28vw, 300px);
+        height: clamp(210px, 31vw, 430px);
         width: auto;
         object-fit: contain;
         flex: 0 0 auto;
