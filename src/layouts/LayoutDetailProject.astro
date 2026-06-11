@@ -1,5 +1,5 @@
 ---
-const { title = 'EcoUshuaia' } = Astro.props;
+const { title = 'EcoUshuaia', theme = 'eco' } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ const { title = 'EcoUshuaia' } = Astro.props;
     <title>{title}</title>
 </head>
 <body>
-    <header class="detail-layout-header">
+    <header class={`detail-layout-header ${theme === 'food' ? 'food-theme' : 'eco-theme'}`}>
         <button class="detail-layout-back-button" type="button" onclick="history.back()" aria-label="Go back">
             <span class="detail-layout-back-icon" aria-hidden="true">←</span>
             <span>Volver</span>
@@ -55,6 +55,14 @@ const { title = 'EcoUshuaia' } = Astro.props;
         -webkit-backdrop-filter: blur(14px);
     }
 
+    .detail-layout-header.eco-theme {
+        background: linear-gradient(135deg, #060807 0%, #101713 55%, #1a251d 100%);
+    }
+
+    .detail-layout-header.food-theme {
+        background: linear-gradient(135deg, #1b0507 0%, #3a0d10 48%, #6d181f 100%);
+    }
+
     .detail-layout-back-button {
         display: inline-flex;
         align-items: center;
@@ -76,6 +84,11 @@ const { title = 'EcoUshuaia' } = Astro.props;
         background: rgba(151, 235, 166, 0.12);
         border-color: rgba(151, 235, 166, 0.32);
         transform: translateY(-1px);
+    }
+
+    .detail-layout-header.food-theme .detail-layout-back-button:hover {
+        background: rgba(255, 126, 126, 0.14);
+        border-color: rgba(255, 126, 126, 0.36);
     }
 
     .detail-layout-back-icon {
