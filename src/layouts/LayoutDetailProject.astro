@@ -38,6 +38,9 @@ const { title = 'EcoUshuaia' } = Astro.props;
     }
 
     .detail-layout-header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -48,6 +51,8 @@ const { title = 'EcoUshuaia' } = Astro.props;
         background: linear-gradient(135deg, #060807 0%, #101713 55%, #1a251d 100%);
         border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         box-shadow: 0 18px 35px rgba(0, 0, 0, 0.22);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
     }
 
     .detail-layout-back-button {
