@@ -95,7 +95,7 @@ const detailImages = [
         <p>La identificación de requisitos se realizó mediante el análisis del problema a resolver y la investigación de aplicaciones y servicios similares relacionados con reciclaje, gestión ambiental y navegación geográfica. A partir de ese relevamiento se definieron las funcionalidades principales, los flujos de uso esperados y las necesidades de los distintos tipos de usuarios, evaluando tanto características que finalmente fueron implementadas como otras que quedaron fuera del alcance inicial del proyecto.</p>
 
         <div class="documentation">
-            <img src={requeriments.src} alt="requeriments">
+            <img src={requeriments.src} alt="requeriments" class="documentation img req">
             <div class="experience-card">
                 <h3>Mi experiencia</h3>
                 <p>* Análisis y priorización de necesidades.</p>
@@ -109,7 +109,7 @@ const detailImages = [
         <p>Con los requisitos definidos, se desarrollaron los casos de uso para organizar y representar las distintas interacciones previstas dentro de la aplicación. Esta etapa permitió validar el alcance funcional del sistema y servir como base para las decisiones de diseño y desarrollo posteriores.</p>
 
         <div class="documentation">
-            <img src={caserUse.src} alt="caserUse">
+            <img src={caserUse.src} alt="caserUse" class="documentation img req">
             <div class="experience-card">
                 <h3>Mi experiencia</h3>
                 <p>* Traducción de requisitos a funcionalidades concretas.</p>
@@ -123,7 +123,7 @@ const detailImages = [
         <p>Se diseñó la base de datos relacional del sistema definiendo las entidades, atributos y relaciones necesarias para soportar las funcionalidades de la aplicación, asegurando una organización consistente y escalable de la información.</p>
 
         <div class="documentation" style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;">
-            <img src={dataBase.src} alt="dataBase" style="width: min(100%, 1080px); max-width: 1100px; align-self: center;">
+            <img src={dataBase.src} alt="dataBase" class="documentation img req">
             <div class="experience-card" style="width: min(100%, 105800px);">
                 <h3>Mi experiencia</h3>
                 <p>La construcción de la base de datos fue un proceso iterativo que evolucionó junto con el proyecto. Inicialmente se definió un modelo simple compuesto por las entidades principales, como usuarios, zonas, calendarios, sensores, contenedores, residuos y mapas. A medida que avanzaba el análisis y se profundizaba en los requisitos del sistema, surgieron nuevas relaciones, restricciones y entidades necesarias para representar correctamente el funcionamiento de la aplicación.</p>
@@ -438,6 +438,9 @@ const detailImages = [
         max-width: 700px;
         height: auto;
         object-fit: contain;
+    }
+
+    .documentation img.req {
         border: 1px solid var(--detail-border);
         border-radius: var(--detail-radius);
     }
