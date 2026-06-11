@@ -110,7 +110,7 @@ const detailImages = [
 
         <div class="documentation">
             <img src={caserUse.src} alt="caserUse" class="documentation img req">
-            <div class="experience-card">
+            <div class="experience-card" style="margin-top: 44px;">
                 <h3>Mi experiencia</h3>
                 <p>* Traducción de requisitos a funcionalidades concretas.</p>
                 <p>* Identificación de actores y responsabilidades.</p>
@@ -281,9 +281,6 @@ const detailImages = [
         max-width: 100%;
         overflow-x: hidden;
         color: var(--detail-text);
-        background:
-            radial-gradient(circle at top left, rgba(184, 223, 179, 0.34), transparent 34rem),
-            linear-gradient(180deg, #f8faf7 0%, var(--detail-bg) 100%);
     }
 
     .detail * {
@@ -443,6 +440,12 @@ const detailImages = [
     .documentation img.req {
         border: 1px solid var(--detail-border);
         border-radius: var(--detail-radius);
+    }
+
+    .documentation[style*='flex-direction: column'] img.req {
+        width: min(100%, 1080px);
+        max-width: 1080px;
+        margin: 0 auto;
     }
 
     .experience-card {
