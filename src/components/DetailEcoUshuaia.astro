@@ -198,6 +198,44 @@ const detailImages = [
 
         <p>Más allá de las tecnologías utilizadas, EcoUshuaia me enseñó a abordar el desarrollo de software como un proceso iterativo de análisis, diseño, implementación y mejora continua, donde el aprendizaje surge tanto de los aciertos como de las decisiones que deben revisarse y perfeccionarse durante el camino. El resultado final no solo fue una aplicación funcional, sino también una experiencia que fortaleció mi capacidad para planificar, diseñar y desarrollar soluciones de software de manera integral.</p>
     </div>
+
+    <div style="margin-top: 80px;">
+        <h1>Tecnologias</h1>
+        <p>El desarrollo de EcoUshuaia me permitió explorar y aplicar distintas tecnologías a lo largo de todas las etapas de un proyecto de software. La selección de herramientas no se basó únicamente en aprender nuevas tecnologías, sino en comprender cómo cada una podía aportar una solución concreta a los desafíos planteados por la aplicación.
+
+        <p>Durante el proceso experimenté múltiples iteraciones y ajustes, tanto en el diseño como en la arquitectura y la implementación. Muchas decisiones técnicas fueron evolucionando a medida que el proyecto crecía, permitiéndome evaluar ventajas, limitaciones y formas de integración entre las distintas herramientas utilizadas.</p>
+
+        <p>Esta experiencia me ayudó a desarrollar una visión más amplia sobre el desarrollo de software, entendiendo que las tecnologías no funcionan de manera aislada, sino como parte de un ecosistema donde el frontend, el backend, la base de datos, la experiencia de usuario y la arquitectura deben trabajar de forma coordinada para construir una solución consistente y escalable.</p>
+
+        <p>Más allá del dominio técnico adquirido en cada herramienta, uno de los principales aprendizajes fue la capacidad de analizar problemas, investigar alternativas, tomar decisiones de diseño e integrar diferentes tecnologías para alcanzar los objetivos funcionales y técnicos del proyecto.</p>
+    </div>
+
+    <div style="margin-top: 40px; display: flex; flex: row;">
+        <div class="technology-card">
+            <h3>Flutter</h3>
+            <p>Tecnología principal utilizada para el desarrollo de la aplicación móvil. Me permitió profundizar en interfaces, navegación, manejo de estado, consumo de APIs y construcción de experiencias multiplataforma.</p>
+        </div>
+
+        <div class="technology-card">
+            <h3>Django REST Framework</h3>
+            <p>Framework utilizado para desarrollar la API del proyecto. Me permitió trabajar con autenticación, validaciones, lógica de negocio y comunicación entre cliente y servidor.</p>
+        </div>
+
+        <div class="technology-card">
+            <h3>PostgreSQL/PostGIS</h3>
+            <p>Base de datos utilizada para modelar y almacenar la información del sistema, incorporando además capacidades geoespaciales para gestionar ubicaciones y zonas dentro de la aplicación.</p>
+        </div>
+
+        <div class="technology-card">
+            <h3>Mapbox</h3>
+            <p>Herramienta utilizada para integrar mapas, búsqueda geográfica y navegación. Me permitió trabajar con servicios geográficos e integración entre Flutter y código nativo.</p>
+        </div>
+
+        <div class="technology-card">
+            <h3>Otras tecnologías</h3>
+            <p>También utilicé JWT, Git, herramientas de diseño y conceptos de arquitectura de software para complementar el desarrollo y organización del proyecto.</p>
+        </div>
+    </div>
 </div>
 
 <style>
@@ -328,6 +366,27 @@ const detailImages = [
         width: 350px;
         border: 1px solid black;
         padding: 20px;
+    }
+
+    .technology-card {
+        box-sizing: border-box;
+        border: 1px solid black;
+        border-radius: 18px;
+        padding: 24px;
+        margin-top: 70px;
+        margin-right: 20px;
+    }
+
+    .technology-card h3 {
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .technology-card p {
+        margin-bottom: 0;
+        text-align: start;
+        overflow-wrap: anywhere;
+        word-break: break-word;
     }
 
     .steps {
