@@ -11,6 +11,9 @@ export const ui = {
             selfLabel: 'Español',
             enLabel: 'English',
         },
+        theme: {
+            label: 'Cambiar tema',
+        },
         nav: {
             home: 'Inicio',
             projects: 'Proyectos',
@@ -299,6 +302,9 @@ export const ui = {
             label: 'Change language',
             selfLabel: 'English',
             enLabel: 'Spanish',
+        },
+        theme: {
+            label: 'Change theme',
         },
         nav: {
             home: 'Home',
