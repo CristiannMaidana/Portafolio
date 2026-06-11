@@ -32,217 +32,258 @@ const detailImages = [
             <img src={image.src} alt={image.alt} />
         ))}
     </div>
-    <div class="divider"></div>
-    <h1>EcoUshuaia</h1>
-    <p>EcoUshuaia es un sistema orientado a mejorar la localización, consulta y disposición de residuos urbanos en la ciudad de Ushuaia mediante una aplicación móvil.</p>
-    
-    <div class="divider"></div>
-    <h3>Historia</h3>
-    <p>Desarrollé EcoUshuaia para resolver una necesidad concreta de la ciudad: facilitar la localización de contenedores, mejorar la disposición de residuos y centralizar información útil en una aplicación móvil.</p>
 
-    <p>Este proyecto me permitió profundizar en arquitectura modular en Flutter, consumo de APIs REST, autenticación con JWT, modelado relacional y geoespacial con PostgreSQL/PostGIS, e integración entre Flutter y código nativo iOS con Swift para mapas, búsqueda y navegación.</p>
-        
-    <div class="steps">
-        <div class="container-steps">
-            <h2>Diseño</h2>
-            <p>Fue mi primera experiencia diseñando una aplicación completa desde cero. En esta etapa aprendí a transformar una idea general en pantallas, recorridos y decisiones funcionales concretas, entendiendo que diseñar no es solo lo visual, sino también organizar cómo el usuario comprende y usa el sistema.</p>
-        </div>
-        
-        <div class="container-steps">
-            <h2>Arquitectura</h2>
-            <p>En esta etapa trabajé en cómo estructurar internamente la aplicación para que pudiera crecer y mantenerse con orden. Aprendí a separar responsabilidades, organizar el proyecto por módulos y capas, y adaptar la arquitectura a medida que la complejidad real de la app fue aumentando.</p>
-        </div>
-                
-        <div class="container-steps">
-            <h2>Frontend</h2>
-            <p>Acá desarrollé la parte visible e interactiva de la aplicación con Flutter y Dart. Aprendí a construir pantallas, componentes, navegación y manejo de estado, conectando la interfaz con el comportamiento real del sistema de forma clara y mantenible.</p>
-        </div>
-                
-        <div class="container-steps">
-            <h2>Backend</h2>
-            <p>En esta etapa me enfoqué en la lógica del servidor, la API, las validaciones y la autenticación con JWT usando Django REST Framework. Aprendí a organizar y exponer la información que necesita la app, entendiendo el backend como una capa central para el funcionamiento seguro y consistente del sistema.</p>
-        </div>
-                
-        <div class="container-steps">
-            <h2>Base de datos</h2>
-            <p>Trabajé en el modelado de la información del sistema con PostgreSQL y PostGIS, definiendo tablas, relaciones y datos geoespaciales. Aprendí a estructurar mejor la información, revisar y actualizar el modelo con el tiempo y ajustar la base de datos para que representara de forma más sólida el problema real.</p>
-        </div>
-                        
-        <div class="container-steps">
-            <h2>Extras</h2>
-            <p>Una parte importante del proyecto fue la integración de Mapbox para mapa, búsqueda y navegación. Esto me permitió profundizar en servicios geográficos y en la integración entre Flutter y código nativo iOS con Swift, además de reforzar conocimientos en APIs REST, autenticación segura y datos geoespaciales.</p>
-        </div>
-    </div>
+    <section class="section intro-section">
+        <span class="eyebrow">Proyecto mobile</span>
+        <h1>EcoUshuaia</h1>
+        <p class="lead">EcoUshuaia es un sistema orientado a mejorar la localización, consulta y disposición de residuos urbanos en la ciudad de Ushuaia mediante una aplicación móvil.</p>
+    </section>
 
-    <h1>Como fueron los primero pasos?</h1>
+    <section class="section">
+        <span class="eyebrow">Contexto</span>
+        <h3>Historia</h3>
+        <p>Desarrollé EcoUshuaia para resolver una necesidad concreta de la ciudad: facilitar la localización de contenedores, mejorar la disposición de residuos y centralizar información útil en una aplicación móvil.</p>
+        <p>Este proyecto me permitió profundizar en arquitectura modular en Flutter, consumo de APIs REST, autenticación con JWT, modelado relacional y geoespacial con PostgreSQL/PostGIS, e integración entre Flutter y código nativo iOS con Swift para mapas, búsqueda y navegación.</p>
+    </section>
 
-    <h2>Buscar requerimientos</h2>
-    <p>La identificación de requisitos se realizó mediante el análisis del problema a resolver y la investigación de aplicaciones y servicios similares relacionados con reciclaje, gestión ambiental y navegación geográfica. A partir de ese relevamiento se definieron las funcionalidades principales, los flujos de uso esperados y las necesidades de los distintos tipos de usuarios, evaluando tanto características que finalmente fueron implementadas como otras que quedaron fuera del alcance inicial del proyecto.</p>
-    <div class="documentation">
-        <img src={requeriments.src} alt="requeriments">
-        <div style="width: 120px;"></div>
-        <div style="justify-content: column;">
-            <h3>Mi experiencia</h3>
-            <p>* Análisis y priorización de necesidades.</p>
-            <p>* Investigación de aplicaciones similares.</p>
-            <p>* Definición del alcance del proyecto.</p>
-            <p>* Elaboración de requisitos funcionales y no funcionales.</p>
+    <section class="section">
+        <div class="section-heading">
+            <span class="eyebrow">Proceso</span>
+            <h2>Etapas del proyecto</h2>
         </div>
-    </div>
 
-    <h2>Casos de uso</h2>
-    <p>Con los requisitos definidos, se desarrollaron los casos de uso para organizar y representar las distintas interacciones previstas dentro de la aplicación. Esta etapa permitió validar el alcance funcional del sistema y servir como base para las decisiones de diseño y desarrollo posteriores.</p>
-    <div class="documentation">
-        <img src={caserUse.src} alt="caserUse">        
-        <div style="width: 120px;"></div>
-        <div style="justify-content: column; align-content: start;">
-            <h3>Mi experiencia</h3>
-            <p>* Traducción de requisitos a funcionalidades concretas.</p>
-            <p>* Identificación de actores y responsabilidades.</p>
-            <p>* Modelado de interacciones entre usuarios y sistema.</p>
-            <p>* Definición del alcance funcional de la aplicación.</p>
+        <div class="steps">
+            <div class="container-steps">
+                <h2>Diseño</h2>
+                <p>Fue mi primera experiencia diseñando una aplicación completa desde cero. En esta etapa aprendí a transformar una idea general en pantallas, recorridos y decisiones funcionales concretas, entendiendo que diseñar no es solo lo visual, sino también organizar cómo el usuario comprende y usa el sistema.</p>
+            </div>
+
+            <div class="container-steps">
+                <h2>Arquitectura</h2>
+                <p>En esta etapa trabajé en cómo estructurar internamente la aplicación para que pudiera crecer y mantenerse con orden. Aprendí a separar responsabilidades, organizar el proyecto por módulos y capas, y adaptar la arquitectura a medida que la complejidad real de la app fue aumentando.</p>
+            </div>
+
+            <div class="container-steps">
+                <h2>Frontend</h2>
+                <p>Acá desarrollé la parte visible e interactiva de la aplicación con Flutter y Dart. Aprendí a construir pantallas, componentes, navegación y manejo de estado, conectando la interfaz con el comportamiento real del sistema de forma clara y mantenible.</p>
+            </div>
+
+            <div class="container-steps">
+                <h2>Backend</h2>
+                <p>En esta etapa me enfoqué en la lógica del servidor, la API, las validaciones y la autenticación con JWT usando Django REST Framework. Aprendí a organizar y exponer la información que necesita la app, entendiendo el backend como una capa central para el funcionamiento seguro y consistente del sistema.</p>
+            </div>
+
+            <div class="container-steps">
+                <h2>Base de datos</h2>
+                <p>Trabajé en el modelado de la información del sistema con PostgreSQL y PostGIS, definiendo tablas, relaciones y datos geoespaciales. Aprendí a estructurar mejor la información, revisar y actualizar el modelo con el tiempo y ajustar la base de datos para que representara de forma más sólida el problema real.</p>
+            </div>
+
+            <div class="container-steps">
+                <h2>Extras</h2>
+                <p>Una parte importante del proyecto fue la integración de Mapbox para mapa, búsqueda y navegación. Esto me permitió profundizar en servicios geográficos y en la integración entre Flutter y código nativo iOS con Swift, además de reforzar conocimientos en APIs REST, autenticación segura y datos geoespaciales.</p>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <h2>Diagrama de la base de datos</h2>
-    <p>Se diseñó la base de datos relacional del sistema definiendo las entidades, atributos y relaciones necesarias para soportar las funcionalidades de la aplicación, asegurando una organización consistente y escalable de la información.</p>
+    <section class="section">
+        <div class="section-heading">
+            <span class="eyebrow">Inicio del proyecto</span>
+            <h1>Cómo fueron los primeros pasos?</h1>
+        </div>
+
+        <h2>Buscar requerimientos</h2>
+        <p>La identificación de requisitos se realizó mediante el análisis del problema a resolver y la investigación de aplicaciones y servicios similares relacionados con reciclaje, gestión ambiental y navegación geográfica. A partir de ese relevamiento se definieron las funcionalidades principales, los flujos de uso esperados y las necesidades de los distintos tipos de usuarios, evaluando tanto características que finalmente fueron implementadas como otras que quedaron fuera del alcance inicial del proyecto.</p>
+
         <div class="documentation">
-        <img src={dataBase.src} alt="dataBase">
-        <div style="width: 120px;"></div>
-        <div style="justify-content: column;">
-            <h3>Mi experiencia</h3>
-            <p>La construcción de la base de datos fue un proceso iterativo que evolucionó junto con el proyecto. Inicialmente se definió un modelo simple compuesto por las entidades principales, como usuarios, zonas, calendarios, sensores, contenedores, residuos y mapas. A medida que avanzaba el análisis y se profundizaba en los requisitos del sistema, surgieron nuevas relaciones, restricciones y entidades necesarias para representar correctamente el funcionamiento de la aplicación.</p>
-            <p>Este proceso de refinamiento constante me permitió comprender la importancia de contar con una base sólida desde las primeras etapas del diseño, al mismo tiempo que incorporaba mejoras derivadas tanto de los conocimientos adquiridos durante la carrera como de las necesidades reales identificadas durante el desarrollo de EcoUshuaia. También reforzó la idea de que el diseño de una base de datos es una tarea evolutiva, donde cada iteración contribuye a obtener una estructura más consistente, escalable y alineada con los objetivos del sistema.</p>
-            <p>Uno de los principales aprendizajes fue comprender que el diseño de la base de datos no es una etapa aislada ni definitiva, sino que evoluciona junto con el resto del sistema. Muchas decisiones surgieron o fueron ajustadas durante el desarrollo de funcionalidades, la implementación del backend y la definición de nuevas interacciones entre los usuarios y la aplicación.</p>
+            <img src={requeriments.src} alt="requeriments">
+            <div class="experience-card">
+                <h3>Mi experiencia</h3>
+                <p>* Análisis y priorización de necesidades.</p>
+                <p>* Investigación de aplicaciones similares.</p>
+                <p>* Definición del alcance del proyecto.</p>
+                <p>* Elaboración de requisitos funcionales y no funcionales.</p>
+            </div>
         </div>
-    </div>
 
-    <h1>Primeras etapas del diseño</h1>
-    <div class="documentation documentation-design">
-        <div class="documentation-design-top">
-            <div class="documentation-design-copy">
-                <p class="documentation-design-text">El diseño de EcoUshuaia representó mi primer acercamiento a la construcción completa de una experiencia de usuario para una aplicación móvil. Durante esta etapa busqué desarrollar una interfaz simple, intuitiva y visualmente consistente, tomando como referencia aplicaciones móviles modernas y adaptando sus patrones de diseño a las necesidades específicas del proyecto.</p> 
+        <h2>Casos de uso</h2>
+        <p>Con los requisitos definidos, se desarrollaron los casos de uso para organizar y representar las distintas interacciones previstas dentro de la aplicación. Esta etapa permitió validar el alcance funcional del sistema y servir como base para las decisiones de diseño y desarrollo posteriores.</p>
+
+        <div class="documentation">
+            <img src={caserUse.src} alt="caserUse">
+            <div class="experience-card">
+                <h3>Mi experiencia</h3>
+                <p>* Traducción de requisitos a funcionalidades concretas.</p>
+                <p>* Identificación de actores y responsabilidades.</p>
+                <p>* Modelado de interacciones entre usuarios y sistema.</p>
+                <p>* Definición del alcance funcional de la aplicación.</p>
+            </div>
+        </div>
+
+        <h2>Diagrama de la base de datos</h2>
+        <p>Se diseñó la base de datos relacional del sistema definiendo las entidades, atributos y relaciones necesarias para soportar las funcionalidades de la aplicación, asegurando una organización consistente y escalable de la información.</p>
+
+        <div class="documentation" style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;">
+            <img src={dataBase.src} alt="dataBase" style="width: min(100%, 1080px); max-width: 1100px; align-self: center;">
+            <div class="experience-card" style="width: min(100%, 105800px);">
+                <h3>Mi experiencia</h3>
+                <p>La construcción de la base de datos fue un proceso iterativo que evolucionó junto con el proyecto. Inicialmente se definió un modelo simple compuesto por las entidades principales, como usuarios, zonas, calendarios, sensores, contenedores, residuos y mapas. A medida que avanzaba el análisis y se profundizaba en los requisitos del sistema, surgieron nuevas relaciones, restricciones y entidades necesarias para representar correctamente el funcionamiento de la aplicación.</p>
+                <p>Este proceso de refinamiento constante me permitió comprender la importancia de contar con una base sólida desde las primeras etapas del diseño, al mismo tiempo que incorporaba mejoras derivadas tanto de los conocimientos adquiridos durante la carrera como de las necesidades reales identificadas durante el desarrollo de EcoUshuaia. También reforzó la idea de que el diseño de una base de datos es una tarea evolutiva, donde cada iteración contribuye a obtener una estructura más consistente, escalable y alineada con los objetivos del sistema.</p>
+                <p>Uno de los principales aprendizajes fue comprender que el diseño de la base de datos no es una etapa aislada ni definitiva, sino que evoluciona junto con el resto del sistema. Muchas decisiones surgieron o fueron ajustadas durante el desarrollo de funcionalidades, la implementación del backend y la definición de nuevas interacciones entre los usuarios y la aplicación.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-heading">
+            <span class="eyebrow">UI / UX</span>
+            <h1>Primeras etapas del diseño</h1>
+        </div>
+
+        <div class="documentation documentation-design">
+
+            <div class="design-grid">
+                <div class="documentation-design-item">
+                    <img src={loginImage.src} alt="">
+                    <h2>Login</h2>
+                </div>
+                <div class="documentation-design-item">
+                    <img src={singupImage.src} alt="">
+                    <h2>Signup</h2>
+                </div>
+                <div class="documentation-design-item">
+                    <img src={homeImage.src} alt="">
+                    <h2>Home</h2>
+                </div>
+                <div class="documentation-design-item">
+                    <img src={calendarImage.src} alt="">
+                    <h2>Calendar</h2>
+                </div>
+                <div class="documentation-design-item">
+                    <img src={mapImage.src} alt="">
+                    <h2>Map</h2>
+                </div>
+                <div class="documentation-design-item">
+                    <img src={settingsImage.src} alt="">
+                    <h2>Settings</h2>
+                </div>
+            </div>
+
+                        <div class="documentation-design-copy glass-card">
+                <p class="documentation-design-text">El diseño de EcoUshuaia representó mi primer acercamiento a la construcción completa de una experiencia de usuario para una aplicación móvil. Durante esta etapa busqué desarrollar una interfaz simple, intuitiva y visualmente consistente, tomando como referencia aplicaciones móviles modernas y adaptando sus patrones de diseño a las necesidades específicas del proyecto.</p>
                 <p class="documentation-design-text">En un comienzo el enfoque estuvo centrado principalmente en la apariencia individual de cada pantalla y en la distribución de sus elementos. Sin embargo, a medida que avanzó el desarrollo, comprendí que el diseño no se limita únicamente al aspecto visual, sino también a la forma en que los usuarios interactúan con la aplicación y cómo las distintas pantallas, componentes y funcionalidades se conectan entre sí.</p>
                 <p class="documentation-design-text">Este proceso me permitió incorporar conceptos relacionados con jerarquía visual, experiencia de usuario, navegación, animaciones y transiciones, buscando que cada interacción se sintiera natural y coherente dentro de la aplicación. El resultado fue una evolución constante del diseño, donde muchas decisiones fueron refinadas a partir de la experiencia obtenida durante el desarrollo y de las nuevas necesidades que surgían a medida que el proyecto crecía.</p>
             </div>
-            <div class="documentation-design-item">
-                <img src={loginImage.src} alt="">
-                <h2>Login</h2>
-            </div>
-            <div class="documentation-design-item">
-                <img src={singupImage.src} alt="">
-                <h2>Signup</h2>
-            </div>
         </div>
-        <div class="documentation-design-bottom">
-            <div class="documentation-design-item">
-                <img src={homeImage.src} alt="">
-                <h2>Home</h2>
-            </div>
-            <div class="documentation-design-item">
-                <img src={calendarImage.src} alt="">
-                <h2>Calendario</h2>
-            </div>
-            <div class="documentation-design-item">
-                <img src={mapImage.src} alt="">
-                <h2>Mapa</h2>
-            </div>
-            <div class="documentation-design-item">
-                <img src={settingsImage.src} alt="">
-                <h2>Settings</h2>
+    </section>
+
+    <section class="section">
+        <div class="section-heading">
+            <span class="eyebrow">Resultado</span>
+            <h1>Diseño final</h1>
+        </div>
+
+        <div class="final-gif">
+            <video class="final-video" src={calendarVideo} autoplay loop muted playsinline></video>
+            <div class="final-gif-copy">
+                <h2>Meta del calendario</h2>
+                <p>El calendario fue diseñado para centralizar eventos, novedades y recordatorios dentro de una única interfaz clara y fácil de utilizar. Uno de los principales objetivos fue mantener una experiencia fluida entre los distintos componentes de la pantalla, integrando transiciones, paneles y animaciones que acompañaran las acciones del usuario de forma natural.</p>
+                <p>A medida que el diseño evolucionó, se buscó que cada elemento tuviera una función específica y que la información más importante permaneciera siempre accesible. El resultado fue una interfaz más dinámica y conectada, donde la navegación entre fechas, categorías y detalles se integra de manera coherente dentro de una misma experiencia visual.</p>
             </div>
         </div>
-    </div>
 
-    <h1>Diseño final</h1>
-    <div class="final-gif">
-        <video class="final-video" src={calendarVideo} autoplay loop muted playsinline></video>
-        <div class="final-gif-copy">
-            <h2>Meta del calendario</h2>
-
-            <p>El calendario fue diseñado para centralizar eventos, novedades y recordatorios dentro de una única interfaz clara y fácil de utilizar. Uno de los principales objetivos fue mantener una experiencia fluida entre los distintos componentes de la pantalla, integrando transiciones, paneles y animaciones que acompañaran las acciones del usuario de forma natural.</p>
-
-            <p>A medida que el diseño evolucionó, se buscó que cada elemento tuviera una función específica y que la información más importante permaneciera siempre accesible. El resultado fue una interfaz más dinámica y conectada, donde la navegación entre fechas, categorías y detalles se integra de manera coherente dentro de una misma experiencia visual.</p>
-        </div>
-    </div>
-
-    <div class="final-gif" style="margin-top: 40px;">
-        <video class="final-video" src={mapVideo} autoplay loop muted playsinline></video>
-        <div class="final-gif-copy">
-            <h2>Meta del mapa</h2>
-
-            <p>La pantalla de mapa fue diseñada para concentrar las principales funcionalidades geográficas de la aplicación en una experiencia simple e intuitiva. El objetivo fue permitir que los usuarios visualicen contenedores, exploren distintas zonas de la ciudad, realicen búsquedas y obtengan rutas sin perder el contexto del mapa ni interrumpir su navegación.</p>
-
-            <p>Durante el desarrollo se trabajó especialmente en la integración entre paneles, controles y movimientos de cámara, buscando que las transiciones y animaciones acompañaran cada acción de forma natural. El resultado fue una interfaz dinámica donde la información, las zonas y las herramientas de navegación se encuentran conectadas dentro de una experiencia fluida y consistente.</p>
-        </div>
-    </div>
-
-    <div class="final-gif" style="margin-top: 40px;">
-        <video class="final-video" src={settingVideo} autoplay loop muted playsinline></video>
-        <div class="final-gif-copy">
-            <h2>Meta de la configuración y perfil</h2>
-
-            <p>La sección de configuración fue diseñada para centralizar la información personal del usuario y permitir la gestión de sus datos dentro de la aplicación. El objetivo principal fue ofrecer una interfaz clara y accesible donde las acciones más importantes, como la visualización y edición del perfil, pudieran realizarse de forma sencilla y directa.</p>
-
-            <p>Durante el desarrollo se buscó mantener una organización visual consistente con el resto de la aplicación, priorizando la legibilidad de la información y una navegación intuitiva entre las distintas opciones. El resultado fue una experiencia enfocada en la administración de datos personales, integrada de manera natural con el diseño general de EcoUshuaia.</p>
-        </div>
-    </div>
-
-    <div style="margin-top: 80px;">
-        <h1>Que aprendí</h1>
-        <p>El desarrollo de EcoUshuaia representó una experiencia de aprendizaje integral que abarcó mucho más que la implementación de una aplicación móvil. A lo largo del proyecto realicé todas las etapas del ciclo de desarrollo, desde el relevamiento de requisitos y la definición de casos de uso hasta el diseño de la base de datos, la arquitectura del sistema, el desarrollo del backend y la construcción de la aplicación móvil.</p>
-
-        <p>Uno de los principales aprendizajes fue comprender que cada decisión dentro de un proyecto de software impacta en múltiples áreas del sistema. Muchas ideas y soluciones evolucionaron con el tiempo, obligándome a revisar diseños previos, replantear estructuras de datos y adaptar funcionalidades a medida que surgían nuevas necesidades y conocimientos.
-
-        <p>En el aspecto técnico, el proyecto me permitió profundizar en desarrollo mobile con Flutter, arquitectura de aplicaciones, diseño de interfaces, experiencia de usuario, integración con APIs REST, bases de datos relacionales y sistemas geoespaciales. También aprendí la importancia de mantener una arquitectura organizada y escalable que facilite la evolución del proyecto a largo plazo.
-
-        <p>Más allá de las tecnologías utilizadas, EcoUshuaia me enseñó a abordar el desarrollo de software como un proceso iterativo de análisis, diseño, implementación y mejora continua, donde el aprendizaje surge tanto de los aciertos como de las decisiones que deben revisarse y perfeccionarse durante el camino. El resultado final no solo fue una aplicación funcional, sino también una experiencia que fortaleció mi capacidad para planificar, diseñar y desarrollar soluciones de software de manera integral.</p>
-    </div>
-
-    <div style="margin-top: 80px;">
-        <h1>Tecnologias</h1>
-        <p>El desarrollo de EcoUshuaia me permitió explorar y aplicar distintas tecnologías a lo largo de todas las etapas de un proyecto de software. La selección de herramientas no se basó únicamente en aprender nuevas tecnologías, sino en comprender cómo cada una podía aportar una solución concreta a los desafíos planteados por la aplicación.
-
-        <p>Durante el proceso experimenté múltiples iteraciones y ajustes, tanto en el diseño como en la arquitectura y la implementación. Muchas decisiones técnicas fueron evolucionando a medida que el proyecto crecía, permitiéndome evaluar ventajas, limitaciones y formas de integración entre las distintas herramientas utilizadas.</p>
-
-        <p>Esta experiencia me ayudó a desarrollar una visión más amplia sobre el desarrollo de software, entendiendo que las tecnologías no funcionan de manera aislada, sino como parte de un ecosistema donde el frontend, el backend, la base de datos, la experiencia de usuario y la arquitectura deben trabajar de forma coordinada para construir una solución consistente y escalable.</p>
-
-        <p>Más allá del dominio técnico adquirido en cada herramienta, uno de los principales aprendizajes fue la capacidad de analizar problemas, investigar alternativas, tomar decisiones de diseño e integrar diferentes tecnologías para alcanzar los objetivos funcionales y técnicos del proyecto.</p>
-    </div>
-
-    <div style="margin-top: 40px; display: flex; flex: row;">
-        <div class="technology-card">
-            <h3>Flutter</h3>
-            <p>Tecnología principal utilizada para el desarrollo de la aplicación móvil. Me permitió profundizar en interfaces, navegación, manejo de estado, consumo de APIs y construcción de experiencias multiplataforma.</p>
+        <div class="final-gif">
+            <video class="final-video" src={mapVideo} autoplay loop muted playsinline></video>
+            <div class="final-gif-copy">
+                <h2>Meta del mapa</h2>
+                <p>La pantalla de mapa fue diseñada para concentrar las principales funcionalidades geográficas de la aplicación en una experiencia simple e intuitiva. El objetivo fue permitir que los usuarios visualicen contenedores, exploren distintas zonas de la ciudad, realicen búsquedas y obtengan rutas sin perder el contexto del mapa ni interrumpir su navegación.</p>
+                <p>Durante el desarrollo se trabajó especialmente en la integración entre paneles, controles y movimientos de cámara, buscando que las transiciones y animaciones acompañaran cada acción de forma natural. El resultado fue una interfaz dinámica donde la información, las zonas y las herramientas de navegación se encuentran conectadas dentro de una experiencia fluida y consistente.</p>
+            </div>
         </div>
 
-        <div class="technology-card">
-            <h3>Django REST Framework</h3>
-            <p>Framework utilizado para desarrollar la API del proyecto. Me permitió trabajar con autenticación, validaciones, lógica de negocio y comunicación entre cliente y servidor.</p>
+        <div class="final-gif">
+            <video class="final-video" src={settingVideo} autoplay loop muted playsinline></video>
+            <div class="final-gif-copy">
+                <h2>Meta de la configuración y perfil</h2>
+                <p>La sección de configuración fue diseñada para centralizar la información personal del usuario y permitir la gestión de sus datos dentro de la aplicación. El objetivo principal fue ofrecer una interfaz clara y accesible donde las acciones más importantes, como la visualización y edición del perfil, pudieran realizarse de forma sencilla y directa.</p>
+                <p>Durante el desarrollo se buscó mantener una organización visual consistente con el resto de la aplicación, priorizando la legibilidad de la información y una navegación intuitiva entre las distintas opciones. El resultado fue una experiencia enfocada en la administración de datos personales, integrada de manera natural con el diseño general de EcoUshuaia.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-heading">
+            <span class="eyebrow">Aprendizaje</span>
+            <h1>Qué aprendí</h1>
         </div>
 
-        <div class="technology-card">
-            <h3>PostgreSQL/PostGIS</h3>
-            <p>Base de datos utilizada para modelar y almacenar la información del sistema, incorporando además capacidades geoespaciales para gestionar ubicaciones y zonas dentro de la aplicación.</p>
+        <div class="text-card">
+            <p>El desarrollo de EcoUshuaia representó una experiencia de aprendizaje integral que abarcó mucho más que la implementación de una aplicación móvil. A lo largo del proyecto realicé todas las etapas del ciclo de desarrollo, desde el relevamiento de requisitos y la definición de casos de uso hasta el diseño de la base de datos, la arquitectura del sistema, el desarrollo del backend y la construcción de la aplicación móvil.</p>
+            <p>Uno de los principales aprendizajes fue comprender que cada decisión dentro de un proyecto de software impacta en múltiples áreas del sistema. Muchas ideas y soluciones evolucionaron con el tiempo, obligándome a revisar diseños previos, replantear estructuras de datos y adaptar funcionalidades a medida que surgían nuevas necesidades y conocimientos.</p>
+            <p>En el aspecto técnico, el proyecto me permitió profundizar en desarrollo mobile con Flutter, arquitectura de aplicaciones, diseño de interfaces, experiencia de usuario, integración con APIs REST, bases de datos relacionales y sistemas geoespaciales. También aprendí la importancia de mantener una arquitectura organizada y escalable que facilite la evolución del proyecto a largo plazo.</p>
+            <p>Más allá de las tecnologías utilizadas, EcoUshuaia me enseñó a abordar el desarrollo de software como un proceso iterativo de análisis, diseño, implementación y mejora continua, donde el aprendizaje surge tanto de los aciertos como de las decisiones que deben revisarse y perfeccionarse durante el camino. El resultado final no solo fue una aplicación funcional, sino también una experiencia que fortaleció mi capacidad para planificar, diseñar y desarrollar soluciones de software de manera integral.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-heading">
+            <span class="eyebrow">Stack</span>
+            <h1>Tecnologías</h1>
         </div>
 
-        <div class="technology-card">
-            <h3>Mapbox</h3>
-            <p>Herramienta utilizada para integrar mapas, búsqueda geográfica y navegación. Me permitió trabajar con servicios geográficos e integración entre Flutter y código nativo.</p>
+        <div class="text-card">
+            <p>El desarrollo de EcoUshuaia me permitió explorar y aplicar distintas tecnologías a lo largo de todas las etapas de un proyecto de software. La selección de herramientas no se basó únicamente en aprender nuevas tecnologías, sino en comprender cómo cada una podía aportar una solución concreta a los desafíos planteados por la aplicación.</p>
+            <p>Durante el proceso experimenté múltiples iteraciones y ajustes, tanto en el diseño como en la arquitectura y la implementación. Muchas decisiones técnicas fueron evolucionando a medida que el proyecto crecía, permitiéndome evaluar ventajas, limitaciones y formas de integración entre las distintas herramientas utilizadas.</p>
+            <p>Esta experiencia me ayudó a desarrollar una visión más amplia sobre el desarrollo de software, entendiendo que las tecnologías no funcionan de manera aislada, sino como parte de un ecosistema donde el frontend, el backend, la base de datos, la experiencia de usuario y la arquitectura deben trabajar de forma coordinada para construir una solución consistente y escalable.</p>
+            <p>Más allá del dominio técnico adquirido en cada herramienta, uno de los principales aprendizajes fue la capacidad de analizar problemas, investigar alternativas, tomar decisiones de diseño e integrar diferentes tecnologías para alcanzar los objetivos funcionales y técnicos del proyecto.</p>
         </div>
 
-        <div class="technology-card">
-            <h3>Otras tecnologías</h3>
-            <p>También utilicé JWT, Git, herramientas de diseño y conceptos de arquitectura de software para complementar el desarrollo y organización del proyecto.</p>
+        <div class="technology-grid">
+            <div class="technology-card">
+                <h3>Flutter</h3>
+                <p>Tecnología principal utilizada para el desarrollo de la aplicación móvil. Me permitió profundizar en interfaces, navegación, manejo de estado, consumo de APIs y construcción de experiencias multiplataforma.</p>
+            </div>
+
+            <div class="technology-card">
+                <h3>Django REST Framework</h3>
+                <p>Framework utilizado para desarrollar la API del proyecto. Me permitió trabajar con autenticación, validaciones, lógica de negocio y comunicación entre cliente y servidor.</p>
+            </div>
+
+            <div class="technology-card">
+                <h3>PostgreSQL/PostGIS</h3>
+                <p>Base de datos utilizada para modelar y almacenar la información del sistema, incorporando además capacidades geoespaciales para gestionar ubicaciones y zonas dentro de la aplicación.</p>
+            </div>
+
+            <div class="technology-card">
+                <h3>Mapbox</h3>
+                <p>Herramienta utilizada para integrar mapas, búsqueda geográfica y navegación. Me permitió trabajar con servicios geográficos e integración entre Flutter y código nativo.</p>
+            </div>
+
+            <div class="technology-card">
+                <h3>Otras tecnologías</h3>
+                <p>También utilicé JWT, Git, herramientas de diseño y conceptos de arquitectura de software para complementar el desarrollo y organización del proyecto.</p>
+            </div>
         </div>
-    </div>
+    </section>
 </div>
 
 <style>
     .detail {
+        --detail-bg: #f5f7f4;
+        --detail-surface: rgba(255, 255, 255, 0.76);
+        --detail-text: #1d1d1f;
+        --detail-muted: #667064;
+        --detail-eco-dark: #3f7f4f;
+        --detail-border: rgba(83, 125, 89, 0.16);
+        --detail-shadow: 0 24px 70px rgba(42, 78, 48, 0.08);
+        --detail-radius: 30px;
+        --detail-radius-sm: 22px;
         width: 100%;
         max-width: 100%;
         overflow-x: hidden;
+        color: var(--detail-text);
+        background:
+            radial-gradient(circle at top left, rgba(184, 223, 179, 0.34), transparent 34rem),
+            linear-gradient(180deg, #f8faf7 0%, var(--detail-bg) 100%);
     }
 
     .detail * {
@@ -252,118 +293,192 @@ const detailImages = [
     .detail h1,
     .detail h2,
     .detail h3,
+    .detail p,
+    .eyebrow {
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .detail h1 {
+        margin: 0;
+        max-width: 920px;
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        letter-spacing: -0.065em;
+        line-height: 0.96;
+        font-weight: 760;
+    }
+
+    .detail h2 {
+        margin: 0;
+        font-size: clamp(1.5rem, 3vw, 2.35rem);
+        letter-spacing: -0.04em;
+        line-height: 1.05;
+        font-weight: 720;
+    }
+
+    .detail h3 {
+        margin: 0 0 18px;
+        font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+        letter-spacing: -0.035em;
+        line-height: 1.1;
+        font-weight: 710;
+    }
+
     .detail p {
-        font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+        max-width: 1180px;
+        margin: 0;
+        color: var(--detail-muted);
+        font-size: clamp(1rem, 1.1vw, 1.08rem);
+        line-height: 1.78;
+        letter-spacing: -0.012em;
     }
 
-    .final-gif {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 40px;
-        flex-wrap: nowrap;
-        padding: 0;
+    .detail p + p {
+        margin-top: 18px;
     }
 
-    .final-gif-copy {
-        flex: 1 1 420px;
-        min-width: 0;
-        align-self: flex-start;
-        padding: 0;
+    .section {
+        width: min(100%, 1280px);
+        margin: 0 auto;
+        padding-top: clamp(72px, 9vw, 130px);
     }
 
-    .final-gif-copy p:first-child {
-        margin-top: 0;
+    .intro-section {
+        padding-top: clamp(56px, 7vw, 96px);
     }
 
-    .final-video {
-        display: flex;
-        flex: 0 0 auto;
-        width: min(100%, 340px);
-        height: auto;
-        aspect-ratio: 9 / 19.5;
-        max-width: 100%;
-        object-fit: contain;
-        border: 1px solid black;
-        border-radius: 22px;
+    .section-heading {
+        display: grid;
+        gap: 14px;
+        margin-bottom: clamp(28px, 5vw, 56px);
     }
 
-    @media (max-width: 1100px) {
-        .final-gif {
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+    .eyebrow {
+        display: inline-flex;
+        width: fit-content;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border: 1px solid var(--detail-border);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.66);
+        color: var(--detail-eco-dark);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        backdrop-filter: blur(18px);
+    }
 
-        .final-gif-copy {
-            flex-basis: 100%;
-        }
+    .lead {
+        margin-top: 28px;
+        min-width: 1050px;
+        font-size: clamp(1.18rem, 2vw, 1.55rem);
+        line-height: 1.55;
+        color: #475146;
+    }
+
+    .steps {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .container-steps,
+    .technology-card,
+    .text-card,
+    .experience-card,
+    .glass-card {
+        background: var(--detail-surface);
+        border: 1px solid var(--detail-border);
+        border-radius: var(--detail-radius-sm);
+        box-shadow: 0 18px 48px rgba(43, 74, 46, 0.055);
+        backdrop-filter: blur(20px);
+    }
+
+    .container-steps {
+        min-height: 100%;
+        padding: clamp(1px, 3vw, 30px);
+        transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .container-steps h2 {
+        margin-bottom: 14px;
+        font-size: 1.35rem;
+        letter-spacing: -0.035em;
+    }
+
+    .container-steps p,
+    .experience-card p,
+    .technology-card p {
+        font-size: 0.98rem;
+        line-height: 1.68;
+    }
+
+    .container-steps:hover,
+    .technology-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(83, 125, 89, 0.28);
+        background: rgba(255, 255, 255, 0.88);
     }
 
     .documentation {
         width: 100%;
-        margin-top: 24px;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        gap: clamp(20px, 4vw, 48px);
-        flex-wrap: wrap;
+        margin: clamp(28px, 4vw, 44px) 0 clamp(62px, 7vw, 96px);
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+        align-items: start;
+        gap: clamp(22px, 4vw, 54px);
     }
 
-    .documentation > div[style*='width: 120px'] {
-        display: none !important;
+    .documentation img {
+        display: block;
+        width: 100%;
+        max-width: 700px;
+        height: auto;
+        object-fit: contain;
     }
 
-    .documentation > div:last-child {
-        flex: 1 1 320px;
-        min-width: 0;
-        display: flex;
-        flex-direction: column !important;
-        justify-content: flex-start;
-        align-items: flex-start;
+    .experience-card {
+        padding: clamp(24px, 4vw, 38px);
+    }
+
+    .experience-card h3 {
+        margin-bottom: 18px;
     }
 
     .documentation-design {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 24px;
-    }
-
-    .documentation-design-top {
-        width: 100%;
         display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 24px;
-        flex-wrap: wrap;
+        flex-direction: column;
+        margin-bottom: 0;
+        gap: clamp(24px, 5vw, 60px);
     }
 
     .documentation-design-copy {
-        flex: 1 1 420px;
         display: flex;
         flex-direction: column;
         gap: 16px;
-    }
-
-    .documentation-design-bottom {
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-start;
-        gap: 24px;
-        flex-wrap: wrap;
+        padding: clamp(24px, 4vw, 40px);
     }
 
     .documentation-design-text {
         margin: 0;
     }
 
+    .design-grid {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 18px;
+        width: 100%;
+    }
+
     .documentation-design-item {
-        flex: 1 1 180px;
-        width: min(100%, 220px);
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 16px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
         text-align: center;
     }
 
@@ -375,63 +490,86 @@ const detailImages = [
         object-fit: contain;
     }
 
-    .documentation-design-item p {
-        margin: 12px 0 0;
+    .documentation-design-item h2 {
+        font-size: 1rem;
+        letter-spacing: -0.02em;
+        color: var(--detail-muted);
     }
 
-    .documentation img {
-        display: block;
-        width: 100%;
-        flex: 1 1 460px;
-        max-width: 700px;
-        height: auto;
-        object-fit: contain;
+    .final-gif {
+        display: grid;
+        grid-template-columns: minmax(240px, 380px) minmax(0, 1fr);
+        align-items: center;
+        gap: clamp(28px, 6vw, 82px);
+        padding: clamp(24px, 4vw, 42px);
+        margin-top: 26px;
+        border: 1px solid var(--detail-border);
+        border-radius: var(--detail-radius);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(241, 248, 239, 0.72));
+        box-shadow: var(--detail-shadow);
     }
 
-    .container-steps {
-        margin: 0;
-        width: auto;
-        flex: 1 1 320px;
-        border: 1px solid black;
-        padding: 20px;
+    .final-gif + .final-gif {
+        margin-top: 32px;
     }
 
-    .technology-card {
-        box-sizing: border-box;
-        border: 1px solid black;
-        border-radius: 18px;
-        padding: 24px;
-        margin: 0;
-        flex: 1 1 240px;
+    .final-gif-copy {
+        min-width: 0;
     }
 
-    .technology-card h3 {
-        text-align: center;
-        margin-top: 0;
+    .final-gif-copy h2 {
+        margin-bottom: 20px;
     }
 
-    .technology-card p {
-        margin-bottom: 0;
-        text-align: start;
-        overflow-wrap: anywhere;
-        word-break: break-word;
-    }
-
-    .steps {
+    .final-video {
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 24px;
+        flex: 0 0 auto;
+        width: min(100%, 340px);
+        height: auto;
+        aspect-ratio: 9 / 18.4;
+        max-width: 100%;
+        object-fit: contain;
+        border: 1px solid black;
+        border-radius: 22px;
+    }
+
+    .text-card {
+        padding: clamp(24px, 4vw, 42px);
+    }
+
+    .text-card p {
+        max-width: 100%;
+    }
+
+    .technology-grid {
+        margin-top: 28px;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 18px;
         align-items: stretch;
     }
 
-    .divider {
-        width: 100%;
-        height: 1px;
-        background-color: black;
+    .technology-card {
+        padding: clamp(2px, 3vw, 20px);
+        transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
     }
 
-    .image{
+    .technology-card h3 {
+        margin: 0 0 14px;
+        text-align: left;
+        font-size: 1.08rem;
+        letter-spacing: -0.03em;
+        color: var(--detail-text);
+    }
+
+    .technology-card p {
+        margin: 0;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        font-size: 13px;
+    }
+
+    .image {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -467,49 +605,35 @@ const detailImages = [
         transform: translateY(-6px);
     }
 
-    .detail > div[style*='margin-top: 40px; display: flex'] {
-        display: flex !important;
-        flex-wrap: wrap;
-        align-items: stretch;
-        gap: 20px;
-    }
-
-    @media (max-width: 1024px) {
-        .documentation-design-top,
-        .documentation-design-bottom {
-            justify-content: center;
+    @media (max-width: 1180px) {
+        .steps,
+        .technology-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
-        .documentation-design-copy {
-            flex-basis: 100%;
+        .documentation-design {
+            display: flex;
+            flex-direction: column;
         }
     }
 
-    @media (max-width: 900px) {
-        .detail h1 {
-            font-size: clamp(2rem, 5vw, 2.6rem);
-        }
-
-        .detail h2 {
-            font-size: clamp(1.5rem, 4vw, 2rem);
-        }
-
-        .detail p {
-            font-size: 0.98rem;
-            line-height: 1.65;
-        }
-
-        .documentation img,
-        .documentation > div:last-child {
-            flex-basis: 100%;
-        }
-
+    @media (max-width: 960px) {
+        .documentation,
         .final-gif {
-            gap: 28px;
+            grid-template-columns: 1fr;
+        }
+
+        .design-grid {
+            grid-template-columns: repeat(6, minmax(0, 1fr));
         }
     }
 
     @media (max-width: 720px) {
+        .section {
+            width: min(100%, 1180px);
+            padding-top: 72px;
+        }
+
         .image {
             justify-content: flex-start;
             padding: 18px;
@@ -526,36 +650,65 @@ const detailImages = [
             transform: none;
         }
 
-        .documentation-design-item {
-            width: min(100%, 280px);
+        .steps,
+        .technology-grid {
+            grid-template-columns: 1fr;
         }
 
-        .container-steps,
-        .technology-card {
-            flex-basis: 100%;
+        .design-grid {
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+        }
+
+        .documentation-design-item {
+            width: 100%;
+        }
+
+        .final-gif {
+            padding: 20px;
         }
     }
 
     @media (max-width: 560px) {
-        .final-video {
-            width: 100%;
-            border-radius: 18px;
+        .detail h1 {
+            font-size: clamp(2.15rem, 13vw, 3.2rem);
+        }
+
+        .detail p {
+            font-size: 0.96rem;
+            line-height: 1.7;
+        }
+
+        .lead {
+            font-size: 1.08rem;
+        }
+
+        .container-steps,
+        .technology-card,
+        .text-card,
+        .experience-card,
+        .glass-card {
+            border-radius: 20px;
         }
 
         .final-gif,
         .documentation,
         .steps,
-        .detail > div[style*='margin-top: 40px; display: flex'] {
+        .design-grid,
+        .technology-grid {
             gap: 16px;
         }
 
         .container-steps,
-        .technology-card {
+        .technology-card,
+        .text-card,
+        .experience-card,
+        .documentation-design-copy {
             padding: 18px;
         }
 
-        .detail p {
-            font-size: 0.95rem;
+        .final-video {
+            width: 100%;
+            border-radius: 18px;
         }
     }
 </style>
