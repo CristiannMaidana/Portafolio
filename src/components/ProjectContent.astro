@@ -20,6 +20,8 @@ type ProjectLink = {
 type ProjectImage = {
     src: string;
     alt: string;
+    width?: number;
+    height?: number;
     imageClass?: string;
 };
 
@@ -76,7 +78,15 @@ const {
             style={`--image-container-color: ${imageContainerColor}; --showcase-shadow-top: ${showcaseShadowTop}; --showcase-shadow-bottom: ${showcaseShadowBottom};`}
         >
             {images.map((image) => (
-                <img class={`app-image ${image.imageClass ?? ''}`.trim()} src={image.src} alt={image.alt} />
+                <img
+                    class={`app-image ${image.imageClass ?? ''}`.trim()}
+                    src={image.src}
+                    alt={image.alt}
+                    width={image.width}
+                    height={image.height}
+                    loading="eager"
+                    decoding="async"
+                />
             ))}
         </div>
     </div>
