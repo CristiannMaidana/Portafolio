@@ -28,13 +28,17 @@ const {
     technologies,
     links,
     images,
-    imageContainerColor = 'var(--portfolio-showcase-bg)'
+    imageContainerColor = 'var(--portfolio-showcase-bg)',
+    showcaseShadowTop = 'var(--portfolio-showcase-shadow-top)',
+    showcaseShadowBottom = 'var(--portfolio-showcase-shadow-bottom)'
 } = Astro.props as {
     description: string[];
     technologies: TecnologyItem[];
     links: ProjectLink[];
     images: ProjectImage[];
     imageContainerColor?: string;
+    showcaseShadowTop?: string;
+    showcaseShadowBottom?: string;
 };
 ---
 
@@ -67,7 +71,10 @@ const {
         </div>
     </div>
     <div class="image">
-        <div class="app-showcase" style={`--image-container-color: ${imageContainerColor};`}>
+        <div
+            class="app-showcase"
+            style={`--image-container-color: ${imageContainerColor}; --showcase-shadow-top: ${showcaseShadowTop}; --showcase-shadow-bottom: ${showcaseShadowBottom};`}
+        >
             {images.map((image) => (
                 <img class={`app-image ${image.imageClass ?? ''}`.trim()} src={image.src} alt={image.alt} />
             ))}
@@ -156,8 +163,8 @@ const {
         background: var(--image-container-color, var(--portfolio-showcase-bg));
         box-shadow:
             inset 0 2px 0 var(--portfolio-showcase-highlight),
-            inset 0 -18px 28px var(--portfolio-showcase-shadow-top),
-            0 18px 35px var(--portfolio-showcase-shadow-bottom);
+            inset 0 -18px 28px var(--showcase-shadow-top, var(--portfolio-showcase-shadow-top)),
+            0 18px 35px var(--showcase-shadow-bottom, var(--portfolio-showcase-shadow-bottom));
     }
 
     .app-image {
