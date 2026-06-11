@@ -12,6 +12,8 @@ import javaScripImage from '../assets/JavaScript.png'
 import calendarImage from '../assets/EcoUshuaia/Calendar.png';
 import mapImage from '../assets/EcoUshuaia/Map.png';
 import settingsImage from '../assets/EcoUshuaia/Settings.png';
+import homeImage from '../assets/Foods/Home - foods.png';
+import favImage from '../assets/Foods/favorites - foods.png';
 
 // Data EcoUshuaia app
 
@@ -72,6 +74,11 @@ const appAlimentosProjectLinks = [
     },
     { label: 'Detalles', href: '/DetailFoodPage', variant: 'secundary' as const }
 ];
+
+const appAlimentosProjectImages = [
+    { src: homeImage.src, alt: 'Home', imageClass: 'middle' },
+    { src: favImage.src, alt: 'Favorites' },
+];
 ---
 
 <div id="container-projects">
@@ -96,8 +103,10 @@ const appAlimentosProjectLinks = [
                 description={appAlimentosProjectDescription}
                 technologies={appAlimentosTecnologyItems}
                 links={appAlimentosProjectLinks}
-                images={ecoUshuaiaProjectImages}
-                imageContainerColor="var(--portfolio-showcase-bg)"
+                images={appAlimentosProjectImages}
+                imageContainerColor="linear-gradient(165deg, #ffd0d0 0%, #ff8a8a 42%, #e04444 100%)"
+                showcaseShadowTop="rgba(184, 52, 52, 0.22)"
+                showcaseShadowBottom="rgba(196, 47, 47, 0.3)"
             >
                 <p class="project-kicker">MOBILE APP</p>
                 <h2>Alimentos</h2>
