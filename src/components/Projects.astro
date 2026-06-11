@@ -8,12 +8,17 @@ import restApiImage from '../assets/RESTApi.svg';
 import ProjectContent from './ProjectContent.astro';
 import expoImage from '../assets/Expo.svg'
 import javaScripImage from '../assets/JavaScript.png'
+import { getLocale, localizePath } from '../i18n/config';
+import { ui } from '../i18n/ui';
 
 import calendarImage from '../assets/EcoUshuaia/forDetails/calendar.png';
 import mapImage from '../assets/EcoUshuaia/forDetails/map.png';
 import settingsImage from '../assets/EcoUshuaia/forDetails/settings.png';
 import homeImage from '../assets/Foods/Home - foods.png';
 import favImage from '../assets/Foods/favorites - foods.png';
+
+const locale = getLocale(Astro.currentLocale);
+const t = ui[locale].projects;
 
 // Data EcoUshuaia app
 
@@ -27,26 +32,24 @@ const ecoUshuaiaTecnologyItems = [
 ];
 
 const ecoUshuaiaProjectDescription = [
-    'Aplicación móvil enfocada en reciclaje urbano y gestión ambiental desarrollada con Flutter.',
-    'La app permite visualizar contenedores ecológicos en mapas interactivos, consultar puntos de reciclaje y acceder a novedades y eventos mediantes una interfaz moderna orientada a dispositivos móviles.',
-    'Desarrollé la arquitectura de la aplicación, la interfaz de usuario, la navegación entre pantallas, la integración con APis REST y los sistemas de mapas y geolocalización.'
+    ...t.eco.description
 ];
 
 const ecoUshuaiaProjectLinks = [
     {
-        label: 'GitHub',
+        label: t.eco.links.github,
         href: 'https://github.com/CristiannMaidana/EcoUshuaia',
         variant: 'primary' as const,
         target: '_blank',
         rel: 'noreferrer'
     },
-    { label: 'Detalles', href: '/DetailEcoUshuaiaPage', variant: 'secundary' as const }
+    { label: t.eco.links.details, href: localizePath(locale, '/DetailEcoUshuaiaPage'), variant: 'secundary' as const }
 ];
 
 const ecoUshuaiaProjectImages = [
-    { src: calendarImage.src, alt: 'Calendar', imageClass: 'middle' },
-    { src: mapImage.src, alt: 'Map' },
-    { src: settingsImage.src, alt: 'Settings', imageClass: 'middle' }
+    { src: calendarImage.src, alt: t.eco.images.calendar, imageClass: 'middle' },
+    { src: mapImage.src, alt: t.eco.images.map },
+    { src: settingsImage.src, alt: t.eco.images.settings, imageClass: 'middle' }
 ];
 
 
@@ -59,32 +62,30 @@ const appAlimentosTecnologyItems = [
 ];
 
 const appAlimentosProjectDescription = [
-    'Aplicación móvil enfocada en obtener informacion de productos alimenticios.',
-    'La app permite visualizar diversas categorias de productos alimenticios, consultar diferentes categorias y productos, ver las caracteristica y nivel de los alimentos, y poder agregar nuevos alimentos mediante una camara nativa. Orientada a dispositivos móviles.',
-    'Desarrollé la navegación entre pantallas, la integración con la API de alimentos y la camara integrada para analizar nuevos productos.'
+    ...t.food.description
 ];
 
 const appAlimentosProjectLinks = [
     {
-        label: 'GitHub',
+        label: t.food.links.github,
         href: 'https://github.com/CristiannMaidana/AppAlimentos',
         variant: 'primary' as const,
         target: '_blank',
         rel: 'noreferrer'
     },
-    { label: 'Detalles', href: '/DetailFoodPage', variant: 'secundary' as const }
+    { label: t.food.links.details, href: localizePath(locale, '/DetailFoodPage'), variant: 'secundary' as const }
 ];
 
 const appAlimentosProjectImages = [
-    { src: homeImage.src, alt: 'Home', imageClass: 'middle' },
-    { src: favImage.src, alt: 'Favorites' },
+    { src: homeImage.src, alt: t.food.images.home, imageClass: 'middle' },
+    { src: favImage.src, alt: t.food.images.favorites },
 ];
 ---
 
 <div id="container-projects">
     <section>
-        <h3>Proyectos destacados</h3>
-        <h1>Proyectos académicos realizados como productos reales.</h1>
+        <h3>{t.eyebrow}</h3>
+        <h1>{t.title}</h1>
         <div class="card">
             <ProjectContent
                 description={ecoUshuaiaProjectDescription}
@@ -93,8 +94,8 @@ const appAlimentosProjectImages = [
                 images={ecoUshuaiaProjectImages}
                 imageContainerColor="var(--portfolio-showcase-bg)"
             >
-                <p class="project-kicker">MOBILE APP</p>
-                <h2>EcoUshuaia</h2>
+                <p class="project-kicker">{t.eco.kicker}</p>
+                <h2>{t.eco.name}</h2>
             </ProjectContent>
         </div>
         
@@ -108,8 +109,8 @@ const appAlimentosProjectImages = [
                 showcaseShadowTop="rgba(184, 52, 52, 0.22)"
                 showcaseShadowBottom="rgba(196, 47, 47, 0.3)"
             >
-                <p class="project-kicker">MOBILE APP</p>
-                <h2>Alimentos</h2>
+                <p class="project-kicker">{t.food.kicker}</p>
+                <h2>{t.food.name}</h2>
             </ProjectContent>
         </div>
     </section>

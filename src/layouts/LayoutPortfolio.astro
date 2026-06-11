@@ -1,9 +1,18 @@
+---
+import LanguagePreferenceScript from '../components/LanguagePreferenceScript.astro';
+import { getLocale } from '../i18n/config';
+import { ui } from '../i18n/ui';
+
+const locale = getLocale(Astro.currentLocale);
+const t = ui[locale];
+---
+
 <!doctype html>
-<html lang="en">
+<html lang={t.meta.lang}>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Cristian Maidana</title>
+    <title>{t.meta.portfolioTitle}</title>
     <style is:inline>
         :root {
             --surface: rgba(255, 255, 255, 0.72);
@@ -128,6 +137,8 @@
     <main class="portfolio-content">
         <slot />
     </main>
+
+    <LanguagePreferenceScript />
 
     <script is:inline>
         const revealGroups = [];

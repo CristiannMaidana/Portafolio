@@ -1,8 +1,12 @@
 ---
 import LayoutDetailProject from '../layouts/LayoutDetailProject.astro';
 import DetailAlimentosApp from '../components/DetailFoodApp.astro';
+import { getLocale } from '../i18n/config';
+import { ui } from '../i18n/ui';
+
+const locale = getLocale(Astro.currentLocale);
 ---
 
-<LayoutDetailProject title="App Alimentos" theme="food">
+<LayoutDetailProject title={ui[locale].projects.food.name} theme="food">
     <DetailAlimentosApp />
 </LayoutDetailProject>

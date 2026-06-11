@@ -1,0 +1,108 @@
+---
+import { defaultLocale, locales } from '../i18n/config';
+---
+
+<script
+    is:inline
+    define:vars={{
+        defaultLocale,
+        locales,
+    }}
+>
+    (() => {
+        const storageKey = 'preferred-language';
+
+        const normalizePath = (pathname) => pathname || '/';
+
+        const stripLocale = (pathname) => {
+            const normalizedPath = normalizePath(pathname);
+
+            for (const locale of locales) {
+                const localePrefix = `/${locale}`;
+
+                if (normalizedPath === localePrefix) {
+                    return '/';
+                }
+
+                if (normalizedPath.startsWith(`${localePrefix}/`)) {
+                    return normalizedPath.slice(localePrefix.length);
+                }
+            }
+
+            return normalizedPath;
+        };
+
+        const getLocaleFromPath = (pathname) => {
+            const normalizedPath = normalizePath(pathname);
+
+            for (const locale of locales) {
+                const localePrefix = `/${locale}`;
+
+                if (normalizedPath === localePrefix || normalizedPath.startsWith(`${localePrefix}/`)) {
+                    return locale;
+                }
+            }
+
+            return defaultLocale;
+        };
+
+        const buildLocalizedPath = (locale, pathname) => {
+            const basePath = stripLocale(pathname);
+
+            if (locale === defaultLocale) {
+                return basePath;
+            }
+
+            return basePath === '/' ? `/${locale}` : `/${locale}${basePath}`;
+        };
+
+        document.addEventListener('click', (event) => {
+            const target = event.target;
+
+            if (!(target instanceof Element)) {
+                return;
+            }
+
+            const languageLink = target.closest('[data-language-option]');
+
+            if (!(languageLink instanceof HTMLAnchorElement)) {
+                return;
+            }
+
+            const nextLocale = languageLink.dataset.languageOption;
+
+            if (!nextLocale || !locales.includes(nextLocale)) {
+                return;
+            }
+
+            try {
+                localStorage.setItem(storageKey, nextLocale);
+            } catch {
+                return;
+            }
+        });
+
+        try {
+            const preferredLocale = localStorage.getItem(storageKey);
+
+            if (!preferredLocale || !locales.includes(preferredLocale)) {
+                return;
+            }
+
+            const currentLocale = getLocaleFromPath(location.pathname);
+
+            if (preferredLocale === currentLocale) {
+                return;
+            }
+
+            const nextPath = buildLocalizedPath(preferredLocale, location.pathname);
+            const nextUrl = `${nextPath}${location.search}${location.hash}`;
+
+            if (nextUrl !== `${location.pathname}${location.search}${location.hash}`) {
+                location.replace(nextUrl);
+            }
+        } catch {
+            return;
+        }
+    })();
+</script>

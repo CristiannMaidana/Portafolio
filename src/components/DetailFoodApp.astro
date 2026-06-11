@@ -1,6 +1,11 @@
 ---
+import { getLocale } from '../i18n/config';
+import { ui } from '../i18n/ui';
+
+const locale = getLocale(Astro.currentLocale);
+const t = ui[locale].detailFood;
 ---
 
 <div style="padding: 20px; text-align: center;">
-    <h1 style="font-size: 100px;">Detalle de app proximamente...</h1>    
+    <h1 style="font-size: 100px;">{t.title}</h1>
 </div>

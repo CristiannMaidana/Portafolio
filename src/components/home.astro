@@ -1,18 +1,24 @@
+---
+import { getLocale } from '../i18n/config';
+import { ui } from '../i18n/ui';
+
+const locale = getLocale(Astro.currentLocale);
+const t = ui[locale].home;
+---
+
 <div class="home-container">
         <div class="home-copy-wrapper">
             <div class="home-copy">
-                <text>JUNIOR DEVELOPER. SYSTEMS STUDENT</text>
+                <text>{t.eyebrow}</text>
                 <div class="home-title">
-                    <h1>Hola, soy Cristian</h1>
+                    <h1>{t.title}</h1>
                 </div>
                 <div class="home-description">
-                    <p>Desarrollador junior con experiencia en frontend, backend, arquitectura y diseño visual. 
-                        Apasionado por crear experiencias digitales modernas con estética premium y movimiento dinámico.
-                    </p>
+                    <p>{t.description}</p>
                 </div>
                 <div class="home-actions">
-                    <a class="btn primary" href="#projects">Ver proyectos</a>
-                    <a class="btn secondary" href="#contact" >Contactarme</a>
+                    <a class="btn primary" href="#projects">{t.actions.projects}</a>
+                    <a class="btn secondary" href="#contact" >{t.actions.contact}</a>
                 </div>
             </div>
         </div>
@@ -26,20 +32,14 @@
                         <div class="circle green"></div>
                     </div>
                     <div class="terminal-divider"></div>
-                    <pre class="terminal-code"><code><span class="code-keyword">const</span> developer = &#123;<br>  name: <span class="code-value">"Cristian"</span>,<br>  stack: [<span class="code-stack">"Flutter", "Django", "PostgreSQL"</span>],<br>  focus: <span class="code-value">"Modern Interfaces"</span>,<br>  status: <span class="code-value">"Open to work"</span><br>&#125;;</code></pre>
+                    <pre class="terminal-code"><code><span class="code-keyword">const</span> developer = &#123;<br>  name: <span class="code-value">"Cristian"</span>,<br>  stack: [<span class="code-stack">"Flutter", "Django", "PostgreSQL"</span>],<br>  focus: <span class="code-value">"{t.code.focus}"</span>,<br>  status: <span class="code-value">"{t.code.status}"</span><br>&#125;;</code></pre>
                     <div class="terminal-stats">
-                        <div class="container-data">
-                            <p class="titulo">4°</p>
-                            <p>Año universitario</p>
-                        </div>
-                        <div class="container-data">
-                            <p class="titulo">Full</p>
-                            <p>Stack academico</p>
-                        </div>
-                        <div class="container-data">
-                            <p class="titulo">UI</p>
-                            <p>Mobile</p>
-                        </div>
+                        {t.stats.map((stat) => (
+                            <div class="container-data">
+                                <p class="titulo">{stat.value}</p>
+                                <p>{stat.label}</p>
+                            </div>
+                        ))}
                     </div>
 
                 </div>

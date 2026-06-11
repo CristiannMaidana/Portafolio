@@ -1,29 +1,21 @@
+---
+import { getLocale, localizePath } from '../i18n/config';
+import { ui } from '../i18n/ui';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+const locale = getLocale(Astro.currentLocale);
+const t = ui[locale];
+---
+
 <nav>
     <ul>
-        <li><a href="/#home">Inicio</a></li>
-        <li><a href="/#projects">Proyectos</a></li>
-        <li><a href="/#about">Sobre mí</a></li>
-        <li><a href="/#contact">Contacto</a></li>
-        <li><a href="/Curriculum%20-%20CRISTIAN%20MAIDANA.pdf" download>Currículum</a></li>
-        <li class="language-switcher">
-            <details>
-                <summary aria-label="Cambiar idioma">
-                    <svg class="summary-icon" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Z" />
-                        <path d="M2 12h20" />
-                        <path d="M12 2a15.3 15.3 0 0 1 0 20" />
-                        <path d="M12 2a15.3 15.3 0 0 0 0 20" />
-                    </svg>
-                    <svg class="summary-chevron" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="m7 10 5 5 5-5" />
-                    </svg>
-                </summary>
-
-                <div class="language-menu">
-                    <button type="button" class="language-option is-active">Español</button>
-                    <button type="button" class="language-option">English</button>
-                </div>
-            </details>
+        <li><a href={localizePath(locale, '/#home')}>{t.nav.home}</a></li>
+        <li><a href={localizePath(locale, '/#projects')}>{t.nav.projects}</a></li>
+        <li><a href={localizePath(locale, '/#about')}>{t.nav.about}</a></li>
+        <li><a href={localizePath(locale, '/#contact')}>{t.nav.contact}</a></li>
+        <li><a href="/Curriculum%20-%20CRISTIAN%20MAIDANA.pdf" download>{t.nav.resume}</a></li>
+        <li class="language-switcher-item">
+            <LanguageSwitcher path="/" />
         </li>
     </ul>
 </nav>
@@ -70,97 +62,9 @@
         text-decoration: none;
     }
 
-    .language-switcher {
+    .language-switcher-item {
         margin-left: auto;
         padding-right: 0;
-    }
-
-    details {
-        position: relative;
-    }
-
-    summary {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 4px;
-        width: 52px;
-        height: 42px;
-        padding: 0 10px;
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.12);
-        color: var(--portfolio-nav-link);
-        cursor: pointer;
-        list-style: none;
-        transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-    }
-
-    summary::-webkit-details-marker {
-        display: none;
-    }
-
-    summary:hover,
-    details[open] summary {
-        background: rgba(255, 255, 255, 0.14);
-        color: var(--portfolio-nav-link-hover);
-        transform: translateY(-1px);
-    }
-
-    .summary-icon,
-    .summary-chevron {
-        fill: none;
-        stroke: currentColor;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-    }
-
-    .summary-icon {
-        width: 18px;
-        height: 18px;
-        stroke-width: 1.8;
-    }
-
-    .summary-chevron {
-        width: 14px;
-        height: 14px;
-        stroke-width: 2.2;
-    }
-
-    .language-menu {
-        position: absolute;
-        top: calc(100% + 10px);
-        right: 0;
-        min-width: 140px;
-        display: grid;
-        gap: 6px;
-        padding: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 18px;
-        background: rgba(20, 20, 20, 0.88);
-        box-shadow: 0 18px 30px rgba(0, 0, 0, 0.22);
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
-    }
-
-    .language-option {
-        border: 0;
-        border-radius: 12px;
-        padding: 10px 12px;
-        background: transparent;
-        color: var(--portfolio-nav-link);
-        font: inherit;
-        text-align: left;
-        cursor: pointer;
-    }
-
-    .language-option:hover {
-        background: rgba(255, 255, 255, 0.08);
-        color: var(--portfolio-nav-link-hover);
-    }
-
-    .language-option.is-active {
-        background: rgba(255, 255, 255, 0.12);
     }
 
     @media (max-width: 1100px) {
@@ -192,15 +96,11 @@
             font-size: 13px;
         }
 
-        .language-switcher {
+        .language-switcher-item {
             position: sticky;
             right: 0;
             padding-left: 8px;
             background: linear-gradient(90deg, rgba(15, 15, 15, 0) 0%, var(--portfolio-nav-bg) 32%);
-        }
-
-        .language-menu {
-            right: 0;
         }
     }
 </style>

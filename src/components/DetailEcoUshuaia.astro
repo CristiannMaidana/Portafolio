@@ -15,15 +15,20 @@ import homeImage from '../assets/EcoUshuaia/forDetails/home.png'
 import calendarVideo from '../assets/EcoUshuaia/forDetails/video/calendarGif.mp4'
 import mapVideo from '../assets/EcoUshuaia/forDetails/video/mapGif.mp4'
 import settingVideo from '../assets/EcoUshuaia/forDetails/video/settingsGif.mp4'
+import { getLocale } from '../i18n/config';
+import { ui } from '../i18n/ui';
+
+const locale = getLocale(Astro.currentLocale);
+const t = ui[locale].detailEco;
 
 const detailImages = [
-    { src: calendarImage.src, alt: 'Calendar screen' },
-    { src: editDataImage.src, alt: 'Edit data screen' },
-    { src: mapImage.src, alt: 'Map screen' },
-    { src: newsDetailImage.src, alt: 'News detail screen' },
-    { src: optionFilterImage.src, alt: 'Option filter screen' },
-    { src: settingsImage.src, alt: 'Settings screen' },
-    { src: singupImage.src, alt: 'Signup screen' }
+    { src: calendarImage.src, alt: t.imageAlts[0] },
+    { src: editDataImage.src, alt: t.imageAlts[1] },
+    { src: mapImage.src, alt: t.imageAlts[2] },
+    { src: newsDetailImage.src, alt: t.imageAlts[3] },
+    { src: optionFilterImage.src, alt: t.imageAlts[4] },
+    { src: settingsImage.src, alt: t.imageAlts[5] },
+    { src: singupImage.src, alt: t.imageAlts[6] }
 ];
 ---
 <div class="detail">
@@ -34,234 +39,197 @@ const detailImages = [
     </div>
 
     <section class="section intro-section">
-        <span class="eyebrow">Proyecto mobile</span>
-        <h1>EcoUshuaia</h1>
-        <p class="lead">EcoUshuaia es un sistema orientado a mejorar la localización, consulta y disposición de residuos urbanos en la ciudad de Ushuaia mediante una aplicación móvil.</p>
+        <span class="eyebrow">{t.intro.eyebrow}</span>
+        <h1>{t.intro.title}</h1>
+        <p class="lead">{t.intro.lead}</p>
     </section>
 
     <section class="section">
-        <span class="eyebrow">Contexto</span>
-        <h3>Historia</h3>
-        <p>Desarrollé EcoUshuaia para resolver una necesidad concreta de la ciudad: facilitar la localización de contenedores, mejorar la disposición de residuos y centralizar información útil en una aplicación móvil.</p>
-        <p>Este proyecto me permitió profundizar en arquitectura modular en Flutter, consumo de APIs REST, autenticación con JWT, modelado relacional y geoespacial con PostgreSQL/PostGIS, e integración entre Flutter y código nativo iOS con Swift para mapas, búsqueda y navegación.</p>
+        <span class="eyebrow">{t.context.eyebrow}</span>
+        <h3>{t.context.title}</h3>
+        {t.context.paragraphs.map((paragraph) => (
+            <p>{paragraph}</p>
+        ))}
     </section>
 
     <section class="section">
         <div class="section-heading">
-            <span class="eyebrow">Proceso</span>
-            <h2>Etapas del proyecto</h2>
+            <span class="eyebrow">{t.process.eyebrow}</span>
+            <h2>{t.process.title}</h2>
         </div>
 
         <div class="steps">
-            <div class="container-steps">
-                <h2>Diseño</h2>
-                <p>Fue mi primera experiencia diseñando una aplicación completa desde cero. En esta etapa aprendí a transformar una idea general en pantallas, recorridos y decisiones funcionales concretas, entendiendo que diseñar no es solo lo visual, sino también organizar cómo el usuario comprende y usa el sistema.</p>
-            </div>
-
-            <div class="container-steps">
-                <h2>Arquitectura</h2>
-                <p>En esta etapa trabajé en cómo estructurar internamente la aplicación para que pudiera crecer y mantenerse con orden. Aprendí a separar responsabilidades, organizar el proyecto por módulos y capas, y adaptar la arquitectura a medida que la complejidad real de la app fue aumentando.</p>
-            </div>
-
-            <div class="container-steps">
-                <h2>Frontend</h2>
-                <p>Acá desarrollé la parte visible e interactiva de la aplicación con Flutter y Dart. Aprendí a construir pantallas, componentes, navegación y manejo de estado, conectando la interfaz con el comportamiento real del sistema de forma clara y mantenible.</p>
-            </div>
-
-            <div class="container-steps">
-                <h2>Backend</h2>
-                <p>En esta etapa me enfoqué en la lógica del servidor, la API, las validaciones y la autenticación con JWT usando Django REST Framework. Aprendí a organizar y exponer la información que necesita la app, entendiendo el backend como una capa central para el funcionamiento seguro y consistente del sistema.</p>
-            </div>
-
-            <div class="container-steps">
-                <h2>Base de datos</h2>
-                <p>Trabajé en el modelado de la información del sistema con PostgreSQL y PostGIS, definiendo tablas, relaciones y datos geoespaciales. Aprendí a estructurar mejor la información, revisar y actualizar el modelo con el tiempo y ajustar la base de datos para que representara de forma más sólida el problema real.</p>
-            </div>
-
-            <div class="container-steps">
-                <h2>Extras</h2>
-                <p>Una parte importante del proyecto fue la integración de Mapbox para mapa, búsqueda y navegación. Esto me permitió profundizar en servicios geográficos y en la integración entre Flutter y código nativo iOS con Swift, además de reforzar conocimientos en APIs REST, autenticación segura y datos geoespaciales.</p>
-            </div>
+            {t.process.steps.map((step) => (
+                <div class="container-steps">
+                    <h2>{step.title}</h2>
+                    <p>{step.body}</p>
+                </div>
+            ))}
         </div>
     </section>
 
     <section class="section">
         <div class="section-heading">
-            <span class="eyebrow">Inicio del proyecto</span>
-            <h1>Cómo fueron los primeros pasos?</h1>
+            <span class="eyebrow">{t.firstSteps.eyebrow}</span>
+            <h1>{t.firstSteps.title}</h1>
         </div>
 
-        <h2>Buscar requerimientos</h2>
-        <p>La identificación de requisitos se realizó mediante el análisis del problema a resolver y la investigación de aplicaciones y servicios similares relacionados con reciclaje, gestión ambiental y navegación geográfica. A partir de ese relevamiento se definieron las funcionalidades principales, los flujos de uso esperados y las necesidades de los distintos tipos de usuarios, evaluando tanto características que finalmente fueron implementadas como otras que quedaron fuera del alcance inicial del proyecto.</p>
+        <h2>{t.firstSteps.requirements.title}</h2>
+        <p>{t.firstSteps.requirements.paragraph}</p>
 
         <div class="documentation">
-            <img src={requeriments.src} alt="requeriments" class="documentation img req">
+            <img src={requeriments.src} alt={t.firstSteps.requirements.imageAlt} class="documentation img req">
             <div class="experience-card">
-                <h3>Mi experiencia</h3>
-                <p>* Análisis y priorización de necesidades.</p>
-                <p>* Investigación de aplicaciones similares.</p>
-                <p>* Definición del alcance del proyecto.</p>
-                <p>* Elaboración de requisitos funcionales y no funcionales.</p>
+                <h3>{t.firstSteps.requirements.experienceTitle}</h3>
+                <ul class="experience-list">
+                    {t.firstSteps.requirements.experience.map((item) => (
+                        <li>{item}</li>
+                    ))}
+                </ul>
             </div>
         </div>
 
-        <h2>Casos de uso</h2>
-        <p>Con los requisitos definidos, se desarrollaron los casos de uso para organizar y representar las distintas interacciones previstas dentro de la aplicación. Esta etapa permitió validar el alcance funcional del sistema y servir como base para las decisiones de diseño y desarrollo posteriores.</p>
+        <h2>{t.firstSteps.useCases.title}</h2>
+        <p>{t.firstSteps.useCases.paragraph}</p>
 
         <div class="documentation">
-            <img src={caserUse.src} alt="caserUse" class="documentation img req">
+            <img src={caserUse.src} alt={t.firstSteps.useCases.imageAlt} class="documentation img req">
             <div class="experience-card" style="margin-top: 44px;">
-                <h3>Mi experiencia</h3>
-                <p>* Traducción de requisitos a funcionalidades concretas.</p>
-                <p>* Identificación de actores y responsabilidades.</p>
-                <p>* Modelado de interacciones entre usuarios y sistema.</p>
-                <p>* Definición del alcance funcional de la aplicación.</p>
+                <h3>{t.firstSteps.useCases.experienceTitle}</h3>
+                <ul class="experience-list">
+                    {t.firstSteps.useCases.experience.map((item) => (
+                        <li>{item}</li>
+                    ))}
+                </ul>
             </div>
         </div>
 
-        <h2>Diagrama de la base de datos</h2>
-        <p>Se diseñó la base de datos relacional del sistema definiendo las entidades, atributos y relaciones necesarias para soportar las funcionalidades de la aplicación, asegurando una organización consistente y escalable de la información.</p>
+        <h2>{t.firstSteps.database.title}</h2>
+        <p>{t.firstSteps.database.paragraph}</p>
 
         <div class="documentation" style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;">
-            <img src={dataBase.src} alt="dataBase" class="documentation img req">
+            <img src={dataBase.src} alt={t.firstSteps.database.imageAlt} class="documentation img req">
             <div class="experience-card" style="width: min(100%, 105800px);">
-                <h3>Mi experiencia</h3>
-                <p>La construcción de la base de datos fue un proceso iterativo que evolucionó junto con el proyecto. Inicialmente se definió un modelo simple compuesto por las entidades principales, como usuarios, zonas, calendarios, sensores, contenedores, residuos y mapas. A medida que avanzaba el análisis y se profundizaba en los requisitos del sistema, surgieron nuevas relaciones, restricciones y entidades necesarias para representar correctamente el funcionamiento de la aplicación.</p>
-                <p>Este proceso de refinamiento constante me permitió comprender la importancia de contar con una base sólida desde las primeras etapas del diseño, al mismo tiempo que incorporaba mejoras derivadas tanto de los conocimientos adquiridos durante la carrera como de las necesidades reales identificadas durante el desarrollo de EcoUshuaia. También reforzó la idea de que el diseño de una base de datos es una tarea evolutiva, donde cada iteración contribuye a obtener una estructura más consistente, escalable y alineada con los objetivos del sistema.</p>
-                <p>Uno de los principales aprendizajes fue comprender que el diseño de la base de datos no es una etapa aislada ni definitiva, sino que evoluciona junto con el resto del sistema. Muchas decisiones surgieron o fueron ajustadas durante el desarrollo de funcionalidades, la implementación del backend y la definición de nuevas interacciones entre los usuarios y la aplicación.</p>
+                <h3>{t.firstSteps.database.experienceTitle}</h3>
+                {t.firstSteps.database.experience.map((paragraph) => (
+                    <p>{paragraph}</p>
+                ))}
             </div>
         </div>
     </section>
 
     <section class="section">
         <div class="section-heading">
-            <span class="eyebrow">UI / UX</span>
-            <h1>Primeras etapas del diseño</h1>
+            <span class="eyebrow">{t.design.eyebrow}</span>
+            <h1>{t.design.title}</h1>
         </div>
 
         <div class="documentation documentation-design">
 
             <div class="design-grid">
                 <div class="documentation-design-item">
-                    <img src={loginImage.src} alt="">
-                    <h2>Login</h2>
+                    <img src={loginImage.src} alt={t.design.screens[0]}>
+                    <h2>{t.design.screens[0]}</h2>
                 </div>
                 <div class="documentation-design-item">
-                    <img src={singupImage.src} alt="">
-                    <h2>Signup</h2>
+                    <img src={singupImage.src} alt={t.design.screens[1]}>
+                    <h2>{t.design.screens[1]}</h2>
                 </div>
                 <div class="documentation-design-item">
-                    <img src={homeImage.src} alt="">
-                    <h2>Home</h2>
+                    <img src={homeImage.src} alt={t.design.screens[2]}>
+                    <h2>{t.design.screens[2]}</h2>
                 </div>
                 <div class="documentation-design-item">
-                    <img src={calendarImage.src} alt="">
-                    <h2>Calendar</h2>
+                    <img src={calendarImage.src} alt={t.design.screens[3]}>
+                    <h2>{t.design.screens[3]}</h2>
                 </div>
                 <div class="documentation-design-item">
-                    <img src={mapImage.src} alt="">
-                    <h2>Map</h2>
+                    <img src={mapImage.src} alt={t.design.screens[4]}>
+                    <h2>{t.design.screens[4]}</h2>
                 </div>
                 <div class="documentation-design-item">
-                    <img src={settingsImage.src} alt="">
-                    <h2>Settings</h2>
+                    <img src={settingsImage.src} alt={t.design.screens[5]}>
+                    <h2>{t.design.screens[5]}</h2>
                 </div>
             </div>
 
-                        <div class="documentation-design-copy glass-card">
-                <p class="documentation-design-text">El diseño de EcoUshuaia representó mi primer acercamiento a la construcción completa de una experiencia de usuario para una aplicación móvil. Durante esta etapa busqué desarrollar una interfaz simple, intuitiva y visualmente consistente, tomando como referencia aplicaciones móviles modernas y adaptando sus patrones de diseño a las necesidades específicas del proyecto.</p>
-                <p class="documentation-design-text">En un comienzo el enfoque estuvo centrado principalmente en la apariencia individual de cada pantalla y en la distribución de sus elementos. Sin embargo, a medida que avanzó el desarrollo, comprendí que el diseño no se limita únicamente al aspecto visual, sino también a la forma en que los usuarios interactúan con la aplicación y cómo las distintas pantallas, componentes y funcionalidades se conectan entre sí.</p>
-                <p class="documentation-design-text">Este proceso me permitió incorporar conceptos relacionados con jerarquía visual, experiencia de usuario, navegación, animaciones y transiciones, buscando que cada interacción se sintiera natural y coherente dentro de la aplicación. El resultado fue una evolución constante del diseño, donde muchas decisiones fueron refinadas a partir de la experiencia obtenida durante el desarrollo y de las nuevas necesidades que surgían a medida que el proyecto crecía.</p>
+            <div class="documentation-design-copy glass-card">
+                {t.design.paragraphs.map((paragraph) => (
+                    <p class="documentation-design-text">{paragraph}</p>
+                ))}
             </div>
         </div>
     </section>
 
     <section class="section">
         <div class="section-heading">
-            <span class="eyebrow">Resultado</span>
-            <h1>Diseño final</h1>
+            <span class="eyebrow">{t.result.eyebrow}</span>
+            <h1>{t.result.title}</h1>
         </div>
 
         <div class="final-gif">
             <video class="final-video" src={calendarVideo} autoplay loop muted playsinline></video>
             <div class="final-gif-copy">
-                <h2>Meta del calendario</h2>
-                <p>El calendario fue diseñado para centralizar eventos, novedades y recordatorios dentro de una única interfaz clara y fácil de utilizar. Uno de los principales objetivos fue mantener una experiencia fluida entre los distintos componentes de la pantalla, integrando transiciones, paneles y animaciones que acompañaran las acciones del usuario de forma natural.</p>
-                <p>A medida que el diseño evolucionó, se buscó que cada elemento tuviera una función específica y que la información más importante permaneciera siempre accesible. El resultado fue una interfaz más dinámica y conectada, donde la navegación entre fechas, categorías y detalles se integra de manera coherente dentro de una misma experiencia visual.</p>
+                <h2>{t.result.sections[0].title}</h2>
+                {t.result.sections[0].paragraphs.map((paragraph) => (
+                    <p>{paragraph}</p>
+                ))}
             </div>
         </div>
 
         <div class="final-gif">
             <video class="final-video" src={mapVideo} autoplay loop muted playsinline></video>
             <div class="final-gif-copy">
-                <h2>Meta del mapa</h2>
-                <p>La pantalla de mapa fue diseñada para concentrar las principales funcionalidades geográficas de la aplicación en una experiencia simple e intuitiva. El objetivo fue permitir que los usuarios visualicen contenedores, exploren distintas zonas de la ciudad, realicen búsquedas y obtengan rutas sin perder el contexto del mapa ni interrumpir su navegación.</p>
-                <p>Durante el desarrollo se trabajó especialmente en la integración entre paneles, controles y movimientos de cámara, buscando que las transiciones y animaciones acompañaran cada acción de forma natural. El resultado fue una interfaz dinámica donde la información, las zonas y las herramientas de navegación se encuentran conectadas dentro de una experiencia fluida y consistente.</p>
+                <h2>{t.result.sections[1].title}</h2>
+                {t.result.sections[1].paragraphs.map((paragraph) => (
+                    <p>{paragraph}</p>
+                ))}
             </div>
         </div>
 
         <div class="final-gif">
             <video class="final-video" src={settingVideo} autoplay loop muted playsinline></video>
             <div class="final-gif-copy">
-                <h2>Meta de la configuración y perfil</h2>
-                <p>La sección de configuración fue diseñada para centralizar la información personal del usuario y permitir la gestión de sus datos dentro de la aplicación. El objetivo principal fue ofrecer una interfaz clara y accesible donde las acciones más importantes, como la visualización y edición del perfil, pudieran realizarse de forma sencilla y directa.</p>
-                <p>Durante el desarrollo se buscó mantener una organización visual consistente con el resto de la aplicación, priorizando la legibilidad de la información y una navegación intuitiva entre las distintas opciones. El resultado fue una experiencia enfocada en la administración de datos personales, integrada de manera natural con el diseño general de EcoUshuaia.</p>
+                <h2>{t.result.sections[2].title}</h2>
+                {t.result.sections[2].paragraphs.map((paragraph) => (
+                    <p>{paragraph}</p>
+                ))}
             </div>
         </div>
     </section>
 
     <section class="section">
         <div class="section-heading">
-            <span class="eyebrow">Aprendizaje</span>
-            <h1>Qué aprendí</h1>
+            <span class="eyebrow">{t.learning.eyebrow}</span>
+            <h1>{t.learning.title}</h1>
         </div>
 
         <div class="text-card">
-            <p>El desarrollo de EcoUshuaia representó una experiencia de aprendizaje integral que abarcó mucho más que la implementación de una aplicación móvil. A lo largo del proyecto realicé todas las etapas del ciclo de desarrollo, desde el relevamiento de requisitos y la definición de casos de uso hasta el diseño de la base de datos, la arquitectura del sistema, el desarrollo del backend y la construcción de la aplicación móvil.</p>
-            <p>Uno de los principales aprendizajes fue comprender que cada decisión dentro de un proyecto de software impacta en múltiples áreas del sistema. Muchas ideas y soluciones evolucionaron con el tiempo, obligándome a revisar diseños previos, replantear estructuras de datos y adaptar funcionalidades a medida que surgían nuevas necesidades y conocimientos.</p>
-            <p>En el aspecto técnico, el proyecto me permitió profundizar en desarrollo mobile con Flutter, arquitectura de aplicaciones, diseño de interfaces, experiencia de usuario, integración con APIs REST, bases de datos relacionales y sistemas geoespaciales. También aprendí la importancia de mantener una arquitectura organizada y escalable que facilite la evolución del proyecto a largo plazo.</p>
-            <p>Más allá de las tecnologías utilizadas, EcoUshuaia me enseñó a abordar el desarrollo de software como un proceso iterativo de análisis, diseño, implementación y mejora continua, donde el aprendizaje surge tanto de los aciertos como de las decisiones que deben revisarse y perfeccionarse durante el camino. El resultado final no solo fue una aplicación funcional, sino también una experiencia que fortaleció mi capacidad para planificar, diseñar y desarrollar soluciones de software de manera integral.</p>
+            {t.learning.paragraphs.map((paragraph) => (
+                <p>{paragraph}</p>
+            ))}
         </div>
     </section>
 
     <section class="section">
         <div class="section-heading">
-            <span class="eyebrow">Stack</span>
-            <h1>Tecnologías</h1>
+            <span class="eyebrow">{t.stack.eyebrow}</span>
+            <h1>{t.stack.title}</h1>
         </div>
 
         <div class="text-card">
-            <p>El desarrollo de EcoUshuaia me permitió explorar y aplicar distintas tecnologías a lo largo de todas las etapas de un proyecto de software. La selección de herramientas no se basó únicamente en aprender nuevas tecnologías, sino en comprender cómo cada una podía aportar una solución concreta a los desafíos planteados por la aplicación.</p>
-            <p>Durante el proceso experimenté múltiples iteraciones y ajustes, tanto en el diseño como en la arquitectura y la implementación. Muchas decisiones técnicas fueron evolucionando a medida que el proyecto crecía, permitiéndome evaluar ventajas, limitaciones y formas de integración entre las distintas herramientas utilizadas.</p>
-            <p>Esta experiencia me ayudó a desarrollar una visión más amplia sobre el desarrollo de software, entendiendo que las tecnologías no funcionan de manera aislada, sino como parte de un ecosistema donde el frontend, el backend, la base de datos, la experiencia de usuario y la arquitectura deben trabajar de forma coordinada para construir una solución consistente y escalable.</p>
-            <p>Más allá del dominio técnico adquirido en cada herramienta, uno de los principales aprendizajes fue la capacidad de analizar problemas, investigar alternativas, tomar decisiones de diseño e integrar diferentes tecnologías para alcanzar los objetivos funcionales y técnicos del proyecto.</p>
+            {t.stack.paragraphs.map((paragraph) => (
+                <p>{paragraph}</p>
+            ))}
         </div>
 
         <div class="technology-grid">
-            <div class="technology-card">
-                <h3>Flutter</h3>
-                <p>Tecnología principal utilizada para el desarrollo de la aplicación móvil. Me permitió profundizar en interfaces, navegación, manejo de estado, consumo de APIs y construcción de experiencias multiplataforma.</p>
-            </div>
-
-            <div class="technology-card">
-                <h3>Django REST Framework</h3>
-                <p>Framework utilizado para desarrollar la API del proyecto. Me permitió trabajar con autenticación, validaciones, lógica de negocio y comunicación entre cliente y servidor.</p>
-            </div>
-
-            <div class="technology-card">
-                <h3>PostgreSQL/PostGIS</h3>
-                <p>Base de datos utilizada para modelar y almacenar la información del sistema, incorporando además capacidades geoespaciales para gestionar ubicaciones y zonas dentro de la aplicación.</p>
-            </div>
-
-            <div class="technology-card">
-                <h3>Mapbox</h3>
-                <p>Herramienta utilizada para integrar mapas, búsqueda geográfica y navegación. Me permitió trabajar con servicios geográficos e integración entre Flutter y código nativo.</p>
-            </div>
-
-            <div class="technology-card">
-                <h3>Otras tecnologías</h3>
-                <p>También utilicé JWT, Git, herramientas de diseño y conceptos de arquitectura de software para complementar el desarrollo y organización del proyecto.</p>
-            </div>
+            {t.stack.cards.map((card) => (
+                <div class="technology-card">
+                    <h3>{card.title}</h3>
+                    <p>{card.body}</p>
+                </div>
+            ))}
         </div>
     </section>
 </div>
@@ -454,6 +422,16 @@ const detailImages = [
 
     .experience-card h3 {
         margin-bottom: 18px;
+    }
+
+    .experience-list {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--detail-muted);
+    }
+
+    .experience-list li + li {
+        margin-top: 10px;
     }
 
     .documentation-design {

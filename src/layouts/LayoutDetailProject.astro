@@ -1,9 +1,16 @@
 ---
+import LanguagePreferenceScript from '../components/LanguagePreferenceScript.astro';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import { getLocale } from '../i18n/config';
+import { ui } from '../i18n/ui';
+
 const { title = 'EcoUshuaia', theme = 'eco' } = Astro.props;
+const locale = getLocale(Astro.currentLocale);
+const t = ui[locale];
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={t.meta.lang}>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,16 +18,21 @@ const { title = 'EcoUshuaia', theme = 'eco' } = Astro.props;
 </head>
 <body>
     <header class={`detail-layout-header ${theme === 'food' ? 'food-theme' : 'eco-theme'}`}>
-        <button class="detail-layout-back-button" type="button" onclick="history.back()" aria-label="Go back">
+        <button class="detail-layout-back-button" type="button" onclick="history.back()" aria-label={t.detailLayout.backAria}>
             <span class="detail-layout-back-icon" aria-hidden="true">←</span>
-            <span>Volver</span>
+            <span>{t.detailLayout.back}</span>
         </button>
-        <h1 class="detail-layout-title">{title}</h1>
+        <div class="detail-layout-title-group">
+            <h1 class="detail-layout-title">{title}</h1>
+            <LanguageSwitcher path={Astro.url.pathname} className="detail-layout-language-switcher" />
+        </div>
     </header>
 
     <main class="detail-layout-content">
         <slot />
     </main>
+
+    <LanguagePreferenceScript />
 </body>
 </html>
 
@@ -113,6 +125,17 @@ const { title = 'EcoUshuaia', theme = 'eco' } = Astro.props;
         letter-spacing: 0.02em;
     }
 
+    .detail-layout-title-group {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-left: auto;
+    }
+
+    :global(.detail-layout-language-switcher) {
+        color: #f4f8f3;
+    }
+
     .detail-layout-content {
         margin: 0 0 100px;
     }
@@ -121,6 +144,11 @@ const { title = 'EcoUshuaia', theme = 'eco' } = Astro.props;
         .detail-layout-header {
             flex-wrap: wrap;
             align-items: flex-start;
+        }
+
+        .detail-layout-title-group {
+            width: 100%;
+            justify-content: space-between;
         }
 
         .detail-layout-title {
@@ -135,6 +163,11 @@ const { title = 'EcoUshuaia', theme = 'eco' } = Astro.props;
     }
 
     @media (max-width: 640px) {
+        .detail-layout-title-group {
+            align-items: flex-start;
+            gap: 12px;
+        }
+
         .detail-layout-content {
             margin: 0 16px 96px;
         }

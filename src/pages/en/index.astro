@@ -1,0 +1,24 @@
+---
+import Home from '../../components/home.astro';
+import NavBar from '../../components/NavBar.astro';
+import Projects from '../../components/Projects.astro';
+import LayoutPortfolio from '../../layouts/LayoutPortfolio.astro';
+import About from '../../components/About.astro';
+import Contact from '../../components/Contact.astro';
+---
+
+<LayoutPortfolio>
+	<NavBar />
+	<section id="home" class="portfolio-screen">
+		<Home />
+	</section>
+	<section id="projects" class="portfolio-screen">
+		<Projects />
+	</section>
+	<section id="about" class="portfolio-screen">
+		<About />
+	</section>
+	<section id="contact" class="portfolio-screen">
+		<Contact />
+	</section>
+</LayoutPortfolio>

@@ -1,0 +1,12 @@
+---
+import LayoutDetailProject from '../../layouts/LayoutDetailProject.astro';
+import DetailEcoUshuaia from '../../components/DetailEcoUshuaia.astro';
+import { getLocale } from '../../i18n/config';
+import { ui } from '../../i18n/ui';
+
+const locale = getLocale(Astro.currentLocale);
+---
+
+<LayoutDetailProject title={ui[locale].detailEco.intro.title}>
+	<DetailEcoUshuaia />
+</LayoutDetailProject>

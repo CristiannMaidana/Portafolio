@@ -6,6 +6,11 @@ import postgresImage from '../assets/postgresSQL.png';
 import restApiImage from '../assets/RESTApi.svg';
 import javaImage from '../assets/Java.png'
 import Tecnologys from './tecnologys.astro';
+import { getLocale } from '../i18n/config';
+import { ui } from '../i18n/ui';
+
+const locale = getLocale(Astro.currentLocale);
+const t = ui[locale].about;
 
 const tecnologyItems = [
     { src: flutterImage.src, alt: 'Flutter icon', label: 'Flutter' },
@@ -18,17 +23,18 @@ const tecnologyItems = [
 ---
 
 <div id="container-about">
-    <h3>Perfil</h3>
-    <h1>Base técnica, criterio visual y ganas de crecer.</h1>
+    <h3>{t.eyebrow}</h3>
+    <h1>{t.title}</h1>
     <div class="content">
         <div class="data">
-            <h2>Cristian Maidana</h2>
-            <p>Estudiante avanzado de Licenciatura en Sistemas orientado al desarrollo de software de calidad.</p>
-            <p>Me interesa el diseño de arquitecturas escalables, la integración entre frontend y backend y las bases de datos relacionales.</p>
+            <h2>{t.profileName}</h2>
+            {t.profileParagraphs.map((paragraph) => (
+                <p>{paragraph}</p>
+            ))}
         </div>
         <div class="tecnology">
-            <h2>Tecnologias</h2>
-            <p>A lo largo de la cursadas universitaria aprendi tanto de patrones de diseño con Java, modelado de datos y normalización con PostgreSQL, concurrencia, estructura de datos, recursividad con Pascal y criterio a la hora de elegir y implementar diferentes tecnologías a los problemas adecuados.</p>
+            <h2>{t.technologyTitle}</h2>
+            <p>{t.technologyParagraph}</p>
             <Tecnologys items={tecnologyItems} />
         </div>
     </div>
