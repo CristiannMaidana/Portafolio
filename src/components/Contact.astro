@@ -3,13 +3,23 @@
 <div class="contact-page">
     <h3>Contacto</h3>
     <h1>Construyamos algo juntos</h1>
-    <form class="contact-form">
+    <form class="contact-form" name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
         <div class="inputs">
-            <input type="text" name="nombre" placeholder="Nombre" />
-            <input type="email" name="email" placeholder="Email" required />
+            <label class="field">
+                <span class="field-text">Nombre</span>
+                <input type="text" name="name" placeholder="Tu nombre" required />
+            </label>
+            <label class="field">
+                <span class="field-text">Email</span>
+                <input type="email" name="email" placeholder="Tu email" required />
+            </label>
         </div>
         <div class="msg">
-            <textarea name="mensaje" placeholder="Mensaje"></textarea>
+            <label class="field field-message">
+                <span class="field-text">Mensaje</span>
+                <textarea name="message" placeholder="Tu mensaje" required></textarea>
+            </label>
         </div>
         <button type="submit">Enviar mensaje</button>
     </form>
@@ -35,6 +45,22 @@
         align-items: center;
         width: 100%;
         max-width: 976px;
+    }
+
+    .field {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .field-text {
+        font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--portfolio-heading);
+        text-align: left;
     }
 
     .inputs{
@@ -66,6 +92,10 @@
 
     .msg {
         margin-top: 16px;
+        width: 100%;
+    }
+
+    .field-message {
         width: 100%;
     }
 
