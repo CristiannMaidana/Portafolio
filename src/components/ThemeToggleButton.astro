@@ -1,0 +1,66 @@
+---
+import { getLocale } from '../i18n/config';
+import { ui } from '../i18n/ui';
+
+const locale = getLocale(Astro.currentLocale);
+---
+
+<button class="theme-toggle-button" type="button" aria-label={ui[locale].theme.label} title={ui[locale].theme.label}>
+    <svg class="theme-toggle-icon sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="3.5" />
+        <path d="M12 1.75v2.5" />
+        <path d="M12 19.75v2.5" />
+        <path d="M4.93 4.93l1.77 1.77" />
+        <path d="M17.3 17.3l1.77 1.77" />
+        <path d="M1.75 12h2.5" />
+        <path d="M19.75 12h2.5" />
+        <path d="M4.93 19.07l1.77-1.77" />
+        <path d="M17.3 6.7l1.77-1.77" />
+    </svg>
+    <svg class="theme-toggle-icon moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20.15 14.39A8 8 0 0 1 9.61 3.85a8 8 0 1 0 10.54 10.54Z" />
+    </svg>
+</button>
+
+<style>
+    .theme-toggle-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        width: 52px;
+        height: 42px;
+        padding: 0 10px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        color: inherit;
+        cursor: pointer;
+        transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .theme-toggle-button:hover {
+        background: rgba(255, 255, 255, 0.14);
+        transform: translateY(-1px);
+    }
+
+    .theme-toggle-icon {
+        fill: none;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    .sun-icon {
+        width: 16px;
+        height: 16px;
+        stroke-width: 1.8;
+    }
+
+    .moon-icon {
+        width: 14px;
+        height: 14px;
+        stroke-width: 1.9;
+        opacity: 0.82;
+    }
+</style>
