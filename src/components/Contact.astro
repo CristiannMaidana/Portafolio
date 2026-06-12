@@ -74,12 +74,17 @@ const t = ui[locale].contact;
         gap: 16px;
         margin-top: 24px;
         width: 100%;
+        align-items: stretch;
+    }
+
+    .inputs .field {
+        flex: 1 1 0;
+        min-width: 0;
     }
 
     .inputs input {
-        width: 480px;
+        width: 100%;
         max-width: 100%;
-        flex: 1 1 0;
         min-width: 0;
         padding: 14px 18px;
         border: 1px solid var(--portfolio-input-border);
