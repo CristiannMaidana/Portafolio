@@ -1,0 +1,81 @@
+<script is:inline>
+    (() => {
+        const storageKey = 'preferred-theme';
+        const cookieKey = 'preferred-theme';
+        const validThemes = ['light', 'dark'];
+        const readCookie = () => {
+            const match = document.cookie.match(/(?:^|; )preferred-theme=([^;]+)/);
+            return match ? decodeURIComponent(match[1]) : null;
+        };
+
+        const getPreferredTheme = () => {
+            try {
+                const storedTheme = localStorage.getItem(storageKey);
+
+                if (storedTheme && validThemes.includes(storedTheme)) {
+                    return storedTheme;
+                }
+            } catch {
+                const cookieTheme = readCookie();
+                return cookieTheme && validThemes.includes(cookieTheme)
+                    ? cookieTheme
+                    : document.documentElement.dataset.theme === 'dark'
+                        ? 'dark'
+                        : 'light';
+            }
+
+            const cookieTheme = readCookie();
+            return cookieTheme && validThemes.includes(cookieTheme)
+                ? cookieTheme
+                : document.documentElement.dataset.theme === 'dark'
+                    ? 'dark'
+                    : 'light';
+        };
+
+        const applyTheme = (theme) => {
+            document.documentElement.dataset.theme = theme;
+            document.documentElement.style.colorScheme = theme;
+
+            document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
+                if (!(button instanceof HTMLButtonElement)) {
+                    return;
+                }
+
+                button.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            });
+        };
+
+        const persistTheme = (theme) => {
+            try {
+                localStorage.setItem(storageKey, theme);
+            } catch {
+                document.cookie = `${cookieKey}=${encodeURIComponent(theme)}; path=/; max-age=31536000; SameSite=Lax`;
+                return;
+            }
+
+            document.cookie = `${cookieKey}=${encodeURIComponent(theme)}; path=/; max-age=31536000; SameSite=Lax`;
+        };
+
+        applyTheme(getPreferredTheme());
+
+        document.addEventListener('click', (event) => {
+            const target = event.target;
+
+            if (!(target instanceof Element)) {
+                return;
+            }
+
+            const toggle = target.closest('[data-theme-toggle]');
+
+            if (!(toggle instanceof HTMLButtonElement)) {
+                return;
+            }
+
+            const currentTheme = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            applyTheme(nextTheme);
+            persistTheme(nextTheme);
+        });
+    })();
+</script>
