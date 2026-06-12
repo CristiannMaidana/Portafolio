@@ -236,13 +236,21 @@ const detailImages = [
 
 <style>
     .detail {
-        --detail-bg: #f5f7f4;
-        --detail-surface: rgba(255, 255, 255, 0.76);
-        --detail-text: #1d1d1f;
-        --detail-muted: #667064;
-        --detail-eco-dark: #3f7f4f;
-        --detail-border: rgba(83, 125, 89, 0.16);
-        --detail-shadow: 0 24px 70px rgba(42, 78, 48, 0.08);
+        --detail-bg: var(--detail-page-bg-end, #f5f7f4);
+        --detail-surface: var(--detail-surface-theme, rgba(255, 255, 255, 0.76));
+        --detail-text: var(--detail-text-theme, #1d1d1f);
+        --detail-muted: var(--detail-muted-theme, #667064);
+        --detail-eco-dark: var(--detail-accent-theme, #3f7f4f);
+        --detail-border: var(--detail-border-theme, rgba(83, 125, 89, 0.16));
+        --detail-shadow: var(--detail-shadow-theme, 0 24px 70px rgba(42, 78, 48, 0.08));
+        --detail-chip-bg: var(--detail-chip-bg-theme, rgba(255, 255, 255, 0.66));
+        --detail-lead: var(--detail-lead-theme, #475146);
+        --detail-card-shadow: var(--detail-card-shadow-theme, 0 18px 48px rgba(43, 74, 46, 0.055));
+        --detail-card-hover-bg: var(--detail-card-hover-bg-theme, rgba(255, 255, 255, 0.88));
+        --detail-card-hover-border: var(--detail-card-hover-border-theme, rgba(83, 125, 89, 0.28));
+        --detail-final-panel-bg: var(--detail-final-panel-bg-theme, linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(241, 248, 239, 0.72)));
+        --detail-image-bg: var(--detail-image-bg-theme, linear-gradient(135deg, rgba(238, 250, 235, 0.94), rgba(217, 241, 215, 0.9)), radial-gradient(circle at 30% 30%, rgba(150, 222, 147, 0.8), transparent 24rem));
+        --detail-video-border: var(--detail-video-border-theme, rgba(0, 0, 0, 0.88));
         --detail-radius: 30px;
         --detail-radius-sm: 22px;
         width: 100%;
@@ -325,7 +333,7 @@ const detailImages = [
         padding: 8px 14px;
         border: 1px solid var(--detail-border);
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.66);
+        background: var(--detail-chip-bg);
         color: var(--detail-eco-dark);
         font-size: 0.78rem;
         font-weight: 700;
@@ -341,7 +349,7 @@ const detailImages = [
         min-width: 0;
         font-size: clamp(1.18rem, 2vw, 1.55rem);
         line-height: 1.55;
-        color: #475146;
+        color: var(--detail-lead);
     }
 
     .steps {
@@ -358,7 +366,7 @@ const detailImages = [
         background: var(--detail-surface);
         border: 1px solid var(--detail-border);
         border-radius: var(--detail-radius-sm);
-        box-shadow: 0 18px 48px rgba(43, 74, 46, 0.055);
+        box-shadow: var(--detail-card-shadow);
         backdrop-filter: blur(20px);
     }
 
@@ -384,8 +392,8 @@ const detailImages = [
     .container-steps:hover,
     .technology-card:hover {
         transform: translateY(-4px);
-        border-color: rgba(83, 125, 89, 0.28);
-        background: rgba(255, 255, 255, 0.88);
+        border-color: var(--detail-card-hover-border);
+        background: var(--detail-card-hover-bg);
     }
 
     .documentation {
@@ -493,7 +501,7 @@ const detailImages = [
         margin-top: 26px;
         border: 1px solid var(--detail-border);
         border-radius: var(--detail-radius);
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(241, 248, 239, 0.72));
+        background: var(--detail-final-panel-bg);
         box-shadow: var(--detail-shadow);
     }
 
@@ -517,7 +525,7 @@ const detailImages = [
         aspect-ratio: 9 / 18.4;
         max-width: 100%;
         object-fit: contain;
-        border: 1px solid black;
+        border: 1px solid var(--detail-video-border);
         border-radius: 22px;
     }
 
@@ -562,9 +570,7 @@ const detailImages = [
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
-        background:
-            linear-gradient(135deg, rgba(238, 250, 235, 0.94), rgba(217, 241, 215, 0.9)),
-            radial-gradient(circle at 30% 30%, rgba(150, 222, 147, 0.8), transparent 24rem);
+        background: var(--detail-image-bg);
         width: 100%;
         min-height: 300px;
         padding: 24px;
