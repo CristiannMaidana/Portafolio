@@ -13,6 +13,7 @@ const locale = getLocale(Astro.currentLocale);
     aria-pressed="false"
     data-theme-toggle
 >
+    <span class="theme-toggle-thumb" aria-hidden="true"></span>
     <svg class="theme-toggle-icon sun-icon" viewBox="0 0 24 24" aria-hidden="true">
         <circle cx="12" cy="12" r="3.5" />
         <path d="M12 1.75v2.5" />
@@ -31,11 +32,12 @@ const locale = getLocale(Astro.currentLocale);
 
 <style>
     .theme-toggle-button {
+        position: relative;
         display: inline-flex;
         align-items: center;
-        justify-content: center;
-        gap: 3px;
-        width: 52px;
+        justify-content: space-between;
+        gap: 0;
+        width: 76px;
         height: 42px;
         padding: 0 10px;
         border: 1px solid rgba(255, 255, 255, 0.15);
@@ -43,7 +45,8 @@ const locale = getLocale(Astro.currentLocale);
         background: rgba(255, 255, 255, 0.12);
         color: inherit;
         cursor: pointer;
-        transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+        overflow: hidden;
+        transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
     }
 
     .theme-toggle-button:hover {
@@ -51,11 +54,28 @@ const locale = getLocale(Astro.currentLocale);
         transform: translateY(-1px);
     }
 
+    .theme-toggle-thumb {
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 30px;
+        height: 32px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.16);
+        box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.14),
+            0 6px 16px rgba(0, 0, 0, 0.18);
+        transition: transform 0.22s ease, background-color 0.22s ease, box-shadow 0.22s ease;
+    }
+
     .theme-toggle-icon {
+        position: relative;
+        z-index: 1;
         fill: none;
         stroke: currentColor;
         stroke-linecap: round;
         stroke-linejoin: round;
+        transition: opacity 0.2s ease, color 0.2s ease, transform 0.2s ease;
     }
 
     .sun-icon {
@@ -73,21 +93,46 @@ const locale = getLocale(Astro.currentLocale);
 
     :global(:root[data-theme='dark']) .theme-toggle-button {
         background: rgba(255, 255, 255, 0.09);
+        border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    :global(:root[data-theme='dark']) .theme-toggle-button .theme-toggle-thumb {
+        transform: translateX(35px);
+        background: rgba(170, 194, 255, 0.15);
+        box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.12),
+            0 6px 18px rgba(0, 0, 0, 0.24);
     }
 
     :global(:root[data-theme='dark']) .theme-toggle-button .sun-icon {
         opacity: 0.45;
+        transform: scale(0.94);
     }
 
     :global(:root[data-theme='dark']) .theme-toggle-button .moon-icon {
         opacity: 1;
+        transform: scale(1);
     }
 
     :global(:root[data-theme='light']) .theme-toggle-button .sun-icon {
         opacity: 1;
+        transform: scale(1);
     }
 
     :global(:root[data-theme='light']) .theme-toggle-button .moon-icon {
         opacity: 0.5;
+        transform: scale(0.94);
+    }
+
+    :global(:root[data-theme='light']) .theme-toggle-button .theme-toggle-thumb {
+        transform: translateX(0);
+    }
+
+    .theme-toggle-button[aria-pressed='true'] .theme-toggle-thumb {
+        transform: translateX(22px);
+    }
+
+    .theme-toggle-button[aria-pressed='false'] .theme-toggle-thumb {
+        transform: translateX(0);
     }
 </style>
