@@ -1,5 +1,7 @@
 ---
 import LanguagePreferenceScript from '../components/LanguagePreferenceScript.astro';
+import ThemeHeadScript from '../components/ThemeHeadScript.astro';
+import ThemePreferenceScript from '../components/ThemePreferenceScript.astro';
 import { getLocale } from '../i18n/config';
 import { ui } from '../i18n/ui';
 
@@ -13,6 +15,7 @@ const t = ui[locale];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{t.meta.portfolioTitle}</title>
+    <ThemeHeadScript />
     <style is:inline>
         :root {
             --surface: rgba(255, 255, 255, 0.72);
@@ -56,14 +59,97 @@ const t = ui[locale];
             --portfolio-showcase-shadow-bottom: rgba(63, 152, 77, 0.28);
             --portfolio-error: #ff6b6b;
             --portfolio-success: #5ec26a;
+            --portfolio-page-bg: #f5f5f7;
+            --ambient-bg-start: #fbfbfd;
+            --ambient-bg-mid: #f5f5f7;
+            --ambient-bg-end: #ffffff;
+            --ambient-radial-one: rgba(0, 113, 227, 0.16);
+            --ambient-radial-two: rgba(90, 200, 250, 0.18);
+            --ambient-radial-three: rgba(52, 199, 89, 0.12);
+            --grid-line: rgba(29, 29, 31, 0.045);
+            --mesh-one: rgba(0, 113, 227, 0.3);
+            --mesh-two: rgba(90, 200, 250, 0.28);
+            --mesh-three: rgba(52, 199, 89, 0.16);
+            --mesh-blend: multiply;
+        }
+
+        :root[data-theme='dark'] {
+            --surface: rgba(18, 23, 31, 0.82);
+            --surface-2: rgba(20, 26, 34, 0.52);
+            --surface-58: rgba(20, 26, 34, 0.58);
+            --surface-62: rgba(20, 26, 34, 0.62);
+            --surface-66: rgba(20, 26, 34, 0.66);
+            --surface-70: rgba(13, 17, 24, 0.78);
+
+            --portfolio-text: #edf2f7;
+            --portfolio-muted: #aab4c2;
+            --portfolio-heading: #f8fbff;
+            --portfolio-border: rgba(133, 157, 184, 0.18);
+            --portfolio-input-border: rgba(133, 157, 184, 0.26);
+            --portfolio-divider: rgba(255, 255, 255, 0.12);
+
+            --portfolio-accent: #8bdff3;
+            --portfolio-accent-alt: #91e7f8;
+            --portfolio-accent-start: #6fe3ff;
+            --portfolio-accent-end: #5eb7ff;
+
+            --portfolio-button-text: #041017;
+            --portfolio-button-hover: rgba(255, 255, 255, 0.06);
+            --portfolio-surface: rgba(11, 15, 21, 0.9);
+
+            --portfolio-nav-bg: rgba(9, 12, 18, 0.76);
+            --portfolio-nav-link: #c0cad6;
+            --portfolio-nav-link-hover: #ffffff;
+
+            --portfolio-terminal-bg: rgba(13, 18, 24, 0.78);
+            --portfolio-terminal-border: rgba(133, 157, 184, 0.16);
+            --portfolio-terminal-shadow: rgba(0, 0, 0, 0.34);
+            --portfolio-terminal-panel: rgba(5, 8, 12, 0.96);
+
+            --portfolio-code-text: #eef6ff;
+            --portfolio-code-keyword: #70d6ff;
+            --portfolio-code-value: #7ee7a6;
+            --portfolio-code-stack: #8ca0b8;
+
+            --portfolio-window-red: #ff5f57;
+            --portfolio-window-yellow: #ffbd2e;
+            --portfolio-window-green: #28c840;
+
+            --portfolio-stat-surface: rgba(17, 22, 30, 0.82);
+
+            --portfolio-showcase-border: rgba(133, 157, 184, 0.18);
+            --portfolio-showcase-bg: linear-gradient(165deg, #183426 0%, #1f5f3b 42%, #2e8f56 100%);
+            --portfolio-showcase-highlight: rgba(255, 255, 255, 0.08);
+            --portfolio-showcase-shadow-top: rgba(13, 24, 20, 0.38);
+            --portfolio-showcase-shadow-bottom: rgba(4, 7, 11, 0.38);
+
+            --portfolio-error: #ff7a7a;
+            --portfolio-success: #74d88a;
+
+            --portfolio-page-bg: #0a0f16;
+
+            --ambient-bg-start: #071018;
+            --ambient-bg-mid: #0a1119;
+            --ambient-bg-end: #101824;
+
+            --ambient-radial-one: rgba(35, 120, 255, 0.16);
+            --ambient-radial-two: rgba(42, 196, 255, 0.14);
+            --ambient-radial-three: rgba(59, 208, 124, 0.12);
+
+            --grid-line: rgba(255, 255, 255, 0.04);
+
+            --mesh-one: rgba(21, 101, 216, 0.28);
+            --mesh-two: rgba(25, 177, 255, 0.24);
+            --mesh-three: rgba(38, 173, 105, 0.16);
+            --mesh-blend: screen;
         }
 
         html {
-            background: var(--portfolio-surface);
+            background: var(--portfolio-page-bg);
         }
 
         body.portfolio-body {
-            background: var(--portfolio-surface);
+            background: var(--portfolio-page-bg);
             color: var(--portfolio-text);
         }
 
@@ -139,6 +225,7 @@ const t = ui[locale];
     </main>
 
     <LanguagePreferenceScript />
+    <ThemePreferenceScript />
 
     <script is:inline>
         const revealGroups = [];
@@ -224,7 +311,7 @@ const t = ui[locale];
 
 <style>
 	:global(:root) {
-        --bg: #f5f5f7;
+        --bg: var(--portfolio-page-bg);
     }
 
 	html,
@@ -256,10 +343,10 @@ const t = ui[locale];
         overflow: hidden;
         pointer-events: none;
         background:
-            radial-gradient(circle at 16% 20%, rgba(0, 113, 227, 0.16), transparent 30%),
-            radial-gradient(circle at 80% 18%, rgba(90, 200, 250, 0.18), transparent 28%),
-            radial-gradient(circle at 78% 82%, rgba(52, 199, 89, 0.12), transparent 30%),
-            linear-gradient(180deg, #fbfbfd 0%, #f5f5f7 45%, #ffffff 100%);
+            radial-gradient(circle at 16% 20%, var(--ambient-radial-one), transparent 30%),
+            radial-gradient(circle at 80% 18%, var(--ambient-radial-two), transparent 28%),
+            radial-gradient(circle at 78% 82%, var(--ambient-radial-three), transparent 30%),
+            linear-gradient(180deg, var(--ambient-bg-start) 0%, var(--ambient-bg-mid) 45%, var(--ambient-bg-end) 100%);
     }
 
     .mesh {
@@ -269,27 +356,27 @@ const t = ui[locale];
         border-radius: 50%;
         filter: blur(50px);
         opacity: 0.48;
-        mix-blend-mode: multiply;
+        mix-blend-mode: var(--mesh-blend);
         animation: meshFloat 18s ease-in-out infinite alternate;
     }
 
     .mesh.one {
         left: -14vw;
         top: 4vh;
-        background: rgba(0, 113, 227, 0.3);
+        background: var(--mesh-one);
     }
 
     .mesh.two {
         right: -18vw;
         top: 28vh;
-        background: rgba(90, 200, 250, 0.28);
+        background: var(--mesh-two);
         animation-delay: -5s;
     }
 
     .mesh.three {
         left: 28vw;
         bottom: -28vh;
-        background: rgba(52, 199, 89, 0.16);
+        background: var(--mesh-three);
         animation-delay: -9s;
     }
 
@@ -297,8 +384,8 @@ const t = ui[locale];
         position: absolute;
         inset: 0;
         background-image:
-            linear-gradient(rgba(29, 29, 31, 0.045) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(29, 29, 31, 0.045) 1px, transparent 1px);
+            linear-gradient(var(--grid-line) 1px, transparent 1px),
+            linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
         background-size: 70px 70px;
         mask-image: linear-gradient(to bottom, transparent, black 20%, black 70%, transparent);
         opacity: 0.55;
