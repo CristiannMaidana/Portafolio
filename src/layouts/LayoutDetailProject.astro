@@ -4,12 +4,13 @@ import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 import ThemeHeadScript from '../components/ThemeHeadScript.astro';
 import ThemePreferenceScript from '../components/ThemePreferenceScript.astro';
 import ThemeToggleButton from '../components/ThemeToggleButton.astro';
-import { getLocale } from '../i18n/config';
+import { getLocale, localizePath } from '../i18n/config';
 import { ui } from '../i18n/ui';
 
 const { title = 'EcoUshuaia', theme = 'eco' } = Astro.props;
 const locale = getLocale(Astro.currentLocale);
 const t = ui[locale];
+const backHref = localizePath(locale, '/#projects');
 ---
 
 <!DOCTYPE html>
@@ -123,7 +124,7 @@ const t = ui[locale];
 </head>
 <body>
     <header class={`detail-layout-header ${theme === 'food' ? 'food-theme' : 'eco-theme'}`}>
-        <button class="detail-layout-back-button" type="button" onclick="history.back()" aria-label={t.detailLayout.backAria}>
+        <button class="detail-layout-back-button" type="button" onclick={`window.location.replace('${backHref}')`} aria-label={t.detailLayout.backAria}>
             <span class="detail-layout-back-icon" aria-hidden="true">←</span>
             <span>{t.detailLayout.back}</span>
         </button>
