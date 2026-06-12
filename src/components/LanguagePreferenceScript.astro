@@ -77,9 +77,16 @@ import { defaultLocale, locales } from '../i18n/config';
 
             try {
                 localStorage.setItem(storageKey, nextLocale);
-            } catch {
+            } catch {}
+
+            const nextUrl = languageLink.href;
+
+            if (!nextUrl || nextUrl === location.href) {
                 return;
             }
+
+            event.preventDefault();
+            location.replace(nextUrl);
         });
 
         try {
