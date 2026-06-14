@@ -22,10 +22,10 @@ export const ui = {
             resume: 'Currículum',
         },
         home: {
-            eyebrow: 'JUNIOR DEVELOPER. SYSTEMS STUDENT',
+            eyebrow: 'FULL STACK JUNIOR DEVELOPER. SYSTEMS STUDENT',
             title: 'Hola, soy Cristian',
             description:
-                'Desarrollador junior con experiencia en frontend, backend, arquitectura y diseño visual. Apasionado por crear experiencias digitales modernas con estética premium y movimiento dinámico.',
+                'Desarrollador Full Stack Junior con experiencia en frontend, backend, arquitectura y diseño visual. Apasionado por crear experiencias digitales modernas con estética premium y movimiento dinámico.',
             actions: {
                 projects: 'Ver proyectos',
                 contact: 'Contactarme',
@@ -314,10 +314,10 @@ export const ui = {
             resume: 'Resume',
         },
         home: {
-            eyebrow: 'JUNIOR DEVELOPER. SYSTEMS STUDENT',
+            eyebrow: 'JUNIOR FULL STACK DEVELOPER. SYSTEMS STUDENT',
             title: "Hi, I'm Cristian",
             description:
-                'Junior developer with experience in frontend, backend, architecture, and visual design. Passionate about building modern digital experiences with a premium aesthetic and dynamic motion.',
+                'Junior Full Stack Developer with experience in frontend, backend, architecture, and visual design. Passionate about building modern digital experiences with a premium aesthetic and dynamic motion.',
             actions: {
                 projects: 'View projects',
                 contact: 'Contact me',
