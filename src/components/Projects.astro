@@ -16,6 +16,7 @@ import mapImage from '../assets/EcoUshuaia/forDetails/map-end.png';
 import settingsImage from '../assets/EcoUshuaia/forDetails/settings.png';
 import homeImage from '../assets/Foods/Home - foods.png';
 import favImage from '../assets/Foods/favorites - foods.png';
+import searchImage from '../assets/Foods/searchFoods.png'
 
 const locale = getLocale(Astro.currentLocale);
 const t = ui[locale].projects;
@@ -79,6 +80,7 @@ const appAlimentosProjectLinks = [
 const appAlimentosProjectImages = [
     { src: homeImage.src, alt: t.food.images.home, width: homeImage.width, height: homeImage.height, imageClass: 'middle' },
     { src: favImage.src, alt: t.food.images.favorites, width: favImage.width, height: favImage.height },
+    { src: searchImage.src, alt: t.food.images.home, width: homeImage.width, height: homeImage.height, imageClass: 'middle' },
 ];
 ---
 
