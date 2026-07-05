@@ -1,11 +1,344 @@
 ---
 import { getLocale } from '../i18n/config';
-import { ui } from '../i18n/ui';
 
 const locale = getLocale(Astro.currentLocale);
-const t = ui[locale].detailFood;
+const content = locale === 'en'
+    ? {
+        intro: {
+            eyebrow: 'Mobile app',
+            title: 'A project focused on technical learning.',
+            lead:
+                'Digital Epicurean was built as a university project to practice JavaScript, React Native, and Expo through a functional mobile application.',
+        },
+        context: {
+            eyebrow: 'Context',
+            title: 'What this app was meant to build',
+            paragraphs: [
+                'The goal was to integrate a real public API, work on screen navigation, and build a mobile experience with a cleaner code structure closer to a real project.',
+                'The app focused on exploring food products, browsing categories, reviewing relevant information, and using the camera to add a native interaction flow to the project.',
+            ],
+        },
+        process: {
+            eyebrow: 'Process',
+            title: 'The three main development focuses',
+            steps: [
+                {
+                    title: 'Learn Expo',
+                    body: 'Build a mobile app with Expo and React Native, learning project structure, screen navigation, and native integrations such as the camera.',
+                },
+                {
+                    title: 'Use a public API',
+                    body: 'Integrate the Open Food Facts API to retrieve real food product data, including search, barcode lookup, and external response handling.',
+                },
+                {
+                    title: 'Build mobile flows',
+                    body: 'Design a coherent experience connecting category browsing, search, favorites, and product scanning with a clear and natural user flow.',
+                },
+            ],
+        },
+    }
+    : {
+        intro: {
+            eyebrow: 'App mobile',
+            title: 'Un proyecto enfocado en aprendizaje tecnico.',
+            lead:
+                'Digital Epicurean fue desarrollado como proyecto universitario para practicar JavaScript, React Native y Expo mediante una aplicacion movil funcional.',
+        },
+        context: {
+            eyebrow: 'Contexto',
+            title: 'Que se busco construir con esta app',
+            paragraphs: [
+                'El objetivo fue integrar una API publica real, trabajar la navegacion entre pantallas y construir una experiencia mobile con una estructura de codigo mas ordenada y cercana a un proyecto real.',
+                'La aplicacion se enfoco en la exploracion de productos alimenticios, la consulta por categorias, la visualizacion de informacion relevante y el uso de camara para sumar un flujo nativo dentro del proyecto.',
+            ],
+        },
+        process: {
+            eyebrow: 'Proceso',
+            title: 'Los tres focos principales del desarrollo',
+            steps: [
+                {
+                    title: 'Aprender Expo',
+                    body: 'Construir una aplicacion movil utilizando Expo y React Native, aprendiendo la estructura de un proyecto, la navegacion entre pantallas y la integracion de funcionalidades nativas como la camara.',
+                },
+                {
+                    title: 'Usar una API publica',
+                    body: 'Integrar la API de Open Food Facts para obtener informacion real de productos alimenticios, implementando busquedas, consultas por codigo de barras y manejo de respuestas externas.',
+                },
+                {
+                    title: 'Construir flujos mobile',
+                    body: 'Diseñar una experiencia coherente conectando exploracion por categorias, busqueda, favoritos y escaneo de productos, priorizando una interaccion clara y natural para el usuario.',
+                },
+            ],
+        },
+    };
 ---
 
-<div style="padding: 20px; text-align: center;">
-    <h1 style="font-size: 100px;">{t.title}</h1>
+<div class="detail">
+    <section class="section intro-section">
+        <span class="eyebrow">{content.intro.eyebrow}</span>
+        <h1>{content.intro.title}</h1>
+        <p class="lead">La app de alimentos fue desarrollado como proyecto universitario para practicar JavaScript, React Native y Expo mediante una aplicación móvil funcional. El objetivo fue integrar una API pública real, trabajar con navegación, búsqueda, cámara y escaneo de códigos de barras, aplicando una estructura de código más ordenada y cercana a un proyecto mobile real.</p>
+
+        <div class="steps">
+            {content.process.steps.map((step) => (
+                <div class="container-steps">
+                    <h2>{step.title}</h2>
+                    <p>{step.body}</p>
+                </div>
+            ))}
+        </div>
+    </section>
+
+    
 </div>
+
+<style>
+    .detail {
+        --detail-bg: #3b0d0d;
+        --detail-surface: #481313;
+        --detail-surface-secondary: #541818;
+        --detail-text: #ffffff;
+        --detail-muted: #d9d9d9;
+        --detail-muted-secondary: #a8a8a8;
+        --detail-accent: #e74c3c;
+        --detail-hover: #f05a49;
+        --detail-border: rgba(255, 255, 255, 0.08);
+        --detail-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+        --detail-card-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
+        --detail-chip-bg: rgba(255, 255, 255, 0.05);
+        --detail-image-bg:
+            linear-gradient(180deg, #481313 0%, #3b0d0d 100%),
+            radial-gradient(circle at 30% 30%, rgba(231, 76, 60, 0.2), transparent 24rem);
+        --detail-card-hover-bg: #541818;
+        --detail-card-hover-border: #f05a49;
+        --detail-radius: 30px;
+        --detail-radius-sm: 22px;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        color: var(--detail-text);
+        background: var(--detail-bg);
+        padding-bottom: clamp(72px, 10vw, 120px);
+    }
+
+    .detail * {
+        box-sizing: border-box;
+    }
+
+    .detail h1,
+    .detail h2,
+    .detail h3,
+    .detail p,
+    .eyebrow {
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .detail h1 {
+        margin: 0;
+        max-width: 920px;
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        letter-spacing: -0.065em;
+        line-height: 0.96;
+        font-weight: 760;
+    }
+
+    .detail h2 {
+        margin: 0;
+        font-size: clamp(1.5rem, 3vw, 2.35rem);
+        letter-spacing: -0.04em;
+        line-height: 1.05;
+        font-weight: 720;
+        color: var(--detail-text);
+    }
+
+    .detail h3 {
+        margin: 0 0 18px;
+        font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+        letter-spacing: -0.035em;
+        line-height: 1.1;
+        font-weight: 710;
+        color: var(--detail-text);
+    }
+
+    .detail p {
+        max-width: 1180px;
+        margin: 0;
+        color: var(--detail-muted);
+        font-size: clamp(1rem, 1.1vw, 1.08rem);
+        line-height: 1.78;
+        letter-spacing: -0.012em;
+    }
+
+    .detail p + p {
+        margin-top: 18px;
+    }
+
+    .section {
+        width: min(100%, 1280px);
+        margin: 0 auto;
+        padding-top: clamp(72px, 9vw, 130px);
+    }
+
+    .intro-section {
+        padding-top: clamp(56px, 7vw, 96px);
+    }
+
+    .section-heading {
+        display: grid;
+        gap: 14px;
+        margin-bottom: clamp(28px, 5vw, 56px);
+    }
+
+    .eyebrow {
+        display: inline-flex;
+        width: fit-content;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 18px;
+        padding: 8px 14px;
+        border: 1px solid var(--detail-border);
+        border-radius: 999px;
+        background: var(--detail-chip-bg);
+        color: var(--detail-accent);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    .lead {
+        margin-top: 28px;
+        width: 100%;
+        max-width: 1050px;
+        min-width: 0;
+        font-size: clamp(1.18rem, 2vw, 1.55rem);
+        line-height: 1.55;
+        color: var(--detail-muted);
+    }
+
+    .steps {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .container-steps {
+        min-height: 100%;
+        padding: clamp(20px, 3vw, 30px);
+        background: var(--detail-surface-secondary);
+        border: 1px solid var(--detail-border);
+        border-radius: var(--detail-radius-sm);
+        box-shadow: var(--detail-card-shadow);
+        transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .container-steps h2 {
+        margin-bottom: 14px;
+        font-size: 1.35rem;
+        letter-spacing: -0.035em;
+    }
+
+    .container-steps p {
+        color: var(--detail-muted-secondary);
+        font-size: 0.98rem;
+        line-height: 1.68;
+    }
+
+    .container-steps:hover {
+        transform: translateY(-4px);
+        border-color: var(--detail-card-hover-border);
+        background: var(--detail-card-hover-bg);
+    }
+
+    .image {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        min-height: 300px;
+        padding: 24px;
+        gap: 24px;
+        overflow-x: auto;
+        background: var(--detail-image-bg);
+        border-bottom: 1px solid var(--detail-border);
+        box-shadow: inset 0 -24px 80px rgba(0, 0, 0, 0.18);
+    }
+
+    .image img {
+        height: clamp(210px, 31vw, 430px);
+        width: auto;
+        object-fit: contain;
+        flex: 0 0 auto;
+        filter: drop-shadow(0 20px 32px rgba(0, 0, 0, 0.28));
+    }
+
+    .image img:nth-child(1),
+    .image img:nth-child(4) {
+        transform: translateY(-18px);
+    }
+
+    .image img:nth-child(2),
+    .image img:nth-child(5) {
+        transform: translateY(18px);
+    }
+
+    .image img:nth-child(3) {
+        transform: translateY(-6px);
+    }
+
+    @media (max-width: 1180px) {
+        .steps {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 720px) {
+        .section {
+            width: min(100%, 1180px);
+            padding-top: 72px;
+        }
+
+        .image {
+            justify-content: flex-start;
+            min-height: 0;
+            padding: 18px;
+        }
+
+        .image img:nth-child(1),
+        .image img:nth-child(2),
+        .image img:nth-child(3),
+        .image img:nth-child(4),
+        .image img:nth-child(5) {
+            transform: none;
+        }
+
+        .steps {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 560px) {
+        .detail h1 {
+            font-size: clamp(2.15rem, 13vw, 3.2rem);
+        }
+
+        .detail p {
+            font-size: 0.96rem;
+            line-height: 1.7;
+        }
+
+        .lead {
+            font-size: 1.08rem;
+        }
+
+        .steps {
+            gap: 16px;
+        }
+
+        .container-steps {
+            padding: 18px;
+            border-radius: 20px;
+        }
+    }
+</style>
