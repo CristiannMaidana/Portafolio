@@ -4,6 +4,12 @@ import makeupImage from '../assets/makeup.png';
 import searchOneVideo from '../assets/Foods/videos/search-1.mp4';
 import searchTwoVideo from '../assets/Foods/videos/search-2.mp4';
 
+import homeImage from '../assets/Foods/Home - foods.png';
+import searchImage from '../assets/Foods/searchFoods.png';
+import productImage from '../assets/Foods/favorites - foods.png';
+import cameraImage from '../assets/Foods/camera.png';
+import cameraSuccessImage from '../assets/Foods/camera.png';
+
 const locale = getLocale(Astro.currentLocale);
 
 const content = locale === 'en'
@@ -113,6 +119,65 @@ const content = locale === 'en'
         </div>
     </section>
 
+    {/* Seccion de pantallas*/}
+    <section class="section intro-section">
+        <span class="eyebrow">Pantallas</span>
+        <h1>Pantallas principales</h1>
+
+        <p class="lead">
+            La aplicación está compuesta por un conjunto de pantallas enfocadas en un flujo simple e intuitivo. Cada una cumple un propósito específico dentro de la experiencia, desde el descubrimiento de productos y la búsqueda de información hasta el escaneo de códigos de barras y la consulta del detalle nutricional. A continuación se presentan las vistas más representativas del proyecto y su función dentro del recorrido del usuario.
+        </p>
+
+        <div class="documentation documentation-design">
+            <div class="design-grid">
+                <div class="documentation-design-item food-screen-item">
+                    <div class="food-screen-card">
+                        <img src={homeImage.src} alt="Home screen">
+                        <div class="food-screen-copy">
+                            <h2>Home</h2>
+                            <p>La pantalla principal actúa como punto de partida para explorar la aplicación. Desde ella el usuario puede descubrir productos navegando por categorías, marcas y etiquetas destacadas, facilitando el acceso rápido a diferentes búsquedas sin necesidad de escribir desde el inicio. Su diseño está orientado a promover el descubrimiento de contenido de forma simple y organizada.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="documentation-design-item food-screen-item">
+                    <div class="food-screen-card">
+                        <img src={searchImage.src} alt="Search screen">
+                        <div class="food-screen-copy">
+                            <h2>Search</h2>
+                            <p>La pantalla de búsqueda permite encontrar productos mediante consultas por nombre, marca o categoría. Los resultados se obtienen en tiempo real desde la API de Open Food Facts e incorporan paginación automática para cargar más productos a medida que el usuario navega por la lista. Desde esta pantalla también es posible acceder al escáner de códigos de barras o abrir el detalle de cualquier producto encontrado.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="documentation-design-item food-screen-item">
+                    <div class="food-screen-card">
+                        <img src={cameraImage.src} alt="Camera screen">
+                        <div class="food-screen-copy">
+                            <h2>Camera</h2>
+                            <p>La pantalla de escáner permite utilizar la cámara del dispositivo para leer códigos de barras de productos. Antes de realizar la detección, la interfaz guía al usuario mediante un marco de referencia y mensajes visuales que facilitan el posicionamiento del código, ofreciendo una experiencia clara y sencilla durante el proceso de escaneo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="documentation-design-item food-screen-item">
+                    <div class="food-screen-card">
+                        <img src={cameraSuccessImage.src} alt="Camera success screen">
+                        <div class="food-screen-copy">
+                            <h2>Camera scanner</h2>
+                            <p>Una vez reconocido el código de barras, la aplicación muestra una confirmación visual indicando que el producto fue identificado correctamente. Desde este estado, el usuario puede acceder directamente al detalle del producto o reiniciar el escaneo para consultar otro artículo, evitando interrupciones innecesarias durante el flujo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="documentation-design-item food-screen-item">
+                    <div class="food-screen-card">
+                        <img src={productImage.src} alt="Product detail screen">
+                        <div class="food-screen-copy">
+                            <h2>Detail product</h2>
+                            <p>La pantalla de detalle reúne toda la información disponible del producto en una única vista. Presenta datos generales como el nombre y la marca, junto con indicadores como Nutri-Score, Eco-Score y NOVA, además de la lista de ingredientes y la información nutricional. El contenido se organiza en bloques para facilitar una lectura rápida y una comparación sencilla entre productos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>  
 
 </div>
 
@@ -362,8 +427,111 @@ const content = locale === 'en'
         }
     }
 
+    .documentation-design {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+        gap: clamp(24px, 5vw, 60px);
+    }
+
+    .documentation-design-copy {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: clamp(24px, 4vw, 40px);
+    }
+
+    .documentation-design-text {
+        margin: 0;
+    }
+
+    .documentation.documentation-design {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .documentation {
+        width: 100%;
+        margin: clamp(28px, 4vw, 44px) 0 clamp(62px, 7vw, 96px);
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+        align-items: start;
+        gap: clamp(22px, 4vw, 54px);
+    }
+
+    .design-grid {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 18px;
+        width: 100%;
+    }
+
+    .documentation-design-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .documentation-design-item img {
+        width: 100%;
+        max-width: none;
+        height: auto;
+        max-height: 460px;
+        object-fit: contain;
+    }
+
+    .documentation-design-item h2 {
+        font-size: 1rem;
+        letter-spacing: -0.02em;
+        color: var(--detail-muted);
+    }
+
+    .food-screen-item {
+        align-items: stretch;
+        grid-column: span 2;
+    }
+
+    .food-screen-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        background: var(--detail-surface-secondary);
+        border: 1px solid var(--detail-border);
+        border-radius: var(--detail-radius-sm);
+        box-shadow: var(--detail-card-shadow);
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .food-screen-copy {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        padding: 18px 16px 20px;
+        min-width: 0;
+        text-align: left;
+    }
+
+    .food-screen-copy p {
+        max-width: 100%;
+        color: var(--detail-muted-secondary);
+        font-size: 0.98rem;
+        line-height: 1.68;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
     @media (max-width: 720px) {
         .steps {
+            grid-template-columns: 1fr;
+        }
+
+        .design-grid {
             grid-template-columns: 1fr;
         }
     }
