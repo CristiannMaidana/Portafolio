@@ -15,9 +15,14 @@ const locale = getLocale(Astro.currentLocale);
 const content = locale === 'en'
     ? {
         intro: {
+            eyebrow: 'Mobile app',
             title: 'A project focused on technical learning.',
+            lead:
+                'The food app was developed as a university project to practice JavaScript, React Native, and Expo through a functional mobile application. The goal was to integrate a real public API, work with navigation, search, camera, and barcode scanning, and apply a cleaner code structure closer to a real mobile project.',
         },
         process: {
+            eyebrow: 'Process',
+            title: 'Main learning goals',
             steps: [
                 {
                     title: 'Learn Expo',
@@ -36,9 +41,14 @@ const content = locale === 'en'
     }
     : {
         intro: {
+            eyebrow: 'Contexto',
             title: 'Un proyecto enfocado en aprendizaje técnico.',
+            lead:
+                'La app de alimentos fue desarrollada como proyecto universitario para practicar JavaScript, React Native y Expo mediante una aplicación móvil funcional. El objetivo fue integrar una API pública real, trabajar con navegación, búsqueda, cámara y escaneo de códigos de barras, aplicando una estructura de código más ordenada y cercana a un proyecto mobile real.',
         },
         process: {
+            eyebrow: 'Proceso',
+            title: 'Objetivos principales de aprendizaje',
             steps: [
                 {
                     title: 'Aprender Expo',
@@ -55,16 +65,136 @@ const content = locale === 'en'
             ],
         },
     };
+
+const experienceSections = [
+    {
+        title: 'Exploración manual',
+        body:
+            'El usuario puede descubrir productos comenzando desde la pantalla principal, explorando categorías, marcas o etiquetas destacadas. Al seleccionar una opción, la aplicación realiza una búsqueda automática, muestra los resultados disponibles y permite acceder al detalle completo de cada producto.',
+        video: searchOneVideo,
+        variant: 'frame',
+    },
+    {
+        title: 'Escaneo por cámara',
+        body:
+            'Como alternativa a la búsqueda manual, la aplicación permite escanear el código de barras de un producto utilizando la cámara del dispositivo. Una vez detectado el código, se muestra una confirmación visual y el usuario puede acceder directamente a la pantalla de detalle.',
+        video: searchTwoVideo,
+        variant: 'phone',
+    },
+];
+
+const screens = [
+    {
+        title: 'Home',
+        body:
+            'La pantalla principal actúa como punto de partida para explorar la aplicación. Desde ella el usuario puede descubrir productos navegando por categorías, marcas y etiquetas destacadas, facilitando el acceso rápido a diferentes búsquedas sin necesidad de escribir desde el inicio. Su diseño está orientado a promover el descubrimiento de contenido de forma simple y organizada.',
+        src: homeImage.src,
+        alt: 'Home screen',
+    },
+    {
+        title: 'Search',
+        body:
+            'La pantalla de búsqueda permite encontrar productos mediante consultas por nombre, marca o categoría. Los resultados se obtienen en tiempo real desde la API de Open Food Facts e incorporan paginación automática para cargar más productos a medida que el usuario navega por la lista. Desde esta pantalla también es posible acceder al escáner de códigos de barras o abrir el detalle de cualquier producto encontrado.',
+        src: searchImage.src,
+        alt: 'Search screen',
+    },
+    {
+        title: 'Camera',
+        body:
+            'La pantalla de escáner permite utilizar la cámara del dispositivo para leer códigos de barras de productos. Antes de realizar la detección, la interfaz guía al usuario mediante un marco de referencia y mensajes visuales que facilitan el posicionamiento del código, ofreciendo una experiencia clara y sencilla durante el proceso de escaneo.',
+        src: cameraImage.src,
+        alt: 'Camera screen',
+    },
+    {
+        title: 'Camera scanner',
+        body:
+            'Una vez reconocido el código de barras, la aplicación muestra una confirmación visual indicando que el producto fue identificado correctamente. Desde este estado, el usuario puede acceder directamente al detalle del producto o reiniciar el escaneo para consultar otro artículo, evitando interrupciones innecesarias durante el flujo.',
+        src: cameraSuccessImage.src,
+        alt: 'Camera success screen',
+    },
+    {
+        title: 'Detail product',
+        body:
+            'La pantalla de detalle reúne toda la información disponible del producto en una única vista. Presenta datos generales como el nombre y la marca, junto con indicadores como Nutri-Score, Eco-Score y NOVA, además de la lista de ingredientes y la información nutricional. El contenido se organiza en bloques para facilitar una lectura rápida y una comparación sencilla entre productos.',
+        src: productImage.src,
+        alt: 'Product detail screen',
+    },
+];
+
+const stackCards = [
+    {
+        title: 'React Native',
+        body:
+            'Framework utilizado para desarrollar la interfaz de la aplicación móvil, creando componentes reutilizables, gestionando la navegación entre pantallas y construyendo una experiencia nativa para dispositivos Android e iOS a partir de una única base de código.',
+    },
+    {
+        title: 'Expo',
+        body:
+            'Plataforma utilizada para simplificar el desarrollo y la configuración del proyecto, facilitando la integración de funcionalidades nativas como la cámara, la ejecución durante el desarrollo y la gestión del entorno sin necesidad de configuraciones nativas complejas.',
+    },
+    {
+        title: 'TypeScript',
+        body:
+            'Lenguaje utilizado para añadir tipado estático al proyecto, definiendo modelos, propiedades y contratos entre las distintas capas de la aplicación. Su uso permitió escribir un código más seguro, legible y fácil de mantener a medida que el proyecto fue creciendo.',
+    },
+    {
+        title: 'Reanimated',
+        body:
+            'Utilizado para incorporar animaciones fluidas entre distintos estados de la interfaz, mejorando la experiencia de usuario durante el flujo de escaneo y en componentes como las notificaciones temporales, aportando transiciones más naturales y una interacción visual más agradable.',
+    },
+    {
+        title: 'Bruno',
+        body:
+            'Herramienta utilizada para probar y validar los endpoints de la API antes de integrarlos en la aplicación. Permitió realizar solicitudes HTTP, inspeccionar las respuestas y verificar el funcionamiento de las consultas, facilitando el desarrollo y la depuración del consumo de datos desde Open Food Facts.',
+    },
+    {
+        title: 'Open Food Facts',
+        body:
+            'API pública utilizada como fuente de información sobre productos alimenticios. A través de ella la aplicación obtiene datos reales como el nombre del producto, la marca, los ingredientes, los valores nutricionales y los indicadores Nutri-Score, Eco-Score y NOVA, permitiendo construir una experiencia basada en información actualizada sin necesidad de desarrollar un backend propio.',
+    },
+];
+
+const learningCards = [
+    {
+        title: 'Integración con API',
+        body:
+            'Durante el desarrollo aprendí a trabajar con una API REST pública, utilizando Bruno para explorar y probar los diferentes endpoints antes de integrarlos en la aplicación. También adquirí experiencia procesando respuestas JSON, adaptando los datos mediante modelos internos y mostrando información real de forma organizada dentro de la interfaz.',
+    },
+    {
+        title: 'Desarrollo mobile',
+        body:
+            'El proyecto me permitió comprender el flujo de desarrollo de una aplicación móvil utilizando React Native y Expo. Aprendí a construir pantallas reutilizables, organizar la navegación entre vistas, diseñar recorridos de usuario claros y conectar diferentes funcionalidades, como la búsqueda, el escaneo de códigos de barras y la visualización del detalle del producto, para ofrecer una experiencia de uso coherente.',
+    },
+    {
+        title: 'Experiencia de escaneo',
+        body:
+            'La implementación del escáner me permitió aprender a trabajar con funcionalidades nativas del dispositivo, gestionando permisos de acceso a la cámara, la lectura de códigos de barras y la comunicación entre el hardware y la aplicación. Además, incorporé estados visuales y retroalimentación para construir un flujo de escaneo más claro y natural para el usuario.',
+    },
+    {
+        title: 'Organización del código',
+        body:
+            'A medida que el proyecto creció, aprendí la importancia de mantener una estructura clara separando las responsabilidades de cada parte de la aplicación. Organizar el código por features y dividir la lógica entre la interfaz, los hooks, los servicios, los repositorios y los mappers facilitó el mantenimiento del proyecto y permitió incorporar nuevas funcionalidades de forma más ordenada.',
+    },
+];
+
+const resultParagraphs = [
+    'La app de alimentos culminó como un MVP completamente funcional que integra exploración de productos, búsqueda, escaneo de códigos de barras y consulta de información nutricional mediante una API pública. Más allá del resultado obtenido, el proyecto representó una oportunidad para incorporar un nuevo stack tecnológico y comprender el flujo completo de desarrollo de una aplicación móvil con React Native y Expo.',
+    'Dentro del portfolio, este proyecto complementa desarrollos de mayor alcance al demostrar la capacidad de adaptarme a nuevas tecnologías, integrar servicios externos y construir aplicaciones móviles con una arquitectura organizada, una experiencia de usuario coherente y funcionalidades propias del entorno móvil.',
+];
 ---
 
 <div class="detail">
     <section class="section intro-section">
-        <span class="eyebrow">Contexto</span>
+        <span class="eyebrow">{content.intro.eyebrow}</span>
         <h1>{content.intro.title}</h1>
+        <p class="lead">{content.intro.lead}</p>
+    </section>
 
-        <p class="lead">
-            La app de alimentos fue desarrollada como proyecto universitario para practicar JavaScript, React Native y Expo mediante una aplicación móvil funcional. El objetivo fue integrar una API pública real, trabajar con navegación, búsqueda, cámara y escaneo de códigos de barras, aplicando una estructura de código más ordenada y cercana a un proyecto mobile real.
-        </p>
+    <section class="section">
+        <div class="section-heading">
+            <span class="eyebrow">{content.process.eyebrow}</span>
+            <h2>{content.process.title}</h2>
+        </div>
 
         <div class="steps">
             {content.process.steps.map((step) => (
@@ -76,53 +206,48 @@ const content = locale === 'en'
         </div>
     </section>
 
-    {/* Seccion de videos flujo de busqueda*/}
-    <section class="section intro-section">
-        <span class="eyebrow">Experiencia</span>
-        <h1>Flujos principales de la aplicación</h1>
+    <section class="section">
+        <div class="section-heading">
+            <span class="eyebrow">Experiencia</span>
+            <h1>Flujos principales de la aplicación</h1>
+        </div>
 
         <p class="lead">
             La aplicación ofrece dos recorridos principales según el contexto del usuario. Es posible explorar productos navegando por categorías, marcas o realizando una búsqueda manual, o acceder directamente al detalle escaneando el código de barras de un producto con la cámara del dispositivo.
         </p>
 
-        <div class="final-gif">
-            <div class="final-video-frame">
-                <video class="final-video" autoplay loop muted preload="metadata">
-                    <source src={searchOneVideo}/>
-                </video>
-            </div>
+        {experienceSections.map((item) => (
+            <div class="final-gif">
+                {item.variant === 'phone' ? (
+                    <div class="iphone-mockup">
+                        <div class="iphone-video-window">
+                            <video class="final-video final-video-phone" autoplay loop muted playsinline preload="metadata">
+                                <source src={item.video} />
+                            </video>
+                        </div>
+                        <img class="iphone-mockup-image" src={makeupImage.src} alt="" aria-hidden="true" />
+                    </div>
+                ) : (
+                    <div class="final-video-frame">
+                        <video class="final-video" autoplay loop muted playsinline preload="metadata">
+                            <source src={item.video} />
+                        </video>
+                    </div>
+                )}
 
-            <div class="final-gif-copy">
-                <h2>Exploración manual</h2>
-                <p>
-                    El usuario puede descubrir productos comenzando desde la pantalla principal, explorando categorías, marcas o etiquetas destacadas. Al seleccionar una opción, la aplicación realiza una búsqueda automática, muestra los resultados disponibles y permite acceder al detalle completo de cada producto.
-                </p>
-            </div>
-        </div>
-
-        <div class="final-gif">
-            <div class="iphone-mockup">
-                <div class="iphone-video-window">
-                    <video class="final-video final-video-phone" autoplay loop muted playsinline preload="metadata">
-                        <source src={searchTwoVideo}/>
-                    </video>
+                <div class="final-gif-copy">
+                    <h2>{item.title}</h2>
+                    <p>{item.body}</p>
                 </div>
-                <img class="iphone-mockup-image" src={makeupImage.src} alt="" aria-hidden="true" />
             </div>
-
-            <div class="final-gif-copy">
-                <h2>Escaneo por camara</h2>
-                <p>
-                    Como alternativa a la búsqueda manual, la aplicación permite escanear el código de barras de un producto utilizando la cámara del dispositivo. Una vez detectado el código, se muestra una confirmación visual y el usuario puede acceder directamente a la pantalla de detalle.
-                </p>
-            </div>
-        </div>
+        ))}
     </section>
 
-    {/* Seccion de pantallas*/}
-    <section class="section intro-section">
-        <span class="eyebrow">Pantallas</span>
-        <h1>Pantallas principales</h1>
+    <section class="section">
+        <div class="section-heading">
+            <span class="eyebrow">Pantallas</span>
+            <h1>Pantallas principales</h1>
+        </div>
 
         <p class="lead">
             La aplicación está compuesta por un conjunto de pantallas enfocadas en un flujo simple e intuitivo. Cada una cumple un propósito específico dentro de la experiencia, desde el descubrimiento de productos y la búsqueda de información hasta el escaneo de códigos de barras y la consulta del detalle nutricional. A continuación se presentan las vistas más representativas del proyecto y su función dentro del recorrido del usuario.
@@ -130,162 +255,103 @@ const content = locale === 'en'
 
         <div class="documentation documentation-design">
             <div class="design-grid">
-                <div class="documentation-design-item food-screen-item">
-                    <div class="food-screen-card">
-                        <img src={homeImage.src} alt="Home screen">
-                        <div class="food-screen-copy">
-                            <h2>Home</h2>
-                            <p>La pantalla principal actúa como punto de partida para explorar la aplicación. Desde ella el usuario puede descubrir productos navegando por categorías, marcas y etiquetas destacadas, facilitando el acceso rápido a diferentes búsquedas sin necesidad de escribir desde el inicio. Su diseño está orientado a promover el descubrimiento de contenido de forma simple y organizada.</p>
+                {screens.map((screen) => (
+                    <div class="documentation-design-item food-screen-item">
+                        <div class="food-screen-card">
+                            <img src={screen.src} alt={screen.alt} />
+                            <div class="food-screen-copy">
+                                <h2>{screen.title}</h2>
+                                <p>{screen.body}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="documentation-design-item food-screen-item">
-                    <div class="food-screen-card">
-                        <img src={searchImage.src} alt="Search screen">
-                        <div class="food-screen-copy">
-                            <h2>Search</h2>
-                            <p>La pantalla de búsqueda permite encontrar productos mediante consultas por nombre, marca o categoría. Los resultados se obtienen en tiempo real desde la API de Open Food Facts e incorporan paginación automática para cargar más productos a medida que el usuario navega por la lista. Desde esta pantalla también es posible acceder al escáner de códigos de barras o abrir el detalle de cualquier producto encontrado.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="documentation-design-item food-screen-item">
-                    <div class="food-screen-card">
-                        <img src={cameraImage.src} alt="Camera screen">
-                        <div class="food-screen-copy">
-                            <h2>Camera</h2>
-                            <p>La pantalla de escáner permite utilizar la cámara del dispositivo para leer códigos de barras de productos. Antes de realizar la detección, la interfaz guía al usuario mediante un marco de referencia y mensajes visuales que facilitan el posicionamiento del código, ofreciendo una experiencia clara y sencilla durante el proceso de escaneo.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="documentation-design-item food-screen-item">
-                    <div class="food-screen-card">
-                        <img src={cameraSuccessImage.src} alt="Camera success screen">
-                        <div class="food-screen-copy">
-                            <h2>Camera scanner</h2>
-                            <p>Una vez reconocido el código de barras, la aplicación muestra una confirmación visual indicando que el producto fue identificado correctamente. Desde este estado, el usuario puede acceder directamente al detalle del producto o reiniciar el escaneo para consultar otro artículo, evitando interrupciones innecesarias durante el flujo.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="documentation-design-item food-screen-item">
-                    <div class="food-screen-card">
-                        <img src={productImage.src} alt="Product detail screen">
-                        <div class="food-screen-copy">
-                            <h2>Detail product</h2>
-                            <p>La pantalla de detalle reúne toda la información disponible del producto en una única vista. Presenta datos generales como el nombre y la marca, junto con indicadores como Nutri-Score, Eco-Score y NOVA, además de la lista de ingredientes y la información nutricional. El contenido se organiza en bloques para facilitar una lectura rápida y una comparación sencilla entre productos.</p>
-                        </div>
-                    </div>
-                </div>
+                ))}
             </div>
         </div>
-    </section>  
+    </section>
 
-    {/* Seccion de tecnologias de app*/}
-    <section class="section intro-section">
-        <span class="eyebrow">Stack</span>
-        <h1>Tecnologías utilizadas.</h1>
+    <section class="section">
+        <div class="section-heading">
+            <span class="eyebrow">Stack</span>
+            <h1>Tecnologías utilizadas</h1>
+        </div>
 
         <p class="lead">
             El desarrollo de la aplicación permitió trabajar con distintas tecnologías orientadas al desarrollo móvil moderno. Cada una fue incorporada para resolver una necesidad específica, desde la construcción de la interfaz y la navegación hasta el consumo de una API pública, el acceso a funcionalidades nativas del dispositivo y la organización de una arquitectura modular para mantener el proyecto claro y mantenible.
         </p>
 
         <div class="steps">
-            
-            <div class="container-steps">
-                <h2>React Native</h2>
-                <p>Framework utilizado para desarrollar la interfaz de la aplicación móvil, creando componentes reutilizables, gestionando la navegación entre pantallas y construyendo una experiencia nativa para dispositivos Android e iOS a partir de una única base de código.</p>
-            </div>
-            
-            <div class="container-steps">
-                <h2>Expo</h2>
-                <p>Plataforma utilizada para simplificar el desarrollo y la configuración del proyecto, facilitando la integración de funcionalidades nativas como la cámara, la ejecución durante el desarrollo y la gestión del entorno sin necesidad de configuraciones nativas complejas.</p>
-            </div>
-                        
-            <div class="container-steps">
-                <h2>TypeScript</h2>
-                <p>Lenguaje utilizado para añadir tipado estático al proyecto, definiendo modelos, propiedades y contratos entre las distintas capas de la aplicación. Su uso permitió escribir un código más seguro, legible y fácil de mantener a medida que el proyecto fue creciendo.</p>
-            </div>
-                                          
-            <div class="container-steps">
-                <h2>Reanimated</h2>
-                <p>Utilizado para incorporar animaciones fluidas entre distintos estados de la interfaz, mejorando la experiencia de usuario durante el flujo de escaneo y en componentes como las notificaciones temporales, aportando transiciones más naturales y una interacción visual más agradable.</p>
-            </div>
-                                                     
-            <div class="container-steps">
-                <h2>Bruno</h2>
-                <p>Herramienta utilizada para probar y validar los endpoints de la API antes de integrarlos en la aplicación. Permitió realizar solicitudes HTTP, inspeccionar las respuestas y verificar el funcionamiento de las consultas, facilitando el desarrollo y la depuración del consumo de datos desde Open Food Facts.</p>
-            </div> 
-                                                                 
-            <div class="container-steps">
-                <h2>Open Food Facts</h2>
-                <p>API pública utilizada como fuente de información sobre productos alimenticios. A través de ella la aplicación obtiene datos reales como el nombre del producto, la marca, los ingredientes, los valores nutricionales y los indicadores Nutri-Score, Eco-Score y NOVA, permitiendo construir una experiencia basada en información actualizada sin necesidad de desarrollar un backend propio.</p>
-            </div>
+            {stackCards.map((card) => (
+                <div class="container-steps">
+                    <h2>{card.title}</h2>
+                    <p>{card.body}</p>
+                </div>
+            ))}
         </div>
-    </section>  
+    </section>
 
-    {/* Seccion de que aprendi*/}
-    <section class="section intro-section">
-        <span class="eyebrow">APRENDIZAJE</span>
-        <h1>Qué aprendí.</h1>
+    <section class="section">
+        <div class="section-heading">
+            <span class="eyebrow">Aprendizaje</span>
+            <h1>Qué aprendí</h1>
+        </div>
 
         <p class="lead">
             Este proyecto representó mi primer acercamiento al desarrollo móvil con el ecosistema de React Native y Expo. A lo largo de su desarrollo pude aprender JavaScript aplicado a aplicaciones móviles, la organización de proyectos por features, el consumo de APIs REST, la validación de endpoints con Bruno, la implementación de navegación mediante Expo Router y la integración de funcionalidades nativas como la cámara y el escaneo de códigos de barras. Además, reforcé la importancia de mantener una estructura de código organizada mediante la separación de responsabilidades entre la interfaz, la lógica de negocio y el acceso a los datos.
         </p>
 
         <div class="steps steps-two-by-two">
-            
-            <div class="container-steps">
-                <h2>Integración con API</h2>
-                <p>Durante el desarrollo aprendí a trabajar con una API REST pública, utilizando Bruno para explorar y probar los diferentes endpoints antes de integrarlos en la aplicación. También adquirí experiencia procesando respuestas JSON, adaptando los datos mediante modelos internos y mostrando información real de forma organizada dentro de la interfaz.</p>
-            </div>
-            
-            <div class="container-steps">
-                <h2>Desarrollo mobile</h2>
-                <p>El proyecto me permitió comprender el flujo de desarrollo de una aplicación móvil utilizando React Native y Expo. Aprendí a construir pantallas reutilizables, organizar la navegación entre vistas, diseñar recorridos de usuario claros y conectar diferentes funcionalidades, como la búsqueda, el escaneo de códigos de barras y la visualización del detalle del producto, para ofrecer una experiencia de uso coherente.</p>
-            </div>
-                        
-            <div class="container-steps">
-                <h2>Experiencia de escaneo</h2>
-                <p>La implementación del escáner me permitió aprender a trabajar con funcionalidades nativas del dispositivo, gestionando permisos de acceso a la cámara, la lectura de códigos de barras y la comunicación entre el hardware y la aplicación. Además, incorporé estados visuales y retroalimentación para construir un flujo de escaneo más claro y natural para el usuario.</p>
-            </div>
-                                          
-            <div class="container-steps">
-                <h2>Organización del código</h2>
-                <p>A medida que el proyecto creció, aprendí la importancia de mantener una estructura clara separando las responsabilidades de cada parte de la aplicación. Organizar el código por features y dividir la lógica entre la interfaz, los hooks, los servicios, los repositorios y los mappers facilitó el mantenimiento del proyecto y permitió incorporar nuevas funcionalidades de forma más ordenada.</p>
-            </div>
+            {learningCards.map((card) => (
+                <div class="container-steps">
+                    <h2>{card.title}</h2>
+                    <p>{card.body}</p>
+                </div>
+            ))}
         </div>
     </section>
 
-    {/* Seccion de resultado final*/}
-    <section class="section intro-section">
-        <span class="eyebrow">RESULTADO</span>
-        <h1>Un MVP mobile funcional.</h1>
+    <section class="section">
+        <div class="section-heading">
+            <span class="eyebrow">Resultado</span>
+            <h1>Un MVP mobile funcional</h1>
+        </div>
 
-        <p class="lead">
-            La app de alimentos culminó como un MVP completamente funcional que integra exploración de productos, búsqueda, escaneo de códigos de barras y consulta de información nutricional mediante una API pública. Más allá del resultado obtenido, el proyecto representó una oportunidad para incorporar un nuevo stack tecnológico y comprender el flujo completo de desarrollo de una aplicación móvil con React Native y Expo.
-
-            Dentro del portfolio, este proyecto complementa desarrollos de mayor alcance al demostrar la capacidad de adaptarme a nuevas tecnologías, integrar servicios externos y construir aplicaciones móviles con una arquitectura organizada, una experiencia de usuario coherente y funcionalidades propias del entorno móvil.        
-        </p>
+        <div class="text-card">
+            {resultParagraphs.map((paragraph) => (
+                <p>{paragraph}</p>
+            ))}
+        </div>
     </section>
 </div>
 
 <style>
+    :global(body),
+    :global(.detail-layout-content) {
+        background: #3b0d0d;
+    }
+
     .detail {
         --detail-bg: #3b0d0d;
+        --detail-surface: #481313;
         --detail-surface-secondary: #541818;
         --detail-text: #ffffff;
         --detail-muted: #d9d9d9;
         --detail-muted-secondary: #a8a8a8;
         --detail-accent: #e74c3c;
-        --detail-hover: #f05a49;
         --detail-border: rgba(255, 255, 255, 0.08);
-        --detail-card-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
+        --detail-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
         --detail-chip-bg: rgba(255, 255, 255, 0.05);
+        --detail-lead: #d9d9d9;
+        --detail-card-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
         --detail-card-hover-bg: #541818;
-        --detail-card-hover-border: #f05a49;
+        --detail-card-hover-border: rgba(240, 90, 73, 0.42);
+        --detail-final-panel-bg: #481313;
+        --detail-video-border: rgba(255, 255, 255, 0.08);
+        --detail-radius: 30px;
         --detail-radius-sm: 22px;
-
         width: 100%;
         max-width: 100%;
+        min-height: 100vh;
         overflow-x: hidden;
         color: var(--detail-text);
         background: var(--detail-bg);
@@ -298,6 +364,7 @@ const content = locale === 'en'
 
     .detail h1,
     .detail h2,
+    .detail h3,
     .detail p,
     .eyebrow {
         font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
@@ -321,6 +388,14 @@ const content = locale === 'en'
         color: var(--detail-text);
     }
 
+    .detail h3 {
+        margin: 0 0 18px;
+        font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+        letter-spacing: -0.035em;
+        line-height: 1.1;
+        font-weight: 710;
+    }
+
     .detail p {
         max-width: 1180px;
         margin: 0;
@@ -330,8 +405,12 @@ const content = locale === 'en'
         letter-spacing: -0.012em;
     }
 
+    .detail p + p {
+        margin-top: 18px;
+    }
+
     .section {
-        width: min(100% - 32px, 1280px);
+        width: min(100%, 1280px);
         margin: 0 auto;
         padding-top: clamp(72px, 9vw, 130px);
     }
@@ -340,11 +419,17 @@ const content = locale === 'en'
         padding-top: clamp(56px, 7vw, 96px);
     }
 
+    .section-heading {
+        display: grid;
+        gap: 14px;
+        margin-bottom: clamp(28px, 5vw, 56px);
+    }
+
     .eyebrow {
         display: inline-flex;
         width: fit-content;
         align-items: center;
-        margin-bottom: 18px;
+        gap: 8px;
         padding: 8px 14px;
         border: 1px solid var(--detail-border);
         border-radius: 999px;
@@ -360,9 +445,14 @@ const content = locale === 'en'
         margin-top: 28px;
         width: 100%;
         max-width: 1050px;
+        min-width: 0;
         font-size: clamp(1.18rem, 2vw, 1.55rem);
         line-height: 1.55;
-        color: var(--detail-muted);
+        color: var(--detail-lead);
+    }
+
+    .section-heading + .lead {
+        margin-top: 0;
     }
 
     .steps {
@@ -376,13 +466,22 @@ const content = locale === 'en'
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .container-steps {
-        min-height: 100%;
-        padding: clamp(20px, 3vw, 30px);
-        background: var(--detail-surface-secondary);
+    .container-steps,
+    .food-screen-card,
+    .text-card {
         border: 1px solid var(--detail-border);
         border-radius: var(--detail-radius-sm);
         box-shadow: var(--detail-card-shadow);
+    }
+
+    .container-steps,
+    .text-card {
+        background: var(--detail-surface);
+    }
+
+    .container-steps {
+        min-height: 100%;
+        padding: clamp(24px, 4vw, 30px);
         transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
     }
 
@@ -398,7 +497,8 @@ const content = locale === 'en'
         line-height: 1.68;
     }
 
-    .container-steps:hover {
+    .container-steps:hover,
+    .food-screen-card:hover {
         transform: translateY(-4px);
         border-color: var(--detail-card-hover-border);
         background: var(--detail-card-hover-bg);
@@ -406,24 +506,44 @@ const content = locale === 'en'
 
     .final-gif {
         display: grid;
-        grid-template-columns: minmax(240px, 380px) 1fr;
-        gap: clamp(24px, 5vw, 56px);
+        grid-template-columns: minmax(240px, 380px) minmax(0, 1fr);
         align-items: center;
-        margin-top: 48px;
-        padding: clamp(20px, 4vw, 36px);
-        background: var(--detail-surface-secondary);
+        gap: clamp(28px, 6vw, 82px);
+        padding: clamp(24px, 4vw, 42px);
+        margin-top: 26px;
         border: 1px solid var(--detail-border);
-        border-radius: var(--detail-radius-sm);
-        box-shadow: var(--detail-card-shadow);
+        border-radius: var(--detail-radius);
+        background: var(--detail-final-panel-bg);
+        box-shadow: var(--detail-shadow);
+    }
+
+    .final-gif + .final-gif {
+        margin-top: 32px;
+    }
+
+    .final-gif-copy {
+        min-width: 0;
+    }
+
+    .final-gif-copy h2 {
+        margin-bottom: 20px;
+    }
+
+    .final-gif-copy p {
+        color: var(--detail-muted-secondary);
     }
 
     .final-video {
-        position: relative;
-        z-index: 1;
-        display: block;
-        width: 70%;
-        border-radius: 32px;
-        overflow-x: auto;
+        display: flex;
+        flex: 0 0 auto;
+        width: min(100%, 340px);
+        height: auto;
+        aspect-ratio: 9 / 18.4;
+        max-width: 60%;
+        object-fit: contain;
+        border: 1px solid var(--detail-video-border);
+        border-radius: 22px;
+        background: #000000;
     }
 
     .final-video-frame {
@@ -431,10 +551,6 @@ const content = locale === 'en'
         align-items: center;
         justify-content: center;
         width: 100%;
-        padding: clamp(16px, 2.8vw, 24px);
-        max-width: 100%;
-        border-radius: 52px;
-        overflow: hidden;
     }
 
     .iphone-mockup {
@@ -466,88 +582,19 @@ const content = locale === 'en'
     }
 
     .final-video-phone {
-        position: relative;
-        z-index: 1;
         width: 100%;
         height: 100%;
+        border: 0;
         border-radius: 0;
         object-fit: cover;
-        background: #000000;
-    }
-
-    .image img {
-        height: clamp(210px, 31vw, 430px);
-        width: auto;
-        object-fit: contain;
-        flex: 0 0 auto;
-        filter: drop-shadow(0 20px 32px rgba(0, 0, 0, 0.28));
-    }
-
-    .final-gif-copy {
-        display: grid;
-        gap: 16px;
-    }
-
-    .final-gif-copy p {
-        color: var(--detail-muted-secondary);
-    }
-
-    @media (max-width: 1180px) {
-        .steps {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-    }
-
-    @media (max-width: 820px) {
-        .final-gif {
-            grid-template-columns: 1fr;
-        }
-
-        .final-video {
-            max-width: 320px;
-            margin: 0 auto;
-        }
-
-        .final-video-frame {
-            max-width: 320px;
-            margin: 0 auto;
-        }
-
-        .iphone-mockup {
-            max-width: 320px;
-        }
-    }
-
-    .documentation-design {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 0;
-        gap: clamp(24px, 5vw, 60px);
-    }
-
-    .documentation-design-copy {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        padding: clamp(24px, 4vw, 40px);
-    }
-
-    .documentation-design-text {
-        margin: 0;
     }
 
     .documentation.documentation-design {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .documentation {
         width: 100%;
         margin: clamp(28px, 4vw, 44px) 0 clamp(62px, 7vw, 96px);
-        display: grid;
-        grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
-        align-items: start;
-        gap: clamp(22px, 4vw, 54px);
+        display: flex;
+        flex-direction: column;
+        gap: clamp(24px, 5vw, 60px);
     }
 
     .design-grid {
@@ -579,7 +626,7 @@ const content = locale === 'en'
     .documentation-design-item h2 {
         font-size: 1rem;
         letter-spacing: -0.02em;
-        color: var(--detail-muted);
+        color: var(--detail-text);
     }
 
     .food-screen-item {
@@ -592,18 +639,15 @@ const content = locale === 'en'
         flex-direction: column;
         height: 100%;
         background: var(--detail-surface-secondary);
-        border: 1px solid var(--detail-border);
-        border-radius: var(--detail-radius-sm);
-        box-shadow: var(--detail-card-shadow);
         overflow: hidden;
-        width: 100%;
+        transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
     }
 
     .food-screen-copy {
         display: flex;
         flex-direction: column;
         gap: 14px;
-        padding: 18px 16px 20px;
+        padding: 18px 18px 22px;
         min-width: 0;
         text-align: left;
     }
@@ -617,13 +661,52 @@ const content = locale === 'en'
         word-break: break-word;
     }
 
-    @media (max-width: 720px) {
+    .text-card {
+        padding: clamp(24px, 4vw, 42px);
+    }
+
+    .text-card p {
+        max-width: 100%;
+    }
+
+    @media (max-width: 1180px) {
         .steps {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .design-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 960px) {
+        .final-gif {
             grid-template-columns: 1fr;
         }
 
         .design-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .food-screen-item {
+            grid-column: span 1;
+        }
+    }
+
+    @media (max-width: 720px) {
+        .section {
+            width: min(100%, 1180px);
+            padding-top: 72px;
+        }
+
+        .steps,
+        .steps-two-by-two,
+        .design-grid {
             grid-template-columns: 1fr;
+        }
+
+        .final-gif {
+            padding: 20px;
         }
     }
 
@@ -641,28 +724,26 @@ const content = locale === 'en'
             font-size: 1.08rem;
         }
 
-        .container-steps {
-            padding: 18px;
+        .container-steps,
+        .food-screen-card,
+        .text-card {
             border-radius: 20px;
         }
 
+        .steps,
+        .design-grid {
+            gap: 16px;
+        }
+
+        .container-steps,
+        .text-card,
+        .food-screen-copy {
+            padding: 18px;
+        }
+
         .final-video {
-            max-width: 260px;
-            border-radius: 22px;
-        }
-
-        .final-video-frame {
-            max-width: 260px;
-            padding: 14px;
-            border-radius: 40px;
-        }
-
-        .iphone-mockup {
-            max-width: 260px;
-        }
-
-        .iphone-video-window {
-            border-radius: 34px;
+            width: 100%;
+            border-radius: 18px;
         }
     }
 </style>
