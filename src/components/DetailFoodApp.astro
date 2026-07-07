@@ -185,9 +185,17 @@ const screens = [
 </div>
 
 <style>
+    :global(:root) {
+        --detail-food-page-bg: #5a1f20;
+    }
+
+    :global(:root[data-theme='dark']) {
+        --detail-food-page-bg: #2b1112;
+    }
+
     :global(body),
     :global(.detail-layout-content) {
-        background: #3b0d0d;
+        background: var(--detail-food-page-bg);
     }
 
     .detail {
@@ -209,8 +217,6 @@ const screens = [
         --detail-video-border: rgba(255,255,255,.10);
         --detail-radius: 30px;
         --detail-radius-sm: 22px;
-        --detail-radius: 30px;
-        --detail-radius-sm: 22px;
         width: 100%;
         max-width: 100%;
         min-height: 100vh;
@@ -218,6 +224,25 @@ const screens = [
         color: var(--detail-text);
         background: var(--detail-bg);
         padding-bottom: clamp(72px, 10vw, 120px);
+    }
+
+    :global(:root[data-theme='dark']) .detail {
+        --detail-bg: #2b1112;
+        --detail-surface: #361617;
+        --detail-surface-secondary: #431d1e;
+        --detail-text: #faf7f7;
+        --detail-muted: #d6c9c9;
+        --detail-muted-secondary: #a99595;
+        --detail-accent: #ef8778;
+        --detail-border: rgba(255,255,255,.08);
+        --detail-shadow: 0 24px 70px rgba(0,0,0,.34);
+        --detail-chip-bg: rgba(255,255,255,.05);
+        --detail-lead: #d3c6c6;
+        --detail-card-shadow: 0 18px 48px rgba(0,0,0,.24);
+        --detail-card-hover-bg: #4a2021;
+        --detail-card-hover-border: rgba(239,135,120,.30);
+        --detail-final-panel-bg: #381718;
+        --detail-video-border: rgba(255,255,255,.10);
     }
 
     .detail * {
