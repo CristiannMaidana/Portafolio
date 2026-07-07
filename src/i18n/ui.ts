@@ -290,7 +290,143 @@ export const ui = {
             },
         },
         detailFood: {
-            title: 'Detalle de la app próximamente...',
+            intro: {
+                eyebrow: 'Contexto',
+                title: 'Un proyecto enfocado en aprendizaje técnico.',
+                lead:
+                    'La app de alimentos fue desarrollada como proyecto universitario para practicar JavaScript, React Native y Expo mediante una aplicación móvil funcional. El objetivo fue integrar una API pública real, trabajar con navegación, búsqueda, cámara y escaneo de códigos de barras, aplicando una estructura de código más ordenada y cercana a un proyecto mobile real.',
+            },
+            process: {
+                eyebrow: 'Proceso',
+                title: 'Objetivos principales de aprendizaje',
+                steps: [
+                    {
+                        title: 'Aprender Expo',
+                        body: 'Construir una aplicación móvil utilizando Expo y React Native, aprendiendo la estructura de un proyecto, la navegación entre pantallas y la integración de funcionalidades nativas como la cámara.',
+                    },
+                    {
+                        title: 'Usar una API pública',
+                        body: 'Integrar la API de Open Food Facts para obtener información real de productos alimenticios, implementando búsquedas, consultas por código de barras y manejo de respuestas externas.',
+                    },
+                    {
+                        title: 'Construir flujos mobile',
+                        body: 'Diseñar una experiencia coherente conectando exploración por categorías, búsqueda, favoritos y escaneo de productos, priorizando una interacción clara y natural para el usuario.',
+                    },
+                ],
+            },
+            experience: {
+                eyebrow: 'Experiencia',
+                title: 'Flujos principales de la aplicación',
+                lead:
+                    'La aplicación ofrece dos recorridos principales según el contexto del usuario. Es posible explorar productos navegando por categorías, marcas o realizando una búsqueda manual, o acceder directamente al detalle escaneando el código de barras de un producto con la cámara del dispositivo.',
+                sections: [
+                    {
+                        title: 'Exploración manual',
+                        body: 'El usuario puede descubrir productos comenzando desde la pantalla principal, explorando categorías, marcas o etiquetas destacadas. Al seleccionar una opción, la aplicación realiza una búsqueda automática, muestra los resultados disponibles y permite acceder al detalle completo de cada producto.',
+                    },
+                    {
+                        title: 'Escaneo por cámara',
+                        body: 'Como alternativa a la búsqueda manual, la aplicación permite escanear el código de barras de un producto utilizando la cámara del dispositivo. Una vez detectado el código, se muestra una confirmación visual y el usuario puede acceder directamente a la pantalla de detalle.',
+                    },
+                ],
+            },
+            design: {
+                eyebrow: 'Pantallas',
+                title: 'Pantallas principales',
+                lead:
+                    'La aplicación está compuesta por un conjunto de pantallas enfocadas en un flujo simple e intuitivo. Cada una cumple un propósito específico dentro de la experiencia, desde el descubrimiento de productos y la búsqueda de información hasta el escaneo de códigos de barras y la consulta del detalle nutricional. A continuación se presentan las vistas más representativas del proyecto y su función dentro del recorrido del usuario.',
+                screens: [
+                    {
+                        title: 'Home',
+                        body: 'La pantalla principal actúa como punto de partida para explorar la aplicación. Desde ella el usuario puede descubrir productos navegando por categorías, marcas y etiquetas destacadas, facilitando el acceso rápido a diferentes búsquedas sin necesidad de escribir desde el inicio. Su diseño está orientado a promover el descubrimiento de contenido de forma simple y organizada.',
+                        imageAlt: 'Pantalla principal',
+                    },
+                    {
+                        title: 'Search',
+                        body: 'La pantalla de búsqueda permite encontrar productos mediante consultas por nombre, marca o categoría. Los resultados se obtienen en tiempo real desde la API de Open Food Facts e incorporan paginación automática para cargar más productos a medida que el usuario navega por la lista. Desde esta pantalla también es posible acceder al escáner de códigos de barras o abrir el detalle de cualquier producto encontrado.',
+                        imageAlt: 'Pantalla de búsqueda',
+                    },
+                    {
+                        title: 'Camera',
+                        body: 'La pantalla de escáner permite utilizar la cámara del dispositivo para leer códigos de barras de productos. Antes de realizar la detección, la interfaz guía al usuario mediante un marco de referencia y mensajes visuales que facilitan el posicionamiento del código, ofreciendo una experiencia clara y sencilla durante el proceso de escaneo.',
+                        imageAlt: 'Pantalla de cámara',
+                    },
+                    {
+                        title: 'Camera scanner',
+                        body: 'Una vez reconocido el código de barras, la aplicación muestra una confirmación visual indicando que el producto fue identificado correctamente. Desde este estado, el usuario puede acceder directamente al detalle del producto o reiniciar el escaneo para consultar otro artículo, evitando interrupciones innecesarias durante el flujo.',
+                        imageAlt: 'Pantalla de confirmación del escáner',
+                    },
+                    {
+                        title: 'Detail product',
+                        body: 'La pantalla de detalle reúne toda la información disponible del producto en una única vista. Presenta datos generales como el nombre y la marca, junto con indicadores como Nutri-Score, Eco-Score y NOVA, además de la lista de ingredientes y la información nutricional. El contenido se organiza en bloques para facilitar una lectura rápida y una comparación sencilla entre productos.',
+                        imageAlt: 'Pantalla de detalle del producto',
+                    },
+                ],
+            },
+            stack: {
+                eyebrow: 'Stack',
+                title: 'Tecnologías utilizadas',
+                lead:
+                    'El desarrollo de la aplicación permitió trabajar con distintas tecnologías orientadas al desarrollo móvil moderno. Cada una fue incorporada para resolver una necesidad específica, desde la construcción de la interfaz y la navegación hasta el consumo de una API pública, el acceso a funcionalidades nativas del dispositivo y la organización de una arquitectura modular para mantener el proyecto claro y mantenible.',
+                cards: [
+                    {
+                        title: 'React Native',
+                        body: 'Framework utilizado para desarrollar la interfaz de la aplicación móvil, creando componentes reutilizables, gestionando la navegación entre pantallas y construyendo una experiencia nativa para dispositivos Android e iOS a partir de una única base de código.',
+                    },
+                    {
+                        title: 'Expo',
+                        body: 'Plataforma utilizada para simplificar el desarrollo y la configuración del proyecto, facilitando la integración de funcionalidades nativas como la cámara, la ejecución durante el desarrollo y la gestión del entorno sin necesidad de configuraciones nativas complejas.',
+                    },
+                    {
+                        title: 'TypeScript',
+                        body: 'Lenguaje utilizado para añadir tipado estático al proyecto, definiendo modelos, propiedades y contratos entre las distintas capas de la aplicación. Su uso permitió escribir un código más seguro, legible y fácil de mantener a medida que el proyecto fue creciendo.',
+                    },
+                    {
+                        title: 'Reanimated',
+                        body: 'Utilizado para incorporar animaciones fluidas entre distintos estados de la interfaz, mejorando la experiencia de usuario durante el flujo de escaneo y en componentes como las notificaciones temporales, aportando transiciones más naturales y una interacción visual más agradable.',
+                    },
+                    {
+                        title: 'Bruno',
+                        body: 'Herramienta utilizada para probar y validar los endpoints de la API antes de integrarlos en la aplicación. Permitió realizar solicitudes HTTP, inspeccionar las respuestas y verificar el funcionamiento de las consultas, facilitando el desarrollo y la depuración del consumo de datos desde Open Food Facts.',
+                    },
+                    {
+                        title: 'Open Food Facts',
+                        body: 'API pública utilizada como fuente de información sobre productos alimenticios. A través de ella la aplicación obtiene datos reales como el nombre del producto, la marca, los ingredientes, los valores nutricionales y los indicadores Nutri-Score, Eco-Score y NOVA, permitiendo construir una experiencia basada en información actualizada sin necesidad de desarrollar un backend propio.',
+                    },
+                ],
+            },
+            learning: {
+                eyebrow: 'Aprendizaje',
+                title: 'Qué aprendí',
+                lead:
+                    'Este proyecto representó mi primer acercamiento al desarrollo móvil con el ecosistema de React Native y Expo. A lo largo de su desarrollo pude aprender JavaScript aplicado a aplicaciones móviles, la organización de proyectos por features, el consumo de APIs REST, la validación de endpoints con Bruno, la implementación de navegación mediante Expo Router y la integración de funcionalidades nativas como la cámara y el escaneo de códigos de barras. Además, reforcé la importancia de mantener una estructura de código organizada mediante la separación de responsabilidades entre la interfaz, la lógica de negocio y el acceso a los datos.',
+                cards: [
+                    {
+                        title: 'Integración con API',
+                        body: 'Durante el desarrollo aprendí a trabajar con una API REST pública, utilizando Bruno para explorar y probar los diferentes endpoints antes de integrarlos en la aplicación. También adquirí experiencia procesando respuestas JSON, adaptando los datos mediante modelos internos y mostrando información real de forma organizada dentro de la interfaz.',
+                    },
+                    {
+                        title: 'Desarrollo mobile',
+                        body: 'El proyecto me permitió comprender el flujo de desarrollo de una aplicación móvil utilizando React Native y Expo. Aprendí a construir pantallas reutilizables, organizar la navegación entre vistas, diseñar recorridos de usuario claros y conectar diferentes funcionalidades, como la búsqueda, el escaneo de códigos de barras y la visualización del detalle del producto, para ofrecer una experiencia de uso coherente.',
+                    },
+                    {
+                        title: 'Experiencia de escaneo',
+                        body: 'La implementación del escáner me permitió aprender a trabajar con funcionalidades nativas del dispositivo, gestionando permisos de acceso a la cámara, la lectura de códigos de barras y la comunicación entre el hardware y la aplicación. Además, incorporé estados visuales y retroalimentación para construir un flujo de escaneo más claro y natural para el usuario.',
+                    },
+                    {
+                        title: 'Organización del código',
+                        body: 'A medida que el proyecto creció, aprendí la importancia de mantener una estructura clara separando las responsabilidades de cada parte de la aplicación. Organizar el código por features y dividir la lógica entre la interfaz, los hooks, los servicios, los repositorios y los mappers facilitó el mantenimiento del proyecto y permitió incorporar nuevas funcionalidades de forma más ordenada.',
+                    },
+                ],
+            },
+            result: {
+                eyebrow: 'Resultado',
+                title: 'Un MVP mobile funcional',
+                paragraphs: [
+                    'La app de alimentos culminó como un MVP completamente funcional que integra exploración de productos, búsqueda, escaneo de códigos de barras y consulta de información nutricional mediante una API pública. Más allá del resultado obtenido, el proyecto representó una oportunidad para incorporar un nuevo stack tecnológico y comprender el flujo completo de desarrollo de una aplicación móvil con React Native y Expo.',
+                    'Dentro del portfolio, este proyecto complementa desarrollos de mayor alcance al demostrar la capacidad de adaptarme a nuevas tecnologías, integrar servicios externos y construir aplicaciones móviles con una arquitectura organizada, una experiencia de usuario coherente y funcionalidades propias del entorno móvil.',
+                ],
+            },
         },
     },
     en: {
@@ -582,7 +718,143 @@ export const ui = {
             },
         },
         detailFood: {
-            title: 'App detail coming soon...',
+            intro: {
+                eyebrow: 'Context',
+                title: 'A project focused on technical learning.',
+                lead:
+                    'The food app was developed as a university project to practice JavaScript, React Native, and Expo through a functional mobile application. The goal was to integrate a real public API, work with navigation, search, camera, and barcode scanning, and apply a cleaner code structure closer to a real mobile project.',
+            },
+            process: {
+                eyebrow: 'Process',
+                title: 'Main learning goals',
+                steps: [
+                    {
+                        title: 'Learn Expo',
+                        body: 'Build a mobile app with Expo and React Native, learning project structure, screen navigation, and native integrations such as the camera.',
+                    },
+                    {
+                        title: 'Use a public API',
+                        body: 'Integrate the Open Food Facts API to retrieve real food product data, including search, barcode lookup, and external response handling.',
+                    },
+                    {
+                        title: 'Build mobile flows',
+                        body: 'Design a coherent experience connecting category browsing, search, favorites, and product scanning with a clear and natural user flow.',
+                    },
+                ],
+            },
+            experience: {
+                eyebrow: 'Experience',
+                title: 'Main application flows',
+                lead:
+                    'The application offers two main flows depending on the user context. It is possible to explore products by browsing categories, brands, or performing a manual search, or to access the detail directly by scanning a product barcode with the device camera.',
+                sections: [
+                    {
+                        title: 'Manual exploration',
+                        body: 'The user can discover products starting from the home screen, exploring categories, brands, or featured tags. When selecting an option, the app performs an automatic search, shows the available results, and allows access to the full detail of each product.',
+                    },
+                    {
+                        title: 'Camera scanning',
+                        body: 'As an alternative to manual search, the app allows scanning a product barcode using the device camera. Once the code is detected, a visual confirmation is shown and the user can access the detail screen directly.',
+                    },
+                ],
+            },
+            design: {
+                eyebrow: 'Screens',
+                title: 'Main screens',
+                lead:
+                    'The application is composed of a set of screens focused on a simple and intuitive flow. Each one fulfills a specific purpose within the experience, from product discovery and information lookup to barcode scanning and nutrition detail consultation. Below are the most representative views of the project and their role within the user journey.',
+                screens: [
+                    {
+                        title: 'Home',
+                        body: 'The home screen acts as the starting point for exploring the application. From there, the user can discover products by browsing categories, brands, and featured tags, making it easier to access different searches without typing from the beginning. Its design is oriented toward promoting content discovery in a simple and organized way.',
+                        imageAlt: 'Home screen',
+                    },
+                    {
+                        title: 'Search',
+                        body: 'The search screen allows products to be found through queries by name, brand, or category. Results are retrieved in real time from the Open Food Facts API and include automatic pagination to load more products as the user navigates the list. From this screen it is also possible to access the barcode scanner or open the detail of any found product.',
+                        imageAlt: 'Search screen',
+                    },
+                    {
+                        title: 'Camera',
+                        body: 'The scanner screen allows the device camera to be used to read product barcodes. Before detection happens, the interface guides the user with a reference frame and visual messages that make barcode positioning easier, providing a clear and simple scanning experience.',
+                        imageAlt: 'Camera screen',
+                    },
+                    {
+                        title: 'Camera scanner',
+                        body: 'Once the barcode is recognized, the application shows a visual confirmation indicating that the product was identified correctly. From this state, the user can access the product detail directly or restart the scan to consult another item without unnecessary interruptions in the flow.',
+                        imageAlt: 'Camera scanner confirmation screen',
+                    },
+                    {
+                        title: 'Detail product',
+                        body: 'The detail screen gathers all the available product information in a single view. It presents general data such as the name and brand, together with indicators like Nutri-Score, Eco-Score, and NOVA, plus the ingredient list and nutrition facts. The content is organized in blocks to make reading faster and product comparison easier.',
+                        imageAlt: 'Product detail screen',
+                    },
+                ],
+            },
+            stack: {
+                eyebrow: 'Stack',
+                title: 'Technologies used',
+                lead:
+                    'The development of the application made it possible to work with different technologies oriented toward modern mobile development. Each one was incorporated to solve a specific need, from interface building and navigation to public API consumption, native device features, and a modular architecture that kept the project clear and maintainable.',
+                cards: [
+                    {
+                        title: 'React Native',
+                        body: 'Framework used to build the mobile application interface, creating reusable components, handling navigation between screens, and delivering a native experience for Android and iOS devices from a single codebase.',
+                    },
+                    {
+                        title: 'Expo',
+                        body: 'Platform used to simplify project development and setup, making it easier to integrate native features such as the camera, run the app during development, and manage the environment without complex native configuration.',
+                    },
+                    {
+                        title: 'TypeScript',
+                        body: 'Language used to add static typing to the project, defining models, properties, and contracts between the different application layers. Its use made it possible to write safer, more readable, and easier-to-maintain code as the project grew.',
+                    },
+                    {
+                        title: 'Reanimated',
+                        body: 'Used to add fluid animations between different interface states, improving user experience during the scanning flow and in components such as temporary notifications, creating more natural transitions and a more pleasant visual interaction.',
+                    },
+                    {
+                        title: 'Bruno',
+                        body: 'Tool used to test and validate API endpoints before integrating them into the application. It made it possible to perform HTTP requests, inspect responses, and verify query behavior, helping development and debugging of data consumption from Open Food Facts.',
+                    },
+                    {
+                        title: 'Open Food Facts',
+                        body: 'Public API used as the source of food product information. Through it, the application retrieves real data such as product name, brand, ingredients, nutrition values, and indicators like Nutri-Score, Eco-Score, and NOVA, enabling an experience based on up-to-date information without needing to build a custom backend.',
+                    },
+                ],
+            },
+            learning: {
+                eyebrow: 'Learning',
+                title: 'What I learned',
+                lead:
+                    'This project represented my first approach to mobile development with the React Native and Expo ecosystem. Throughout its development I learned JavaScript applied to mobile apps, feature-based project organization, REST API consumption, endpoint validation with Bruno, navigation implementation through Expo Router, and the integration of native features such as the camera and barcode scanning. It also reinforced the importance of keeping the code structure organized through separation of responsibilities between interface, business logic, and data access.',
+                cards: [
+                    {
+                        title: 'API integration',
+                        body: 'During development I learned how to work with a public REST API, using Bruno to explore and test different endpoints before integrating them into the application. I also gained experience processing JSON responses, adapting data through internal models, and displaying real information in an organized way inside the interface.',
+                    },
+                    {
+                        title: 'Mobile development',
+                        body: 'The project allowed me to understand the development flow of a mobile application using React Native and Expo. I learned how to build reusable screens, organize navigation between views, design clear user journeys, and connect different features such as search, barcode scanning, and product detail visualization into a coherent experience.',
+                    },
+                    {
+                        title: 'Scanning experience',
+                        body: 'Implementing the scanner allowed me to learn how to work with native device capabilities, handling camera permissions, barcode reading, and communication between hardware and application. I also added visual states and feedback to build a clearer and more natural scanning flow for the user.',
+                    },
+                    {
+                        title: 'Code organization',
+                        body: 'As the project grew, I learned the importance of maintaining a clear structure by separating the responsibilities of each part of the application. Organizing the code by features and splitting logic across interface, hooks, services, repositories, and mappers made the project easier to maintain and allowed new features to be added in a more organized way.',
+                    },
+                ],
+            },
+            result: {
+                eyebrow: 'Result',
+                title: 'A functional mobile MVP',
+                paragraphs: [
+                    'The food app ended up as a fully functional MVP that integrates product exploration, search, barcode scanning, and nutrition information lookup through a public API. Beyond the final result, the project represented an opportunity to adopt a new technology stack and understand the full development flow of a mobile application with React Native and Expo.',
+                    'Inside the portfolio, this project complements broader developments by showing my ability to adapt to new technologies, integrate external services, and build mobile applications with organized architecture, coherent user experience, and functionality specific to the mobile environment.',
+                ],
+            },
         },
     },
 } as const satisfies Record<Locale, unknown>;
