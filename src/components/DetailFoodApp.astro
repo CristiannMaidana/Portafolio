@@ -222,6 +222,38 @@ const content = locale === 'en'
         </div>
     </section>  
 
+    {/* Seccion de que aprendi*/}
+    <section class="section intro-section">
+        <span class="eyebrow">APRENDIZAJE</span>
+        <h1>Qué aprendí.</h1>
+
+        <p class="lead">
+            Este proyecto representó mi primer acercamiento al desarrollo móvil con el ecosistema de React Native y Expo. A lo largo de su desarrollo pude aprender JavaScript aplicado a aplicaciones móviles, la organización de proyectos por features, el consumo de APIs REST, la validación de endpoints con Bruno, la implementación de navegación mediante Expo Router y la integración de funcionalidades nativas como la cámara y el escaneo de códigos de barras. Además, reforcé la importancia de mantener una estructura de código organizada mediante la separación de responsabilidades entre la interfaz, la lógica de negocio y el acceso a los datos.
+        </p>
+
+        <div class="steps steps-two-by-two">
+            
+            <div class="container-steps">
+                <h2>Integración con API</h2>
+                <p>Durante el desarrollo aprendí a trabajar con una API REST pública, utilizando Bruno para explorar y probar los diferentes endpoints antes de integrarlos en la aplicación. También adquirí experiencia procesando respuestas JSON, adaptando los datos mediante modelos internos y mostrando información real de forma organizada dentro de la interfaz.</p>
+            </div>
+            
+            <div class="container-steps">
+                <h2>Desarrollo mobile</h2>
+                <p>El proyecto me permitió comprender el flujo de desarrollo de una aplicación móvil utilizando React Native y Expo. Aprendí a construir pantallas reutilizables, organizar la navegación entre vistas, diseñar recorridos de usuario claros y conectar diferentes funcionalidades, como la búsqueda, el escaneo de códigos de barras y la visualización del detalle del producto, para ofrecer una experiencia de uso coherente.</p>
+            </div>
+                        
+            <div class="container-steps">
+                <h2>Experiencia de escaneo</h2>
+                <p>La implementación del escáner me permitió aprender a trabajar con funcionalidades nativas del dispositivo, gestionando permisos de acceso a la cámara, la lectura de códigos de barras y la comunicación entre el hardware y la aplicación. Además, incorporé estados visuales y retroalimentación para construir un flujo de escaneo más claro y natural para el usuario.</p>
+            </div>
+                                          
+            <div class="container-steps">
+                <h2>Organización del código</h2>
+                <p>A medida que el proyecto creció, aprendí la importancia de mantener una estructura clara separando las responsabilidades de cada parte de la aplicación. Organizar el código por features y dividir la lógica entre la interfaz, los hooks, los servicios, los repositorios y los mappers facilitó el mantenimiento del proyecto y permitió incorporar nuevas funcionalidades de forma más ordenada.</p>
+            </div>
+        </div>
+    </section>
 </div>
 
 <style>
@@ -326,6 +358,10 @@ const content = locale === 'en'
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 18px;
         margin-top: 42px;
+    }
+
+    .steps-two-by-two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .container-steps {
