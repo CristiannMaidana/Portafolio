@@ -445,8 +445,8 @@ export const ui = {
                 eyebrow: 'Resultado',
                 title: 'Un MVP mobile funcional',
                 paragraphs: [
-                    'La app de alimentos culminó como un MVP completamente funcional que integra exploración de productos, búsqueda, escaneo de códigos de barras y consulta de información nutricional mediante una API pública. Más allá del resultado obtenido, el proyecto representó una oportunidad para incorporar un nuevo stack tecnológico y comprender el flujo completo de desarrollo de una aplicación móvil con React Native y Expo.',
-                    'Dentro del portfolio, este proyecto complementa desarrollos de mayor alcance al demostrar la capacidad de adaptarme a nuevas tecnologías, integrar servicios externos y construir aplicaciones móviles con una arquitectura organizada, una experiencia de usuario coherente y funcionalidades propias del entorno móvil.',
+                    'La app de alimentos culminó como un MVP completamente funcional que integra exploración de productos, búsqueda, escaneo de códigos de barras, consulta de información nutricional mediante una API pública, autenticación de usuarios y almacenamiento persistente de favoritos. Más allá del resultado obtenido, el proyecto representó una oportunidad para incorporar un nuevo stack tecnológico y comprender el flujo completo de desarrollo de una aplicación móvil moderna, integrando React Native, Expo, Convex y Better Auth en una solución full stack.',
+                    'Dentro del portfolio, este proyecto complementa desarrollos de mayor alcance al demostrar la capacidad de adaptarme a nuevas tecnologías, integrar servicios externos, implementar autenticación y persistencia de datos, y construir aplicaciones móviles con una arquitectura organizada, una experiencia de usuario coherente y funcionalidades propias del entorno móvil.',
                 ],
             },
         },
