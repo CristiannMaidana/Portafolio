@@ -9,7 +9,8 @@ import homeImage from '../assets/Foods/Home - foods.png';
 import searchImage from '../assets/Foods/searchFoods.png';
 import productImage from '../assets/Foods/favorites - foods.png';
 import cameraImage from '../assets/Foods/camera.png';
-import cameraSuccessImage from '../assets/Foods/camera-success.png';
+import favoriteScreenImage from '../assets/Foods/favScreen.png';
+import login from '../assets/Foods/login.png';
 
 const locale = getLocale(Astro.currentLocale);
 const t = ui[locale].detailFood;
@@ -42,10 +43,14 @@ const screens = [
     },
     {
         ...t.design.screens[3],
-        src: cameraSuccessImage.src,
+        src: login.src,
     },
     {
         ...t.design.screens[4],
+        src: favoriteScreenImage.src,
+    },
+    {
+        ...t.design.screens[5],
         src: productImage.src,
     },
 ];
