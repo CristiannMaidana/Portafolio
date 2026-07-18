@@ -294,7 +294,7 @@ export const ui = {
                 eyebrow: 'Contexto',
                 title: 'Un proyecto enfocado en aprendizaje técnico.',
                 lead:
-                    'La app de alimentos fue desarrollada como proyecto universitario para practicar JavaScript, React Native y Expo mediante una aplicación móvil funcional. El objetivo fue integrar una API pública real, trabajar con navegación, búsqueda, cámara y escaneo de códigos de barras, aplicando una estructura de código más ordenada y cercana a un proyecto mobile real.',
+                    'La app de alimentos fue desarrollada como proyecto universitario para practicar JavaScript, React Native y Expo mediante una aplicación móvil funcional. El objetivo fue integrar una API pública real, trabajar con navegación, búsqueda, cámara y escaneo de códigos de barras, aplicando una estructura de código más ordenada y cercana a un proyecto mobile real. Además, se incorporó un backend con Convex para el almacenamiento persistente de datos y Better Auth para implementar un sistema de autenticación de usuarios, permitiendo gestionar favoritos asociados a cada cuenta y completar un flujo de desarrollo full stack orientado a aplicaciones móviles.',
             },
             process: {
                 eyebrow: 'Proceso',
