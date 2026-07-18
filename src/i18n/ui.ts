@@ -450,7 +450,6 @@ export const ui = {
                 title: 'Un MVP mobile funcional',
                 paragraphs: [
                     'La app de alimentos culminó como un MVP completamente funcional que integra exploración de productos, búsqueda, escaneo de códigos de barras, consulta de información nutricional mediante una API pública, autenticación de usuarios y almacenamiento persistente de favoritos. Más allá del resultado obtenido, el proyecto representó una oportunidad para incorporar un nuevo stack tecnológico y comprender el flujo completo de desarrollo de una aplicación móvil moderna, integrando React Native, Expo, Convex y Better Auth en una solución full stack.',
-                    'Dentro del portfolio, este proyecto complementa desarrollos de mayor alcance al demostrar la capacidad de adaptarme a nuevas tecnologías, integrar servicios externos, implementar autenticación y persistencia de datos, y construir aplicaciones móviles con una arquitectura organizada, una experiencia de usuario coherente y funcionalidades propias del entorno móvil.',
                 ],
             },
         },
@@ -748,23 +747,31 @@ export const ui = {
                 eyebrow: 'Context',
                 title: 'A project focused on technical learning.',
                 lead:
-                    'The food app was developed as a university project to practice JavaScript, React Native, and Expo through a functional mobile application. The goal was to integrate a real public API, work with navigation, search, camera, and barcode scanning, and apply a cleaner code structure closer to a real mobile project.',
+                    'The food app was developed as a university project to practice JavaScript, React Native, and Expo through a functional mobile application. The goal was to integrate a real public API, work with navigation, search, camera, and barcode scanning, and apply a cleaner code structure closer to a real mobile project. In addition, a Convex backend was incorporated for persistent data storage, along with Better Auth to implement user authentication, making it possible to manage favorites associated with each account and complete a full-stack development flow focused on mobile applications.',
             },
             process: {
                 eyebrow: 'Process',
                 title: 'Main learning goals',
                 steps: [
                     {
-                        title: 'Learn Expo',
-                        body: 'Build a mobile app with Expo and React Native, learning project structure, screen navigation, and native integrations such as the camera.',
+                        title: 'Mobile development with Expo',
+                        body: 'Build a mobile application with React Native and Expo, learning project structure, screen navigation, and the integration of native features such as the camera and animations.',
                     },
                     {
-                        title: 'Use a public API',
-                        body: 'Integrate the Open Food Facts API to retrieve real food product data, including search, barcode lookup, and external response handling.',
+                        title: 'REST API consumption',
+                        body: 'Integrate the public Open Food Facts API to retrieve real food product information, implementing searches, barcode lookups, and JSON response processing.',
                     },
                     {
-                        title: 'Build mobile flows',
-                        body: 'Design a coherent experience connecting category browsing, search, favorites, and product scanning with a clear and natural user flow.',
+                        title: 'Backend with Convex',
+                        body: 'Implement a backend using Convex to store persistent information, creating queries, mutations, and a data model for managing favorite products.',
+                    },
+                    {
+                        title: 'User authentication',
+                        body: 'Integrate Better Auth with Convex to implement registration, sign-in, and session management, protecting features and associating stored data with each user.',
+                    },
+                    {
+                        title: 'Architecture and mobile flows',
+                        body: 'Design a feature-based application that connects browsing, search, scanning, authentication, and favorites through a modular architecture that separates the interface, business logic, and data access.',
                     },
                 ],
             },
@@ -781,6 +788,10 @@ export const ui = {
                     {
                         title: 'Camera scanning',
                         body: 'As an alternative to manual search, the app allows scanning a product barcode using the device camera. Once the code is detected, a visual confirmation is shown and the user can access the detail screen directly.',
+                    },
+                    {
+                        title: 'Favorites and authentication',
+                        body: 'This flow demonstrates the complete favorites management experience. When users try to access this section without being signed in, the application displays the authentication screen to protect access to personal information. Once authenticated, they can view only the products associated with their account, add or remove favorites from each product detail, and see the changes reflected immediately in the list. Finally, after signing out, access to favorites is restricted again until the user authenticates once more.',
                     },
                 ],
             },
@@ -806,9 +817,14 @@ export const ui = {
                         imageAlt: 'Camera screen',
                     },
                     {
-                        title: 'Camera scanner',
-                        body: 'Once the barcode is recognized, the application shows a visual confirmation indicating that the product was identified correctly. From this state, the user can access the product detail directly or restart the scan to consult another item without unnecessary interruptions in the flow.',
-                        imageAlt: 'Camera scanner confirmation screen',
+                        title: 'Favorites and login',
+                        body: 'The favorites screen first checks whether the user has an active session. When the user is not authenticated, a sign-in window is displayed that restricts access to saved products and lets them log in with their account. Once signed in, the application retrieves only the favorites associated with that user and replaces the access view with the list of stored products.',
+                        imageAlt: 'Login screen on the favorites page',
+                    },
+                    {
+                        title: 'Favorites',
+                        body: 'The favorites screen provides quick access to products the user chose to save while browsing. The information is stored persistently using Convex and Better Auth authentication, preserving the favorites list between sessions and synchronizing it with the user account. From this screen, users can revisit any saved product and access its details directly.',
+                        imageAlt: 'Favorites screen',
                     },
                     {
                         title: 'Detail product',
@@ -832,14 +848,6 @@ export const ui = {
                         body: 'Platform used to simplify project development and setup, making it easier to integrate native features such as the camera, run the app during development, and manage the environment without complex native configuration.',
                     },
                     {
-                        title: 'TypeScript',
-                        body: 'Language used to add static typing to the project, defining models, properties, and contracts between the different application layers. Its use made it possible to write safer, more readable, and easier-to-maintain code as the project grew.',
-                    },
-                    {
-                        title: 'Reanimated',
-                        body: 'Used to add fluid animations between different interface states, improving user experience during the scanning flow and in components such as temporary notifications, creating more natural transitions and a more pleasant visual interaction.',
-                    },
-                    {
                         title: 'Bruno',
                         body: 'Tool used to test and validate API endpoints before integrating them into the application. It made it possible to perform HTTP requests, inspect responses, and verify query behavior, helping development and debugging of data consumption from Open Food Facts.',
                     },
@@ -847,13 +855,21 @@ export const ui = {
                         title: 'Open Food Facts',
                         body: 'Public API used as the source of food product information. Through it, the application retrieves real data such as product name, brand, ingredients, nutrition values, and indicators like Nutri-Score, Eco-Score, and NOVA, enabling an experience based on up-to-date information without needing to build a custom backend.',
                     },
+                    {
+                        title: 'Convex',
+                        body: 'Convex was used as the backend to manage persistent storage of favorite products. Through its queries and mutations, the application can save, retrieve, and remove favorites associated with the authenticated user, keeping information synchronized between sessions without the need to develop a custom server or API.',
+                    },
+                    {
+                        title: 'Better Auth',
+                        body: 'Better Auth was used to implement the application authentication system. It made it possible to manage registration, sign-in and sign-out, and securely preserve the user session between app launches. Its integration with Convex made it easier to identify each authenticated user, associate favorite products with a specific account, and restrict access to personal information to its owner.',
+                    },
                 ],
             },
             learning: {
                 eyebrow: 'Learning',
                 title: 'What I learned',
                 lead:
-                    'This project represented my first approach to mobile development with the React Native and Expo ecosystem. Throughout its development I learned JavaScript applied to mobile apps, feature-based project organization, REST API consumption, endpoint validation with Bruno, navigation implementation through Expo Router, and the integration of native features such as the camera and barcode scanning. It also reinforced the importance of keeping the code structure organized through separation of responsibilities between interface, business logic, and data access.',
+                    'This project represented my first approach to mobile development with the React Native and Expo ecosystem. Throughout its development I learned JavaScript applied to mobile apps, feature-based project organization, REST API consumption, endpoint validation with Bruno, navigation implementation through Expo Router, and the integration of native features such as the camera and barcode scanning. I also incorporated Convex as a backend for persistent data storage and Better Auth to implement session-based authentication, making it possible to protect features and associate each user’s information with their account. Finally, I reinforced the importance of maintaining an organized code structure by separating responsibilities across the interface, business logic, and data access, improving application scalability and maintainability.',
                 cards: [
                     {
                         title: 'API integration',
@@ -871,14 +887,21 @@ export const ui = {
                         title: 'Code organization',
                         body: 'As the project grew, I learned the importance of maintaining a clear structure by separating the responsibilities of each part of the application. Organizing the code by features and splitting logic across interface, hooks, services, repositories, and mappers made the project easier to maintain and allowed new features to be added in a more organized way.',
                     },
+                    {
+                        title: 'Backend with Convex',
+                        body: 'Integrating Convex helped me understand how to build a modern backend without developing a traditional API. I learned to define the database schema, create queries and mutations to retrieve and modify information, and connect these operations directly to the application through typed calls. I also implemented persistent storage for favorite products and their relationship with authenticated users, understanding the complete flow from the interface to the database and how to keep data synchronized securely and efficiently.',
+                    },
+                    {
+                        title: 'Authentication with Better Auth',
+                        body: 'Integrating Better Auth helped me understand how to implement a complete authentication system within a mobile application. I learned to configure the authentication provider with Convex, manage registration, sign-in and sign-out, preserve the user session between app launches, and protect features that require authentication. I also implemented the association between each user and their favorite products, learning how to control data access so that each account can view and manage only its own information.',
+                    },
                 ],
             },
             result: {
                 eyebrow: 'Result',
                 title: 'A functional mobile MVP',
                 paragraphs: [
-                    'The food app ended up as a fully functional MVP that integrates product exploration, search, barcode scanning, and nutrition information lookup through a public API. Beyond the final result, the project represented an opportunity to adopt a new technology stack and understand the full development flow of a mobile application with React Native and Expo.',
-                    'Inside the portfolio, this project complements broader developments by showing my ability to adapt to new technologies, integrate external services, and build mobile applications with organized architecture, coherent user experience, and functionality specific to the mobile environment.',
+                    'The food app became a fully functional MVP that integrates product exploration, search, barcode scanning, nutrition information lookup through a public API, user authentication, and persistent favorites storage. Beyond the final result, the project represented an opportunity to adopt a new technology stack and understand the complete development flow of a modern mobile application, integrating React Native, Expo, Convex, and Better Auth into a full-stack solution.',
                 ],
             },
         },
