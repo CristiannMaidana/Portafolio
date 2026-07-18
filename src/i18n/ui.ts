@@ -337,6 +337,10 @@ export const ui = {
                         title: 'Escaneo por cámara',
                         body: 'Como alternativa a la búsqueda manual, la aplicación permite escanear el código de barras de un producto utilizando la cámara del dispositivo. Una vez detectado el código, se muestra una confirmación visual y el usuario puede acceder directamente a la pantalla de detalle.',
                     },
+                    {
+                        title: 'Favoritos y autenticación',
+                        body: 'Este recorrido muestra el funcionamiento completo de la gestión de favoritos. Cuando el usuario intenta acceder a esta sección sin haber iniciado sesión, la aplicación presenta la pantalla de autenticación para proteger el acceso a la información personal. Una vez autenticado, puede consultar únicamente los productos asociados a su cuenta, agregar o eliminar favoritos desde el detalle de cada producto y comprobar cómo los cambios se reflejan inmediatamente en la lista. Finalmente, al cerrar la sesión, el acceso a los favoritos vuelve a quedar restringido hasta que el usuario se autentique nuevamente.',
+                    },
                 ],
             },
             design: {
