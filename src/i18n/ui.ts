@@ -352,9 +352,14 @@ export const ui = {
                         imageAlt: 'Pantalla de cámara',
                     },
                     {
-                        title: 'Camera scanner',
-                        body: 'Una vez reconocido el código de barras, la aplicación muestra una confirmación visual indicando que el producto fue identificado correctamente. Desde este estado, el usuario puede acceder directamente al detalle del producto o reiniciar el escaneo para consultar otro artículo, evitando interrupciones innecesarias durante el flujo.',
-                        imageAlt: 'Pantalla de confirmación del escáner',
+                        title: 'Favorites and login',
+                        body: 'La pantalla de favoritos verifica primero si el usuario tiene una sesión activa. Cuando no está autenticado, se muestra una ventana de inicio de sesión que restringe el acceso a los productos guardados y permite ingresar con su cuenta. Una vez iniciada la sesión, la aplicación consulta únicamente los favoritos asociados a ese usuario y reemplaza la vista de acceso por la lista de productos almacenados.',
+                        imageAlt: 'Pantalla de login en pagina favoritos'
+                    },
+                    {
+                        title: 'Favorites',
+                        body: 'La pantalla de favoritos permite acceder rápidamente a los productos que el usuario decidió guardar durante su navegación. La información se almacena de forma persistente mediante una base de datos local con Convex y autenticación con Better Auth, permitiendo conservar la lista de favoritos entre sesiones y sincronizarla con la cuenta del usuario. Desde esta pantalla es posible consultar nuevamente cualquier producto guardado y acceder directamente a su detalle.',
+                        imageAlt: 'Pantalla de favoritos',
                     },
                     {
                         title: 'Detail product',
