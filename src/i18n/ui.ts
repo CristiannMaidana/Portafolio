@@ -383,14 +383,6 @@ export const ui = {
                         body: 'Plataforma utilizada para simplificar el desarrollo y la configuración del proyecto, facilitando la integración de funcionalidades nativas como la cámara, la ejecución durante el desarrollo y la gestión del entorno sin necesidad de configuraciones nativas complejas.',
                     },
                     {
-                        title: 'TypeScript',
-                        body: 'Lenguaje utilizado para añadir tipado estático al proyecto, definiendo modelos, propiedades y contratos entre las distintas capas de la aplicación. Su uso permitió escribir un código más seguro, legible y fácil de mantener a medida que el proyecto fue creciendo.',
-                    },
-                    {
-                        title: 'Reanimated',
-                        body: 'Utilizado para incorporar animaciones fluidas entre distintos estados de la interfaz, mejorando la experiencia de usuario durante el flujo de escaneo y en componentes como las notificaciones temporales, aportando transiciones más naturales y una interacción visual más agradable.',
-                    },
-                    {
                         title: 'Bruno',
                         body: 'Herramienta utilizada para probar y validar los endpoints de la API antes de integrarlos en la aplicación. Permitió realizar solicitudes HTTP, inspeccionar las respuestas y verificar el funcionamiento de las consultas, facilitando el desarrollo y la depuración del consumo de datos desde Open Food Facts.',
                     },
@@ -398,6 +390,14 @@ export const ui = {
                         title: 'Open Food Facts',
                         body: 'API pública utilizada como fuente de información sobre productos alimenticios. A través de ella la aplicación obtiene datos reales como el nombre del producto, la marca, los ingredientes, los valores nutricionales y los indicadores Nutri-Score, Eco-Score y NOVA, permitiendo construir una experiencia basada en información actualizada sin necesidad de desarrollar un backend propio.',
                     },
+                    {
+                        title: 'Convex',
+                        body: 'Convex fue utilizado como backend para gestionar el almacenamiento persistente de los productos favoritos. A través de sus consultas (queries) y mutaciones (mutations), la aplicación puede guardar, obtener y eliminar favoritos asociados al usuario autenticado, manteniendo la información sincronizada entre sesiones sin necesidad de desarrollar un servidor o una API propia.',
+                    },
+                    {
+                        title: 'Better Auth',
+                        body: 'Better Auth fue utilizado para implementar el sistema de autenticación de la aplicación. Permitió gestionar el registro, el inicio y cierre de sesión, así como mantener la sesión del usuario de forma segura entre ejecuciones de la aplicación. Su integración con Convex facilitó la identificación de cada usuario autenticado, haciendo posible asociar los productos favoritos a una cuenta específica y restringir el acceso a la información personal únicamente a su propietario.',
+                    }
                 ],
             },
             learning: {
