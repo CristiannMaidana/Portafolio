@@ -4,6 +4,7 @@ import { ui } from '../i18n/ui';
 import makeupImage from '../assets/makeup.png';
 import searchOneVideo from '../assets/Foods/videos/search-1.mp4';
 import searchTwoVideo from '../assets/Foods/videos/search-2.mp4';
+import favoriteScreenVideo from '../assets/Foods/videos/favoritesScreen.mp4';
 
 import homeImage from '../assets/Foods/Home - foods.png';
 import searchImage from '../assets/Foods/searchFoods.png';
@@ -24,6 +25,11 @@ const experienceSections = [
     {
         ...t.experience.sections[1],
         video: searchTwoVideo,
+        variant: 'phone',
+    },
+    {
+        ...t.experience.sections[2],
+        video: favoriteScreenVideo,
         variant: 'phone',
     },
 ];
