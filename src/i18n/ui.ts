@@ -301,16 +301,25 @@ export const ui = {
                 title: 'Objetivos principales de aprendizaje',
                 steps: [
                     {
-                        title: 'Aprender Expo',
-                        body: 'Construir una aplicación móvil utilizando Expo y React Native, aprendiendo la estructura de un proyecto, la navegación entre pantallas y la integración de funcionalidades nativas como la cámara.',
+                        title: 'Desarrollo mobile con Expo',
+                        body: 'Construir una aplicación móvil con React Native y Expo, aprendiendo la estructura de un proyecto, la navegación entre pantallas y la integración de funcionalidades nativas como la cámara y las animaciones.',
                     },
                     {
-                        title: 'Usar una API pública',
-                        body: 'Integrar la API de Open Food Facts para obtener información real de productos alimenticios, implementando búsquedas, consultas por código de barras y manejo de respuestas externas.',
+                        title: 'Consumo de APIs REST',
+                        body: 'Integrar la API pública de Open Food Facts para obtener información real de productos alimenticios, implementando búsquedas, consultas por código de barras y el procesamiento de respuestas JSON.',
                     },
                     {
-                        title: 'Construir flujos mobile',
-                        body: 'Diseñar una experiencia coherente conectando exploración por categorías, búsqueda, favoritos y escaneo de productos, priorizando una interacción clara y natural para el usuario.',
+                        title: 'Backend con Convex',
+                        body: 'Implementar un backend utilizando Convex para almacenar información persistente, creando queries, mutations y un modelo de datos que permitiera gestionar los productos favoritos.',
+                    },
+                    {
+                        title: 'Autenticación de usuarios',
+                        body: 'Integrar Better Auth junto con Convex para implementar el registro, inicio de sesión y gestión de sesiones, protegiendo funcionalidades y asociando los datos almacenados a cada usuario.',
+                    },
+
+                    {
+                        title: 'Arquitectura y flujos móviles',
+                        body: 'Diseñar una aplicación organizada por features, conectando exploración, búsqueda, escaneo, autenticación y favoritos mediante una arquitectura modular que separa la interfaz, la lógica de negocio y el acceso a los datos.',
                     },
                 ],
             },
