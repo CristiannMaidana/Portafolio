@@ -422,6 +422,14 @@ export const ui = {
                         title: 'Organización del código',
                         body: 'A medida que el proyecto creció, aprendí la importancia de mantener una estructura clara separando las responsabilidades de cada parte de la aplicación. Organizar el código por features y dividir la lógica entre la interfaz, los hooks, los servicios, los repositorios y los mappers facilitó el mantenimiento del proyecto y permitió incorporar nuevas funcionalidades de forma más ordenada.',
                     },
+                    {
+                        title: 'Backend con Convex',
+                        body: 'La integración de Convex me permitió comprender cómo construir un backend moderno sin desarrollar una API tradicional. Aprendí a definir el esquema de la base de datos, crear queries y mutations para consultar y modificar información, y conectar estas operaciones directamente con la aplicación mediante llamadas tipadas. Además, implementé el almacenamiento persistente de productos favoritos y su relación con usuarios autenticados, entendiendo el flujo completo desde la interfaz hasta la base de datos y cómo mantener los datos sincronizados de forma segura y eficiente.',
+                    },
+                    {
+                        title: 'Autenticación con Better Auth',
+                        body: 'La integración de Better Auth me permitió comprender cómo implementar un sistema de autenticación completo dentro de una aplicación móvil. Aprendí a configurar el proveedor de autenticación junto con Convex, gestionar el registro, el inicio y cierre de sesión, mantener la sesión del usuario entre ejecuciones y proteger funcionalidades que requieren autenticación. Además, implementé la asociación entre cada usuario y sus productos favoritos, entendiendo cómo controlar el acceso a los datos para que cada cuenta pueda consultar y administrar únicamente su propia información.',
+                    },
                 ],
             },
             result: {
